@@ -5,24 +5,220 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> Dr. Pedro Simplício | Especialista em Prótese Dentária </title>
+  <title>Dr. Pedro Simplício | Especialista em Prótese Dentária em Natal</title>
 
-  <meta name="description" content="Dr. Pedro Simplício, especialista em Prótese Dentária em Natal/RN. Conheça tratamentos com coroas, dentaduras, próteses sobre implantes e reabilitação oral.">
+  <meta name="description"
+        content="Dr. Pedro Simplício, especialista em Prótese Dentária em Natal/RN. Reabilitação oral, dentaduras, coroas e próteses sobre implantes com planejamento individualizado.">
 
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#20352e">
+  <meta name="theme-color" content="#203b53">
 
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+  <link rel="preload" as="image" href="/hero-maca.jpg">
+
   <style>
-    /* Estilos de segurança para a página inicial */
-    .ps-hero-img {
+
+    /* =====================================
+       NOVA ABERTURA DO SITE
+    ===================================== */
+
+    .ps-feature {
+      position: relative;
+      min-height: 640px;
+      overflow: hidden;
+      background: #f3f0ea;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+    }
+
+    .ps-feature-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .ps-feature-media img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center center;
     }
+
+    .ps-feature::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        90deg,
+        rgba(248, 246, 241, 0.96) 0%,
+        rgba(248, 246, 241, 0.89) 26%,
+        rgba(248, 246, 241, 0.58) 44%,
+        rgba(248, 246, 241, 0.04) 69%
+      );
+    }
+
+    .ps-feature-inner {
+      width: 100%;
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .ps-feature-copy {
+      max-width: 625px;
+    }
+
+    .ps-feature-kicker {
+      display: block;
+      margin-bottom: 25px;
+      color: #98734e;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .ps-feature h1 {
+      margin: 0;
+      color: #203b53;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 4.4vw, 64px);
+      font-weight: 400;
+      line-height: 1.13;
+      letter-spacing: -1.5px;
+      text-wrap: balance;
+    }
+
+    .ps-feature-description {
+      max-width: 485px;
+      margin: 27px 0 0;
+      color: #435666;
+      font-size: 19px;
+      line-height: 1.75;
+    }
+
+    .ps-feature-actions {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .ps-feature-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 26px;
+      border-radius: 3px;
+      background: #a5774f;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .ps-feature-button:hover {
+      background: #865c3a;
+      transform: translateY(-2px);
+    }
+
+    .ps-feature-secondary {
+      display: inline-flex;
+      align-items: center;
+      min-height: 52px;
+      color: #203b53;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    /* =====================================
+       APRESENTAÇÃO PROFISSIONAL
+    ===================================== */
+
+    .ps-about {
+      padding: 105px 0;
+      background: #ffffff;
+    }
+
+    .ps-about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(35px, 6vw, 100px);
+      align-items: center;
+    }
+
+    .ps-about-photo {
+      position: relative;
+      overflow: hidden;
+      background: #e9e9e6;
+      aspect-ratio: 4 / 4.5;
+      border-radius: 3px;
+    }
+
+    .ps-about-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .ps-about-kicker {
+      display: block;
+      margin-bottom: 22px;
+      color: #a5774f;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .ps-about h2 {
+      max-width: 650px;
+      margin: 0 0 28px;
+      color: #203b53;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(32px, 3.1vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    .ps-about p {
+      margin: 0 0 19px;
+      color: #52616b;
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .ps-about-link {
+      display: inline-block;
+      margin-top: 18px;
+      padding-bottom: 6px;
+      color: #203b53;
+      border-bottom: 1px solid #a5774f;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .ps-about-link:hover {
+      color: #a5774f;
+    }
+
+    /* =====================================
+       GUIA DO PACIENTE
+    ===================================== */
 
     .ps-education {
       background: #f0eee7;
@@ -30,17 +226,19 @@
 
     .ps-education-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
     }
 
     .ps-education-card {
-      background: white;
+      display: block;
+      background: #ffffff;
       padding: 28px;
       border: 1px solid #d9ddd6;
       border-radius: 15px;
       text-decoration: none;
-      display: block;
+      color: #203b53;
+      transition: border-color 0.2s ease;
     }
 
     .ps-education-card h3 {
@@ -50,10 +248,11 @@
     .ps-education-card p {
       color: #5d6a63;
       font-size: 17px;
+      line-height: 1.7;
     }
 
     .ps-education-card:hover {
-      border-color: #81978b;
+      border-color: #a5774f;
     }
 
     .ps-footer-note {
@@ -62,11 +261,146 @@
       color: #c4d0c6;
     }
 
+    /* =====================================
+       RESPONSIVIDADE
+    ===================================== */
+
+    @media (max-width: 900px) {
+
+      .ps-feature {
+        min-height: 590px;
+      }
+
+      .ps-feature-copy {
+        max-width: 540px;
+      }
+
+      .ps-feature::before {
+        background: linear-gradient(
+          90deg,
+          rgba(248, 246, 241, 0.98) 0%,
+          rgba(248, 246, 241, 0.93) 39%,
+          rgba(248, 246, 241, 0.38) 80%
+        );
+      }
+
+      .ps-about {
+        padding: 75px 0;
+      }
+
+      .ps-about-grid {
+        gap: 35px;
+      }
+
+    }
+
     @media (max-width: 700px) {
+
+      .ps-feature {
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .ps-feature::before {
+        display: none;
+      }
+
+      .ps-feature-inner {
+        order: 1;
+        padding-top: 56px;
+        padding-bottom: 48px;
+      }
+
+      .ps-feature-media {
+        position: relative;
+        order: 2;
+        inset: auto;
+        z-index: auto;
+        width: 100%;
+        height: 315px;
+      }
+
+      .ps-feature-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 66% center;
+      }
+
+      .ps-feature-kicker {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        margin-bottom: 18px;
+      }
+
+      .ps-feature h1 {
+        font-size: clamp(35px, 9vw, 44px);
+        line-height: 1.16;
+        letter-spacing: -0.8px;
+      }
+
+      .ps-feature-description {
+        margin-top: 23px;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .ps-feature-actions {
+        margin-top: 28px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .ps-feature-button {
+        width: 100%;
+      }
+
+      .ps-feature-secondary {
+        justify-content: center;
+      }
+
+      .ps-about {
+        padding: 65px 0;
+      }
+
+      .ps-about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .ps-about-photo {
+        max-width: 430px;
+        width: 100%;
+        aspect-ratio: 4 / 4;
+      }
+
+      .ps-about h2 {
+        font-size: 35px;
+      }
+
+      .ps-about p {
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
       .ps-education-grid {
         grid-template-columns: 1fr;
       }
+
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ps-feature-button {
+        transition: none;
+      }
+
+      .ps-feature-button:hover {
+        transform: none;
+      }
+    }
+
   </style>
 
   <script src="/site.js" defer></script>
@@ -74,419 +408,652 @@
 
 <body>
 
-<a class="skip" href="#conteudo">
-  Pular para o conteúdo
-</a>
+  <a class="skip" href="#conteudo">
+    Pular para o conteúdo
+  </a>
 
-<header class="top">
-  <div class="container nav">
+  <!-- =====================================
+       MENU PRINCIPAL
+  ===================================== -->
 
-    <a class="brand" href="/index.html" aria-label="Dr. Pedro Simplício, página inicial">
-      <strong>Dr. Pedro Simplício</strong>
-      <small>Especialista em Prótese Dentária</small>
-    </a>
+  <header class="top">
+    <div class="container nav">
 
-    <button
-      class="menu"
-      type="button"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-      aria-controls="menu-principal"
-      onclick="alternarMenu(this)">
-      ☰ Menu
-    </button>
+      <a class="brand"
+         href="/index.html"
+         aria-label="Dr. Pedro Simplício, página inicial">
+        <strong>Dr. Pedro Simplício</strong>
+        <small>Especialista em Prótese Dentária</small>
+      </a>
 
-    <nav class="links" id="menu-principal" aria-label="Menu principal">
-      <a href="/index.html">Início</a>
-      <a href="#tratamentos">Tratamentos</a>
-      <a href="#guia">Guia do paciente</a>
-      <a href="/sobre.html">Sobre mim</a>
-      <a href="/contato.html">Contato</a>
-    </nav>
-
-    <div class="controls">
       <button
-        class="textsize"
+        class="menu"
         type="button"
-        onclick="alternarLetras()"
-        aria-label="Aumentar ou reduzir letras">
-        A+
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+        onclick="alternarMenu(this)">
+        ☰ Menu
       </button>
-    </div>
 
-  </div>
-</header>
+      <nav class="links"
+           id="menu-principal"
+           aria-label="Menu principal">
+        <a href="/index.html">Início</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#guia">Guia do paciente</a>
+        <a href="/sobre.html">Sobre mim</a>
+        <a href="/contato.html">Contato</a>
+      </nav>
 
-<main id="conteudo">
-
-  <!-- APRESENTAÇÃO -->
-
-  <section class="hero" aria-labelledby="titulo-principal">
-    <div class="container hero-grid">
-
-      <div class="hero-copy">
-
-        <span class="eyebrow">
-          REABILITAÇÃO ORAL EM NATAL/RN
-        </span>
-
-        <h1 id="titulo-principal">
-          Volte a sorrir, mastigar e viver com confiança.
-        </h1>
-
-        <p class="lead">
-          Tratamentos em prótese dentária com planejamento
-          individualizado, explicações claras e cuidado
-          em cada etapa.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn" href="/contato.html">
-            Agendar minha consulta
-          </a>
-
-          <a class="btn outline" href="#tratamentos">
-            Conhecer os tratamentos
-          </a>
-        </div>
-
+      <div class="controls">
+        <button
+          class="textsize"
+          type="button"
+          onclick="alternarLetras()"
+          aria-label="Aumentar ou reduzir letras">
+          A+
+        </button>
       </div>
 
-      <div class="hero-photo">
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- =====================================
+         NOVA ABERTURA
+    ===================================== -->
+
+    <section class="ps-feature"
+             aria-labelledby="titulo-principal">
+
+      <div class="ps-feature-media">
         <img
-          class="ps-hero-img"
-          src="/pedro-simplicio.jpg"
-          alt="Dr. Pedro Simplício, especialista em Prótese Dentária em Natal"
-          width="600"
-          height="750"
+          src="/hero-maca.jpg"
+          alt="Senhora sorridente segurando uma maçã"
+          width="1648"
+          height="928"
           fetchpriority="high">
       </div>
 
-    </div>
-  </section>
+      <div class="container ps-feature-inner">
 
-  <!-- DIFERENCIAIS -->
+        <div class="ps-feature-copy">
 
-  <section class="trust" aria-label="Características do atendimento">
-    <div class="container trust-grid">
+          <span class="ps-feature-kicker">
+            REABILITAÇÃO ORAL EM NATAL/RN
+          </span>
 
-      <div>
-        <strong>Atendimento por especialista</strong>
-        <span>Formação especializada em Prótese Dentária.</span>
-      </div>
+          <h1 id="titulo-principal">
+            Reabilitação oral focada no que realmente
+            importa: a sua tranquilidade.
+          </h1>
 
-      <div>
-        <strong>Explicações claras</strong>
-        <span>Entenda as possibilidades antes de decidir.</span>
-      </div>
-
-      <div>
-        <strong>Planejamento individualizado</strong>
-        <span>Tratamentos pensados para cada necessidade.</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TRATAMENTOS -->
-
-  <section class="section" id="tratamentos">
-    <div class="container">
-
-      <div class="section-head">
-        <span class="eyebrow">TRATAMENTOS</span>
-
-        <h2>Como posso ajudar você?</h2>
-
-        <p>
-          Conheça as possibilidades de tratamento
-          para recuperar seus dentes, sua mastigação
-          e seu conforto.
-        </p>
-      </div>
-
-      <div class="cards">
-
-        <a class="card" href="/protese-protocolo.html">
-          <span class="num">01</span>
-          <h3>Dentes fixos sobre implantes</h3>
-          <p>
-            Conheça a prótese protocolo, suas etapas,
-            indicações e cuidados.
-          </p>
-          <span class="more">Entender o tratamento →</span>
-        </a>
-
-        <a class="card" href="/coroas-dentarias.html">
-          <span class="num">02</span>
-          <h3>Coroas dentárias</h3>
-          <p>
-            Entenda como uma coroa pode ajudar
-            a recuperar um dente comprometido.
-          </p>
-          <span class="more">Entender o tratamento →</span>
-        </a>
-
-        <a class="card" href="/protese-total.html">
-          <span class="num">03</span>
-          <h3>Dentaduras</h3>
-          <p>
-            Informações sobre próteses totais,
-            adaptação, conforto e manutenção.
-          </p>
-          <span class="more">Entender o tratamento →</span>
-        </a>
-
-        <a class="card" href="/protese-parcial-removivel.html">
-          <span class="num">04</span>
-          <h3>Próteses removíveis</h3>
-          <p>
-            Alternativas para substituir alguns
-            dentes ausentes.
-          </p>
-          <span class="more">Entender o tratamento →</span>
-        </a>
-
-        <a class="card" href="/protese-sobre-implantes.html">
-          <span class="num">05</span>
-          <h3>Coroas e próteses sobre implantes</h3>
-          <p>
-            Entenda as opções de próteses
-            apoiadas em implantes dentários.
-          </p>
-          <span class="more">Entender o tratamento →</span>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- GUIA EDUCATIVO -->
-
-  <section class="section ps-education" id="guia">
-    <div class="container">
-
-      <div class="section-head">
-        <span class="eyebrow">GUIA DO PACIENTE</span>
-
-        <h2>Entenda seu tratamento antes de decidir.</h2>
-
-        <p>
-          Aqui você encontra respostas para dúvidas
-          comuns, explicadas de forma simples,
-          sem termos complicados.
-        </p>
-      </div>
-
-      <div class="ps-education-grid">
-
-        <a
-          class="ps-education-card"
-          href="/dentadura-solta-machucando.html">
-
-          <span class="eyebrow">DENTADURAS</span>
-
-          <h3>Minha dentadura está solta ou machucando. O que fazer?</h3>
-
-          <p>
-            Entenda as possíveis causas, os cuidados
-            necessários e quando procurar uma avaliação.
+          <p class="ps-feature-description">
+            Comer com conforto, sorrir sem constrangimento
+            e conversar sem o receio de que sua prótese
+            se solte.
           </p>
 
-          <strong>Leia o guia completo →</strong>
-        </a>
+          <div class="ps-feature-actions">
 
-        <a
-          class="ps-education-card"
-          href="/protese-protocolo.html">
+            <a class="ps-feature-button"
+               href="/contato.html">
+              Agendar minha avaliação
+            </a>
 
-          <span class="eyebrow">IMPLANTES</span>
+            <a class="ps-feature-secondary"
+               href="#tratamentos">
+              Conhecer os tratamentos
+            </a>
 
-          <h3>Como funciona o tratamento com dentes fixos?</h3>
+          </div>
 
-          <p>
-            Conheça as etapas da prótese protocolo,
-            da avaliação até a manutenção.
-          </p>
-
-          <strong>Leia o guia completo →</strong>
-        </a>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PERGUNTAS FREQUENTES -->
-
-  <section class="section" id="duvidas">
-    <div class="container">
-
-      <div class="section-head">
-        <span class="eyebrow">PERGUNTAS FREQUENTES</span>
-
-        <h2>Suas dúvidas merecem respostas claras.</h2>
-
-        <p>
-          Algumas das perguntas mais comuns
-          de quem está pensando em fazer
-          uma prótese dentária.
-        </p>
-      </div>
-
-      <div class="faq">
-
-        <details>
-          <summary>
-            Vou ficar sem dentes durante o tratamento?
-          </summary>
-          <p>
-            Depende do tipo de tratamento e das
-            condições clínicas. Em muitos casos,
-            existem alternativas provisórias.
-            A indicação precisa ser individualizada.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            A prótese protocolo pode ser colocada no mesmo dia?
-          </summary>
-          <p>
-            Em situações selecionadas, pode ser possível
-            instalar uma prótese provisória fixa logo
-            após a cirurgia. Isso depende de condições
-            clínicas e da estabilidade dos implantes.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Quanto tempo demora para fazer uma prótese?
-          </summary>
-          <p>
-            O prazo depende do tipo de prótese,
-            da complexidade do caso e das etapas
-            necessárias para sua confecção.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Uma dentadura solta sempre precisa ser trocada?
-          </summary>
-          <p>
-            Não necessariamente. Alguns casos podem
-            ser resolvidos com ajustes ou reembasamento.
-            Em outros, pode ser indicada uma nova prótese.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Como saber qual tratamento é melhor para mim?
-          </summary>
-          <p>
-            A escolha depende da avaliação da boca,
-            das condições dos dentes e dos tecidos,
-            das suas necessidades e das possibilidades
-            clínicas de cada tratamento.
-          </p>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAMADA FINAL -->
-
-  <section class="section alt">
-    <div class="container">
-
-      <div class="banner">
-
-        <div>
-          <h2>Vamos conversar sobre seu caso?</h2>
-
-          <p>
-            Agende uma avaliação e entenda
-            as possibilidades de tratamento
-            para sua necessidade.
-          </p>
         </div>
 
-        <a class="btn light" href="/contato.html">
-          Agendar uma avaliação
-        </a>
+      </div>
+    </section>
+
+    <!-- =====================================
+         APRESENTAÇÃO PROFISSIONAL
+    ===================================== -->
+
+    <section class="ps-about"
+             id="sobre"
+             aria-labelledby="titulo-sobre">
+
+      <div class="container ps-about-grid">
+
+        <div class="ps-about-photo">
+
+          <img
+            src="/pedro-simplicio.jpg"
+            alt="Dr. Pedro Simplício, especialista em Prótese Dentária"
+            width="600"
+            height="750"
+            loading="lazy">
+
+        </div>
+
+        <div class="ps-about-content">
+
+          <span class="ps-about-kicker">
+            PRAZER, SOU PEDRO SIMPLÍCIO
+          </span>
+
+          <h2 id="titulo-sobre">
+            Entender o seu problema é o primeiro
+            passo para cuidar dele.
+          </h2>
+
+          <p>
+            Sou cirurgião-dentista especialista em
+            Prótese Dentária e atuo na reabilitação
+            oral de pacientes que precisam recuperar
+            dentes, mastigação e conforto.
+          </p>
+
+          <p>
+            Acredito que um bom tratamento começa
+            com uma avaliação cuidadosa, uma conversa
+            clara e um planejamento que considere
+            as necessidades de cada pessoa.
+          </p>
+
+          <p>
+            Meu objetivo é que você compreenda
+            as possibilidades para o seu caso
+            e participe das decisões com segurança,
+            sabendo o que esperar de cada etapa.
+          </p>
+
+          <a class="ps-about-link" href="/sobre.html">
+            Conheça mais sobre meu trabalho →
+          </a>
+
+        </div>
 
       </div>
+    </section>
+
+    <!-- =====================================
+         DIFERENCIAIS
+    ===================================== -->
+
+    <section class="trust"
+             aria-label="Características do atendimento">
+
+      <div class="container trust-grid">
+
+        <div>
+          <strong>Atendimento por especialista</strong>
+          <span>
+            Formação especializada em Prótese Dentária.
+          </span>
+        </div>
+
+        <div>
+          <strong>Explicações claras</strong>
+          <span>
+            Entenda as possibilidades antes de decidir.
+          </span>
+        </div>
+
+        <div>
+          <strong>Planejamento individualizado</strong>
+          <span>
+            Tratamentos pensados para cada necessidade.
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         TRATAMENTOS
+    ===================================== -->
+
+    <section class="section" id="tratamentos">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            TRATAMENTOS
+          </span>
+
+          <h2>Como posso ajudar você?</h2>
+
+          <p>
+            Conheça as possibilidades de tratamento
+            para recuperar seus dentes, sua mastigação
+            e seu conforto.
+          </p>
+
+        </div>
+
+        <div class="cards">
+
+          <a class="card" href="/protese-protocolo.html">
+
+            <span class="num">01</span>
+
+            <h3>Dentes fixos sobre implantes</h3>
+
+            <p>
+              Conheça a prótese protocolo, suas etapas,
+              indicações e cuidados.
+            </p>
+
+            <span class="more">
+              Entender o tratamento →
+            </span>
+
+          </a>
+
+          <a class="card" href="/coroas-dentarias.html">
+
+            <span class="num">02</span>
+
+            <h3>Coroas dentárias</h3>
+
+            <p>
+              Entenda como uma coroa pode ajudar
+              a recuperar um dente comprometido.
+            </p>
+
+            <span class="more">
+              Entender o tratamento →
+            </span>
+
+          </a>
+
+          <a class="card" href="/protese-total.html">
+
+            <span class="num">03</span>
+
+            <h3>Dentaduras</h3>
+
+            <p>
+              Informações sobre próteses totais,
+              adaptação, conforto e manutenção.
+            </p>
+
+            <span class="more">
+              Entender o tratamento →
+            </span>
+
+          </a>
+
+          <a class="card"
+             href="/protese-parcial-removivel.html">
+
+            <span class="num">04</span>
+
+            <h3>Próteses removíveis</h3>
+
+            <p>
+              Alternativas para substituir alguns
+              dentes ausentes.
+            </p>
+
+            <span class="more">
+              Entender o tratamento →
+            </span>
+
+          </a>
+
+          <a class="card"
+             href="/protese-sobre-implantes.html">
+
+            <span class="num">05</span>
+
+            <h3>Coroas e próteses sobre implantes</h3>
+
+            <p>
+              Entenda as opções de próteses
+              apoiadas em implantes dentários.
+            </p>
+
+            <span class="more">
+              Entender o tratamento →
+            </span>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         GUIA DO PACIENTE
+    ===================================== -->
+
+    <section class="section ps-education" id="guia">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            GUIA DO PACIENTE
+          </span>
+
+          <h2>
+            Entenda seu tratamento antes de decidir.
+          </h2>
+
+          <p>
+            Aqui você encontra respostas para dúvidas
+            comuns, explicadas de forma simples,
+            sem termos complicados.
+          </p>
+
+        </div>
+
+        <div class="ps-education-grid">
+
+          <a class="ps-education-card"
+             href="/dentadura-solta-machucando.html">
+
+            <span class="eyebrow">
+              DENTADURAS
+            </span>
+
+            <h3>
+              Minha dentadura está solta ou machucando.
+              O que fazer?
+            </h3>
+
+            <p>
+              Entenda as possíveis causas, os cuidados
+              necessários e quando procurar uma avaliação.
+            </p>
+
+            <strong>
+              Leia o guia completo →
+            </strong>
+
+          </a>
+
+          <a class="ps-education-card"
+             href="/protese-protocolo.html">
+
+            <span class="eyebrow">
+              IMPLANTES
+            </span>
+
+            <h3>
+              Como funciona o tratamento com dentes fixos?
+            </h3>
+
+            <p>
+              Conheça as etapas da prótese protocolo,
+              da avaliação até a manutenção.
+            </p>
+
+            <strong>
+              Leia o guia completo →
+            </strong>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         PERGUNTAS FREQUENTES
+    ===================================== -->
+
+    <section class="section" id="duvidas">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <span class="eyebrow">
+            PERGUNTAS FREQUENTES
+          </span>
+
+          <h2>
+            Suas dúvidas merecem respostas claras.
+          </h2>
+
+          <p>
+            Algumas das perguntas mais comuns
+            de quem está pensando em fazer
+            uma prótese dentária.
+          </p>
+
+        </div>
+
+        <div class="faq">
+
+          <details>
+
+            <summary>
+              Vou ficar sem dentes durante o tratamento?
+            </summary>
+
+            <p>
+              Depende do tipo de tratamento e das
+              condições clínicas. Em muitos casos,
+              existem alternativas provisórias.
+              A indicação precisa ser individualizada.
+            </p>
+
+          </details>
+
+          <details>
+
+            <summary>
+              A prótese protocolo pode ser colocada
+              no mesmo dia?
+            </summary>
+
+            <p>
+              Em situações selecionadas, pode ser possível
+              instalar uma prótese provisória fixa logo
+              após a cirurgia. Isso depende de condições
+              clínicas e da estabilidade dos implantes.
+            </p>
+
+          </details>
+
+          <details>
+
+            <summary>
+              Quanto tempo demora para fazer uma prótese?
+            </summary>
+
+            <p>
+              O prazo depende do tipo de prótese,
+              da complexidade do caso e das etapas
+              necessárias para sua confecção.
+            </p>
+
+          </details>
+
+          <details>
+
+            <summary>
+              Uma dentadura solta sempre precisa ser trocada?
+            </summary>
+
+            <p>
+              Não necessariamente. Alguns casos podem
+              ser resolvidos com ajustes ou reembasamento.
+              Em outros, pode ser indicada uma nova prótese.
+            </p>
+
+          </details>
+
+          <details>
+
+            <summary>
+              Como saber qual tratamento é melhor para mim?
+            </summary>
+
+            <p>
+              A escolha depende da avaliação da boca,
+              das condições dos dentes e dos tecidos,
+              das suas necessidades e das possibilidades
+              clínicas de cada tratamento.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================
+         CHAMADA FINAL
+    ===================================== -->
+
+    <section class="section alt">
+
+      <div class="container">
+
+        <div class="banner">
+
+          <div>
+
+            <h2>
+              Vamos conversar sobre seu caso?
+            </h2>
+
+            <p>
+              Agende uma avaliação e entenda
+              as possibilidades de tratamento
+              para sua necessidade.
+            </p>
+
+          </div>
+
+          <a class="btn light"
+             href="/contato.html">
+            Agendar uma avaliação
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================
+       RODAPÉ
+  ===================================== -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="foot-grid">
+
+        <div>
+
+          <h3>
+            Dr. Pedro Simplício
+          </h3>
+
+          <p>
+            Especialista em Prótese Dentária.<br>
+            Reabilitação oral em Natal/RN.
+          </p>
+
+          <small>
+            CRO-RN: inserir número antes da publicação.
+          </small>
+
+        </div>
+
+        <div>
+
+          <strong>
+            Tratamentos
+          </strong>
+
+          <p>
+            <a href="/protese-protocolo.html">
+              Prótese protocolo
+            </a><br>
+
+            <a href="/coroas-dentarias.html">
+              Coroas dentárias
+            </a><br>
+
+            <a href="/protese-total.html">
+              Dentaduras
+            </a>
+          </p>
+
+        </div>
+
+        <div>
+
+          <strong>
+            Informações
+          </strong>
+
+          <p>
+            <a href="/sobre.html">
+              Sobre mim
+            </a><br>
+
+            <a href="/contato.html">
+              Contato
+            </a><br>
+
+            <a href="/privacidade.html">
+              Privacidade
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+      <p class="ps-footer-note">
+        Conteúdo educativo. As informações deste site
+        não substituem uma avaliação odontológica.
+      </p>
 
     </div>
-  </section>
+  </footer>
 
-</main>
+  <!-- =====================================
+       FUNCIONALIDADES
+  ===================================== -->
 
-<!-- RODAPÉ -->
+  <script>
 
-<footer class="footer">
-  <div class="container">
+    function alternarMenu(botao) {
+      const menu = document.getElementById("menu-principal");
 
-    <div class="foot-grid">
+      if (!menu) return;
 
-      <div>
-        <h3>Dr. Pedro Simplício</h3>
+      const aberto = menu.classList.toggle("open");
 
-        <p>
-          Especialista em Prótese Dentária.<br>
-          Reabilitação oral em Natal/RN.
-        </p>
+      botao.setAttribute(
+        "aria-expanded",
+        String(aberto)
+      );
+    }
 
-        <small>
-          CRO-RN: inserir número antes da publicação.
-        </small>
-      </div>
+    function alternarLetras() {
+      document.body.classList.toggle("large-text");
+    }
 
-      <div>
-        <strong>Tratamentos</strong>
-
-        <p>
-          <a href="/protese-protocolo.html">Prótese protocolo</a><br>
-          <a href="/coroas-dentarias.html">Coroas dentárias</a><br>
-          <a href="/protese-total.html">Dentaduras</a>
-        </p>
-      </div>
-
-      <div>
-        <strong>Informações</strong>
-
-        <p>
-          <a href="/sobre.html">Sobre mim</a><br>
-          <a href="/contato.html">Contato</a><br>
-          <a href="/privacidade.html">Privacidade</a>
-        </p>
-      </div>
-
-    </div>
-
-    <p class="ps-footer-note">
-      Conteúdo educativo. As informações deste site
-      não substituem uma avaliação odontológica.
-    </p>
-
-  </div>
-</footer>
-
-<script>
-  function alternarMenu(botao) {
-    const menu = document.getElementById("menu-principal");
-    const aberto = menu.classList.toggle("open");
-    botao.setAttribute("aria-expanded", String(aberto));
-  }
-
-  function alternarLetras() {
-    document.body.classList.toggle("large-text");
-  }
-</script>
+  </script>
 
 </body>
 </html>
