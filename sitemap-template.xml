@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Substitua SEU-DOMINIO.com.br pelo domínio final, depois renomeie este arquivo para sitemap.xml -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://SEU-DOMINIO.com.br/</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/sobre.html</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/contato.html</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/tratamentos/</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/guia/</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/tratamentos/protese-protocolo.html</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/tratamentos/coroas-dentarias.html</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/tratamentos/protese-total.html</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/tratamentos/protese-parcial-removivel.html</loc></url>
+<url><loc>https://SEU-DOMINIO.com.br/tratamentos/protese-sobre-implantes.html</loc></url>
+</urlset>
