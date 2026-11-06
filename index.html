@@ -1,1059 +1,353 @@
-
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Dr. Pedro Simplício | Especialista em Prótese Dentária em Natal</title>
-
-  <meta name="description"
-        content="Dr. Pedro Simplício, especialista em Prótese Dentária em Natal/RN. Reabilitação oral, dentaduras, coroas e próteses sobre implantes com planejamento individualizado.">
-
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#203b53">
-
-  <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
-  <link rel="preload" as="image" href="/hero-maca.jpg">
-
-  <style>
-
-    /* =====================================
-       NOVA ABERTURA DO SITE
-    ===================================== */
-
-    .ps-feature {
-      position: relative;
-      min-height: 640px;
-      overflow: hidden;
-      background: #f3f0ea;
-      isolation: isolate;
-      display: flex;
-      align-items: center;
-    }
-
-    .ps-feature-media {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-    }
-
-    .ps-feature-media img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-    }
-
-    .ps-feature::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(
-        90deg,
-        rgba(248, 246, 241, 0.96) 0%,
-        rgba(248, 246, 241, 0.89) 26%,
-        rgba(248, 246, 241, 0.58) 44%,
-        rgba(248, 246, 241, 0.04) 69%
-      );
-    }
-
-    .ps-feature-inner {
-      width: 100%;
-      padding-top: 90px;
-      padding-bottom: 90px;
-    }
-
-    .ps-feature-copy {
-      max-width: 625px;
-    }
-
-    .ps-feature-kicker {
-      display: block;
-      margin-bottom: 25px;
-      color: #98734e;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      line-height: 1.6;
-      text-transform: uppercase;
-    }
-
-    .ps-feature h1 {
-      margin: 0;
-      color: #203b53;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 4.4vw, 64px);
-      font-weight: 400;
-      line-height: 1.13;
-      letter-spacing: -1.5px;
-      text-wrap: balance;
-    }
-
-    .ps-feature-description {
-      max-width: 485px;
-      margin: 27px 0 0;
-      color: #435666;
-      font-size: 19px;
-      line-height: 1.75;
-    }
-
-    .ps-feature-actions {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 35px;
-    }
-
-    .ps-feature-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 14px 26px;
-      border-radius: 3px;
-      background: #a5774f;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.3;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .ps-feature-button:hover {
-      background: #865c3a;
-      transform: translateY(-2px);
-    }
-
-    .ps-feature-secondary {
-      display: inline-flex;
-      align-items: center;
-      min-height: 52px;
-      color: #203b53;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-
-    /* =====================================
-       APRESENTAÇÃO PROFISSIONAL
-    ===================================== */
-
-    .ps-about {
-      padding: 105px 0;
-      background: #ffffff;
-    }
-
-    .ps-about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: clamp(35px, 6vw, 100px);
-      align-items: center;
-    }
-
-    .ps-about-photo {
-      position: relative;
-      overflow: hidden;
-      background: #e9e9e6;
-      aspect-ratio: 4 / 4.5;
-      border-radius: 3px;
-    }
-
-    .ps-about-photo img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .ps-about-kicker {
-      display: block;
-      margin-bottom: 22px;
-      color: #a5774f;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .ps-about h2 {
-      max-width: 650px;
-      margin: 0 0 28px;
-      color: #203b53;
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: clamp(32px, 3.1vw, 46px);
-      line-height: 1.2;
-      letter-spacing: -0.8px;
-    }
-
-    .ps-about p {
-      margin: 0 0 19px;
-      color: #52616b;
-      font-size: 18px;
-      line-height: 1.85;
-    }
-
-    .ps-about-link {
-      display: inline-block;
-      margin-top: 18px;
-      padding-bottom: 6px;
-      color: #203b53;
-      border-bottom: 1px solid #a5774f;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .ps-about-link:hover {
-      color: #a5774f;
-    }
-
-    /* =====================================
-       GUIA DO PACIENTE
-    ===================================== */
-
-    .ps-education {
-      background: #f0eee7;
-    }
-
-    .ps-education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .ps-education-card {
-      display: block;
-      background: #ffffff;
-      padding: 28px;
-      border: 1px solid #d9ddd6;
-      border-radius: 15px;
-      text-decoration: none;
-      color: #203b53;
-      transition: border-color 0.2s ease;
-    }
-
-    .ps-education-card h3 {
-      margin: 12px 0;
-    }
-
-    .ps-education-card p {
-      color: #5d6a63;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .ps-education-card:hover {
-      border-color: #a5774f;
-    }
-
-    .ps-footer-note {
-      margin-top: 28px;
-      font-size: 14px;
-      color: #c4d0c6;
-    }
-
-    /* =====================================
-       RESPONSIVIDADE
-    ===================================== */
-
-    @media (max-width: 900px) {
-
-      .ps-feature {
-        min-height: 590px;
-      }
-
-      .ps-feature-copy {
-        max-width: 540px;
-      }
-
-      .ps-feature::before {
-        background: linear-gradient(
-          90deg,
-          rgba(248, 246, 241, 0.98) 0%,
-          rgba(248, 246, 241, 0.93) 39%,
-          rgba(248, 246, 241, 0.38) 80%
-        );
-      }
-
-      .ps-about {
-        padding: 75px 0;
-      }
-
-      .ps-about-grid {
-        gap: 35px;
-      }
-
-    }
-
-    @media (max-width: 700px) {
-
-      .ps-feature {
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .ps-feature::before {
-        display: none;
-      }
-
-      .ps-feature-inner {
-        order: 1;
-        padding-top: 56px;
-        padding-bottom: 48px;
-      }
-
-      .ps-feature-media {
-        position: relative;
-        order: 2;
-        inset: auto;
-        z-index: auto;
-        width: 100%;
-        height: 315px;
-      }
-
-      .ps-feature-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 66% center;
-      }
-
-      .ps-feature-kicker {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-        margin-bottom: 18px;
-      }
-
-      .ps-feature h1 {
-        font-size: clamp(35px, 9vw, 44px);
-        line-height: 1.16;
-        letter-spacing: -0.8px;
-      }
-
-      .ps-feature-description {
-        margin-top: 23px;
-        font-size: 17px;
-        line-height: 1.7;
-      }
-
-      .ps-feature-actions {
-        margin-top: 28px;
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .ps-feature-button {
-        width: 100%;
-      }
-
-      .ps-feature-secondary {
-        justify-content: center;
-      }
-
-      .ps-about {
-        padding: 65px 0;
-      }
-
-      .ps-about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .ps-about-photo {
-        max-width: 430px;
-        width: 100%;
-        aspect-ratio: 4 / 4;
-      }
-
-      .ps-about h2 {
-        font-size: 35px;
-      }
-
-      .ps-about p {
-        font-size: 17px;
-        line-height: 1.75;
-      }
-
-      .ps-education-grid {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .ps-feature-button {
-        transition: none;
-      }
-
-      .ps-feature-button:hover {
-        transform: none;
-      }
-    }
-
-  </style>
-
-  <script src="/site.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Especialista em Prótese Dentária em Natal/RN | Dr. Pedro Simplício</title>
+<meta content="Dr. Pedro Simplício, especialista em Prótese Dentária em Natal/RN (CRO/RN 5780). Orientações claras sobre dentaduras, próteses e reabilitação oral para viver com mais conforto." name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="#242b4b" name="theme-color"/>
+<meta content="website" property="og:type"/><meta content="pt_BR" property="og:locale"/>
+<meta content="Dr. Pedro Simplício | Prótese Dentária em Natal/RN" property="og:title"/>
+<meta content="Informações claras sobre reabilitação oral, próteses e possibilidades de tratamento." property="og:description"/>
+<!-- Adicione futuramente uma foto ao banner principal. Não use imagem ou dados fictícios em produção. -->
+<!-- SEO: ao confirmar domínio oficial, substitua o exemplo abaixo pelo endereço real e remova os comentários.
+<link rel="canonical" href="https://DOMINIO-CONFIRMADO.com.br/">
+<meta property="og:url" content="https://DOMINIO-CONFIRMADO.com.br/">
+Não publique um domínio fictício como URL canônica. Configure também redirecionamento www/sem-www no Vercel.
+-->
+<!-- Antes de publicar: confirmar domínio, adicionar imagens reais, WhatsApp profissional, endereço e conferir páginas internas. -->
+<style>
+:root{--navy:#111637;--navy2:#263454;--purple:#572595;--purple2:#7542bb;--lilac:#bfa3ed;--text:#18203d;--muted:#4c536c;--line:#e6e1ef;--bg:#fbfaff;--white:#fff;--max:1140px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:var(--white)}a{color:inherit}button,input{font:inherit}button{cursor:pointer}img{max-width:100%}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #ffba51;outline-offset:3px}.wrap{width:min(var(--max),calc(100% - 48px));margin-inline:auto}.skip{position:absolute;left:12px;top:-100px;background:#fff;z-index:10;padding:10px}.skip:focus{top:10px}.serif{font-family:Georgia,"Times New Roman",serif}.eyebrow{font-size:13px;font-weight:750;letter-spacing:.13em;color:var(--purple);text-transform:uppercase}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:12px 22px;border:1px solid transparent;border-radius:10px;background:var(--purple);color:white;font-weight:700;text-decoration:none;line-height:1.25;text-align:center;transition:background .2s}.btn:hover{background:#3e1b73}.btn:focus-visible{outline-offset:4px}.btn-light{background:#fff;color:var(--purple)}.btn-light:hover{background:#ede6f7}.text-link{font-weight:700;color:var(--purple);text-underline-offset:4px}
+/* Header */
+.top{background:#fff;position:relative;z-index:5;border-bottom:1px solid #e9e5f1}.header{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;gap:11px;align-items:center;text-decoration:none;flex-shrink:0}.monogram{font:italic 54px/.9 Georgia,serif;color:var(--purple)}.brandwords{display:flex;flex-direction:column}.brandname{font:bold clamp(21px,2.1vw,27px)/1.15 Georgia,serif;white-space:nowrap}.brandsub{font-size:10px;font-weight:700;letter-spacing:.02em}.nav{display:flex;align-items:center;gap:24px;margin-left:auto}.nav a{text-decoration:none;font-size:15px;white-space:nowrap}.nav a:hover,.nav a[aria-current]{color:var(--purple)}.header-cta{font-size:14px;padding-inline:16px;white-space:nowrap}.menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 12px;color:var(--purple)}
+/* Hero */
+.hero{position:relative;min-height:460px;display:flex;align-items:center;background:#27344e;color:#fff;overflow:hidden;isolation:isolate}.hero-photo{position:absolute;inset:0 0 0 auto;width:56%;z-index:-2;background:linear-gradient(140deg,#4c3978,#283955)}.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#243452 0%,#293451 37%,#273454d9 51%,#26335425 78%)}.hero-inner{padding-block:72px}.hero-copy{max-width:590px}.hero h1{font-size:clamp(38px,4.5vw,57px);font-weight:400;line-height:1.12;letter-spacing:-.018em;margin:0 0 19px}.hero h1 em{font-style:normal;font-weight:700;color:#c5a6f7}.hero p{font-size:19px;line-height:1.5;max-width:490px;margin:0 0 27px}.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:21px}.hero-secondary{color:#fff;font-weight:700;text-underline-offset:5px}
+/* Content */
+.section{padding:78px 0}.section-head{max-width:750px;margin:0 auto 32px;text-align:center}.section-head h2{font:400 clamp(31px,3.8vw,44px)/1.13 Georgia,serif;margin:11px 0 13px}.section-head p{font-size:18px;color:var(--muted);margin:0}.guide{background:var(--bg)}.guide-panel{max-width:900px;margin:0 auto}.search-label{display:block;font-weight:700;font-size:15px;margin-bottom:10px}.searchrow{display:flex;align-items:center;gap:9px;position:relative}.searchrow input{width:100%;border-radius:11px;border:1.5px solid #cac0df;min-height:58px;padding:13px 16px 13px 47px;background:#fff;color:var(--text)}.searchrow svg{position:absolute;left:15px;width:23px;height:23px;stroke:var(--purple);fill:none;stroke-width:2;pointer-events:none}.search-count{min-height:20px;margin:10px 0 0;font-size:14px;color:var(--muted)}.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:17px}.guide-card{border:1px solid var(--line);border-radius:13px;padding:24px;background:#fff;display:flex;flex-direction:column;min-height:176px;text-decoration:none;transition:border .2s,transform .2s}.guide-card[hidden]{display:none}.guide-card:hover{border-color:#9c7dc8;transform:translateY(-2px)}.guide-card .tag{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);font-weight:750}.guide-card h3{font-size:20px;line-height:1.3;margin:9px 0 8px}.guide-card p{color:var(--muted);font-size:15px;line-height:1.5;margin:0 0 12px;flex:1}.guide-card .more{color:var(--purple);font-size:14px;font-weight:750}.no-results{display:none;margin:20px 0 0;padding:18px;background:white;border:1px solid var(--line);border-radius:10px}.no-results.visible{display:block}.no-results a{color:var(--purple)}
+/* Treatment */
+.treatment-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.treatment{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column;text-decoration:none;transition:box-shadow .2s,border-color .2s}.treatment:hover{border-color:#ac92d1;box-shadow:0 9px 22px #38205b13}.treatment img{display:block;width:100%;height:152px;object-fit:cover}.treatment-body{padding:18px 18px 22px;flex:1;display:flex;flex-direction:column}.treatment h3{font:700 20px/1.2 Georgia,serif;min-height:48px;margin:0 0 10px}.treatment p{color:var(--muted);font-size:15px;line-height:1.5;margin:0 0 17px;flex:1}.treatment .more{font-size:14px;color:var(--purple);font-weight:750}
+/* about */
+.about{background:#f7f5fc}.about-grid{display:grid;grid-template-columns:minmax(220px,.58fr) minmax(0,1fr);align-items:center;gap:clamp(30px,6vw,88px)}.about-mark{min-height:285px;border-radius:16px;background:linear-gradient(140deg,#302956,#4d2f78);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;padding:30px;text-align:center}.about-mark .initial{font:italic 104px/.95 Georgia,serif;color:#d6bffb}.about-mark span:last-child{font-size:13px;letter-spacing:.14em;font-weight:700}.about h2,.location h2{font:400 clamp(31px,3.5vw,43px)/1.15 Georgia,serif;margin:12px 0 14px}.about p,.location p{font-size:17px;color:var(--muted);line-height:1.75;margin:0 0 17px}.credential{font-weight:700;color:var(--text)!important;font-size:15px!important}
+/* location */
+.location-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.67fr);gap:clamp(28px,6vw,90px);align-items:center}.location-photo{margin:0;display:flex;justify-content:center}.location-photo img{display:block;width:min(100%,382px);height:auto;border-radius:16px;box-shadow:0 16px 36px #0d10331f}.location-photo figcaption{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}.location-points{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}.pill{background:#f3effa;border:1px solid #e3d9f1;color:#452276;border-radius:50px;padding:7px 12px;font-size:14px;font-weight:700}.location .note{font-size:14px}
+/* CTA/footer */
+.final{background:linear-gradient(110deg,#253654,#49246e);padding:62px 0;color:#fff}.final-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}.final h2{font:400 clamp(30px,3.5vw,42px)/1.15 Georgia,serif;margin:0 0 10px}.final p{max-width:650px;margin:0;color:#f2ecfa}.final .btn{flex-shrink:0}.footer{background:#15162d;color:#efecf7;padding:27px 0;font-size:14px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{margin:5px 0 0;color:#c8c1da}.footer a{color:#f0e9fa;margin-right:14px}
+@media(max-width:1120px){.header{gap:15px}.nav{gap:14px}.brandname{font-size:23px}.brandsub{font-size:9px}.header-cta{padding-inline:12px}}
+@media(max-width:930px){.header{min-height:78px}.menu-toggle{display:inline-block;margin-left:auto}.nav{display:none;position:absolute;left:0;right:0;top:100%;background:white;box-shadow:0 10px 19px #0002;padding:20px 24px;flex-direction:column;align-items:stretch;gap:15px}.nav.open{display:flex}.header-cta{display:none}.hero-photo{width:70%}.treatment-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{gap:35px}}
+@media(max-width:650px){.wrap{width:calc(100% - 36px)}body{font-size:16px}.brandname{font-size:20px}.monogram{font-size:46px}.brandsub{font-size:8px}.hero{min-height:620px;align-items:flex-end}.hero-photo{width:100%;height:62%;bottom:auto;background-position:center 39%}.hero::before{background:linear-gradient(0deg,#243452 2%,#243452 31%,#243452ea 51%,#24345225 85%)}.hero-inner{padding-top:270px;padding-bottom:45px}.hero h1{font-size:clamp(34px,8.5vw,45px)}.hero p{font-size:17px}.hero-actions{align-items:stretch;gap:17px;flex-direction:column}.hero-actions .btn{text-align:center}.hero-secondary{text-align:center}.section{padding:56px 0}.section-head h2{font-size:34px}.section-head p{font-size:16px}.guide-grid{grid-template-columns:1fr}.guide-card{min-height:0}.treatment-grid{gap:12px}.treatment img{height:118px}.treatment-body{padding:14px}.treatment h3{font-size:18px;min-height:43px}.treatment p{font-size:14px}.about-grid,.location-grid{grid-template-columns:1fr}.about-mark{min-height:190px}.about-mark .initial{font-size:75px}.location-photo{grid-row:1}.location-photo img{max-height:460px;object-fit:contain}.final-inner{flex-direction:column;align-items:stretch;gap:25px}.final .btn{width:100%}}
+@media(max-width:390px){.brandname{font-size:18px}.brandsub{font-size:7px}.treatment-grid{grid-template-columns:1fr}.treatment img{height:190px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Áreas reservadas para fotos futuras. Para inserir imagens, substitua o conteúdo destas caixas pelos respectivos <img> e ajuste object-fit: cover. */
+.hero-photo{display:flex;align-items:center;justify-content:center;opacity:1}.hero-photo.is-placeholder{opacity:.56}.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1}.hero-photo-label{max-width:220px;font-size:12px;letter-spacing:.14em;font-weight:800;text-align:center;color:#eee4ff;padding:18px;border:1px dashed #d1b9ec;border-radius:12px}.image-slot{display:flex;align-items:center;justify-content:center;background:linear-gradient(130deg,#eae4f4,#f7f4fc);border:1px dashed #c8b5db;color:#654f81;text-align:center;font-size:14px;font-weight:700;letter-spacing:.02em}.treatment-image{height:152px}.location-image{width:100%;min-height:300px;border-radius:16px;aspect-ratio:4/4.5;padding:20px}.location-photo{display:block}.about-mark{background:linear-gradient(140deg,#302956,#4d2f78)}
+@media(max-width:650px){.hero-photo.is-placeholder{opacity:.32}.hero-photo img{object-position:65% center}.hero-photo-label{margin-top:-70px}}
+
+/* Acesso direto ao agendamento, exibido só quando houver número real */
+.whatsapp-fixo{position:fixed;right:20px;bottom:20px;z-index:30;display:none;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:11px 17px;border-radius:999px;background:#216d4e;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 6px 22px #10162f45}
+.whatsapp-fixo:hover{background:#19583e}.whatsapp-fixo svg{width:22px;height:22px;flex:none;fill:currentColor}.whatsapp-fixo.ativo{display:inline-flex}
+@media(max-width:650px){.whatsapp-fixo{right:12px;bottom:12px;padding:12px 16px;font-size:14px;min-height:52px}.brandwords{min-width:0}.brandsub{letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+@media(max-width:650px){body:has(.whatsapp-fixo.ativo){padding-bottom:68px}}
+
+/* Quadro de dúvidas: a pesquisa é o foco, os artigos são sugestões compactas. */
+.guide{background:#f8f7fc}
+.guide-layout{max-width:1040px}
+.guide-intro{max-width:760px;margin-bottom:32px}
+.guide-intro h2{font-size:clamp(36px,4.3vw,52px);letter-spacing:-.025em}
+.guide-intro p{max-width:630px;margin-inline:auto}
+.guide-panel{max-width:880px;margin:auto}
+.guide .search-label{font-size:16px;margin-bottom:10px;color:var(--text)}
+.guide .searchrow input{min-height:68px;padding-left:55px;font-size:18px;border:2px solid #9a83c4;border-radius:14px;box-shadow:0 6px 22px rgba(47,33,91,.06)}
+.guide .searchrow input:focus{border-color:var(--purple);outline:3px solid rgba(87,37,149,.15);outline-offset:2px}
+.guide .searchrow svg{left:19px;width:24px;height:24px}
+.guide .search-hint{color:var(--muted);font-size:14px;margin:10px 0 0}
+.guide-results-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:35px 0 13px}
+.guide-results-head h3{font:400 25px/1.25 Georgia,serif;margin:0}
+.guide .search-count{margin:0;min-height:auto;font-size:13px;text-align:right}
+.guide .guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
+.guide .guide-card{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:start;gap:5px 12px;padding:17px 19px;border-radius:10px;box-shadow:none;transform:none;background:#fff}
+.guide .guide-card:hover{border-color:#9c7dc8;transform:none;background:#fefcff}
+.guide .guide-card .tag{grid-column:1/-1;font-size:11px;letter-spacing:.08em}
+.guide .guide-card h4{grid-column:1;margin:2px 0 0;font-size:17px;line-height:1.32;font-weight:700}
+.guide .guide-card p{grid-column:1;margin:2px 0 0;flex:none;font-size:13px;line-height:1.48}
+.guide .guide-card .more{grid-column:2;grid-row:2/span 2;align-self:center;max-width:76px;line-height:1.4;text-align:right;font-size:12px}
+.guide .guide-card[hidden]{display:none}
+@media(max-width:700px){
+ .guide{padding:58px 0}
+ .guide-intro{margin-bottom:26px}
+ .guide-intro h2{font-size:clamp(34px,9vw,43px)}
+ .guide .searchrow input{font-size:16px;min-height:62px}
+ .guide .guide-grid{grid-template-columns:1fr}
+ .guide-results-head{margin-top:27px}
+ .guide-results-head h3{font-size:23px}
+ .guide .guide-card{padding:16px}
+}
+@media(max-width:390px){.guide-results-head{align-items:start;flex-direction:column;gap:3px}.guide .search-count{text-align:left}}
+
+
+/* === Interações refinadas — visual discreto, rápido e acessível === */
+:root{--motion-fast:170ms;--motion-normal:240ms;--motion-ease:cubic-bezier(.22,1,.36,1)}
+/* Cabeçalho com profundidade ao rolar; sem sobrepor a abertura do menu móvel */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);box-shadow:0 0 0 rgba(17,22,55,0);transition:box-shadow var(--motion-normal) ease,background-color var(--motion-normal) ease;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.top.is-scrolled{background:rgba(255,255,255,.97);box-shadow:0 7px 22px rgba(18,22,50,.09);border-bottom-color:rgba(118,97,154,.17)}
+/* Áreas-alvo não ficam escondidas sob o cabeçalho */
+html{scroll-padding-top:100px}section[id]{scroll-margin-top:100px}
+/* Links com feedback leve */
+.nav a,.text-link,.hero-secondary{transition:color var(--motion-fast) ease,text-decoration-color var(--motion-fast) ease}
+.nav a:hover,.text-link:hover{color:var(--purple2)}
+/* Botões: pequena elevação, sombra e sensação de pressão real */
+.btn{transform:translateY(0);box-shadow:0 2px 0 rgba(15,19,47,.1);transition:transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-fast) ease,background-color var(--motion-fast) ease}
+@media(hover:hover) and (pointer:fine){.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(24,18,54,.17)}}
+.btn:active{transform:translateY(1px);box-shadow:0 1px 3px rgba(24,18,54,.12)}
+/* Cartões: elevação só em dispositivos com mouse; toque preserva resposta imediata */
+.guide .guide-card,.treatment{transform:translateY(0);box-shadow:0 1px 2px rgba(26,24,66,.035);transition:transform var(--motion-normal) var(--motion-ease),box-shadow var(--motion-normal) ease,border-color var(--motion-normal) ease,background-color var(--motion-normal) ease}
+@media(hover:hover) and (pointer:fine){
+ .guide .guide-card:hover,.treatment:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(33,26,75,.10);border-color:#ae92d7;background:#fff}
+}
+.guide .guide-card:active,.treatment:active{transform:translateY(1px);box-shadow:0 2px 6px rgba(33,26,75,.08)}
+.guide .guide-card .more,.treatment .more{transition:color var(--motion-fast) ease}
+.guide .guide-card:hover .more,.treatment:hover .more{color:#3e1b73}
+/* Quadro de busca ganha foco e profundidade sem deslocar resultados */
+.searchrow{border-radius:13px;transition:box-shadow var(--motion-fast) ease}
+.searchrow:focus-within{box-shadow:0 0 0 5px rgba(117,66,187,.13),0 9px 24px rgba(33,26,75,.08)}
+.searchrow input{transition:border-color var(--motion-fast) ease,background-color var(--motion-fast) ease}
+.searchrow:focus-within input{border-color:var(--purple2)}
+.searchrow input:focus{outline:2px solid transparent}
+/* Exibir entrada uma única vez; apenas quando JS e IntersectionObserver estiverem ativos */
+@media(prefers-reduced-motion:no-preference){
+ .motion-enabled .reveal-item{opacity:0;transform:translateY(14px);transition:opacity 440ms ease,transform 440ms var(--motion-ease)}
+ .motion-enabled .reveal-item.is-visible{opacity:1;transform:translateY(0)}
+}
+/* Menu móvel: abertura sutil, sem impedir navegação por teclado */
+@media(max-width:930px){
+ .nav.open{animation:nav-in 180ms ease-out both}
+ @keyframes nav-in{from{opacity:.75;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+}
+/* Acessibilidade: nenhum efeito é exigido para compreender ou usar o site */
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .top,.btn,.guide .guide-card,.treatment,.searchrow,.searchrow input,.nav a,.text-link,.hero-secondary,.reveal-item{transition:none!important;animation:none!important;transform:none!important;opacity:1!important}
+}
+
+
+/* Conceito de leveza: manifesto e diferenciais sem excesso de cartões */
+.philosophy{background:#fff;position:relative}
+.philosophy .wrap{max-width:1080px}
+.philosophy-intro{max-width:790px;margin:0 auto 48px;text-align:center}
+.philosophy-intro h2{font:400 clamp(35px,4.3vw,54px)/1.12 Georgia,'Times New Roman',serif;color:var(--navy);letter-spacing:-.025em;margin:14px auto 18px;text-wrap:balance}
+.philosophy-intro p{font-size:19px;line-height:1.7;color:var(--muted);max-width:735px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.value-item{min-width:0;padding:31px 28px 31px 0;display:flex;flex-direction:column;gap:17px}
+.value-item+.value-item{padding-left:28px;border-left:1px solid var(--line)}
+.value-number{font:italic 28px/1 Georgia,serif;color:#7953a3}
+.value-item h3{font:600 24px/1.25 Georgia,'Times New Roman',serif;color:#202646;letter-spacing:-.01em;margin:0 0 13px}
+.value-item p{font-size:16px;color:var(--muted);line-height:1.68;margin:0}
+.philosophy-signature{font:italic 21px/1.5 Georgia,serif;color:var(--purple);max-width:680px;text-align:center;margin:34px auto 0}
+/* Calm visual transitions, consistent breathing room, and accessible size */
+#diferenciais{scroll-margin-top:100px}
+@media(max-width:1050px){.value-item{padding-right:19px}.value-item+.value-item{padding-left:19px}.value-item h3{font-size:21px}}
+@media(max-width:780px){.values-grid{grid-template-columns:1fr}.value-item,.value-item+.value-item{padding:24px 0;border-left:0;flex-direction:row;gap:17px}.value-item+.value-item{border-top:1px solid var(--line)}.value-number{min-width:36px}.philosophy-intro{margin-bottom:30px}.philosophy-intro p{font-size:17px}.philosophy-signature{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.value-item{animation:none!important}}
+
+/* PEDRO SIMPLÍCIO — DIREÇÃO EDITORIAL PREMIUM, V2
+   Minimalista, humana e legível. As áreas de fotografia são substituíveis. */
+:root{--navy:#29293f;--navy2:#1e2337;--purple:#615474;--purple2:#51465e;--lilac:#dfd2e2;--text:#292c3b;--muted:#636573;--line:#e7e4e6;--bg:#f7f5f2;--white:#fff;--max:1180px}
+body{font-size:17px;background:#fff;color:var(--text);line-height:1.68;-webkit-font-smoothing:antialiased}
+.wrap{width:min(var(--max),calc(100% - 80px))}
+.top{background:rgba(255,255,255,.96);border-bottom:1px solid #eeecea}
+.header{min-height:100px;gap:35px}.brand{gap:0}.brandname{font:400 clamp(24px,2.35vw,32px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-.045em;color:#26283b}.brandsub{margin-top:8px;font-size:9px;font-weight:650;letter-spacing:.16em;color:#77717e}.nav{gap:27px}.nav a{font-size:13px;letter-spacing:.012em;color:#4d4a58}.header-cta{padding-inline:21px;font-size:13px}
+.btn{background:#5e526d;border-radius:3px;padding:14px 27px;min-height:53px;font-size:14px;font-weight:600;letter-spacing:.01em;box-shadow:none}
+.btn:hover{background:#4c405e}.btn-light{color:#29293f;background:#f6f3f0}
+.hero{min-height:600px;background:#27283d;color:#fff}
+.hero::before{background:linear-gradient(90deg,#24283b 0%,#292b42 46%,rgba(42,39,59,.75) 70%,rgba(38,37,56,.38) 100%)}
+.hero-photo{width:47%;background:linear-gradient(145deg,#54465f,#30324a);opacity:1}
+.hero-inner{padding-block:104px}.hero-copy{max-width:685px}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(43px,4.8vw,68px);line-height:1.12;letter-spacing:-.04em;font-weight:400;margin:0 0 27px;text-wrap:balance}
+.hero h1 em{display:inline;color:#e2d3e6;font-weight:400;font-style:italic}
+.hero p{max-width:505px;font-size:18px;line-height:1.72;color:#e3e0e8;margin-bottom:35px}
+.hero-secondary{font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid #a59aab;padding-bottom:5px}
+.section{padding:110px 0}.section-head{max-width:800px;margin-bottom:48px}.section-head h2,.philosophy-intro h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.04em;font-weight:400}
+.section-head h2{font-size:clamp(39px,4vw,54px);line-height:1.15;margin:14px 0 20px}.section-head p{max-width:625px;margin:0 auto;line-height:1.7;font-size:17px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:#7b677d;font-weight:700}
+.guide{background:#f8f7f4}.guide-layout{display:block;max-width:1030px}.guide-intro{margin:0 auto 44px;text-align:center;max-width:750px}
+.guide-panel{max-width:860px}.search-label{font-size:13px;font-weight:600;color:#44445a;letter-spacing:.02em}
+.searchrow input{min-height:73px;border-radius:3px;border:1px solid #d4ccd7;background:#fff;padding-left:60px;font-size:18px;box-shadow:0 12px 35px rgba(38,31,51,.04)}
+.searchrow svg{left:22px;stroke:#685772}.search-hint{font-size:13px;color:#77717a}
+.guide-results-head{margin-top:38px;padding-bottom:15px;border-bottom:1px solid #ddd9df}.guide-results-head h3{font:400 24px/1.25 Georgia,serif;color:#313044}
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin-top:0}
+.guide-card{border:0;border-bottom:1px solid #ddd9df;background:transparent;box-shadow:none;min-height:unset;border-radius:0;padding:25px 1px 25px 0;transition:transform .2s ease,color .2s ease}
+.guide-card:hover{transform:translateX(4px);border-color:#aaa0b2}
+.guide-card .tag{color:#846f88;font-size:10px;font-weight:700;letter-spacing:.15em}
+.guide-card h4,.guide-card h3{font:400 23px/1.28 Georgia,serif;letter-spacing:-.02em;margin:8px 0 7px;color:#26283e}
+.guide-card p{font-size:14px;line-height:1.55;margin:0 0 10px;color:#656372}
+.guide-card .more{font-size:12px;color:#615474;font-weight:650;letter-spacing:.025em}
+#tratamentos{background:#fff}.treatment-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#e6e2e5;border:1px solid #e6e2e5}
+.treatment{min-height:235px;border:0;border-radius:0;background:#fff;transition:background .22s ease;box-shadow:none}
+.treatment:hover{background:#f9f7f9;box-shadow:none;border-color:transparent}.treatment-index{font:italic 26px Georgia,serif;color:#9a8b9f;margin:27px 33px 0}
+.treatment-body{padding:10px 34px 30px}.treatment h3{font:400 26px/1.22 Georgia,serif;min-height:0;margin:0 0 9px;letter-spacing:-.018em}.treatment p{font-size:15px;max-width:410px;margin-bottom:14px}.treatment .more{font-size:13px;font-weight:600}
+.about{background:#f7f5f3}.about-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:clamp(50px,8vw,116px)}
+.photo-reserve{border-radius:0;box-shadow:none;display:flex;justify-content:center;align-items:center;background:linear-gradient(145deg,#ddd6d8,#b8b5be);color:#61586b;overflow:hidden}
+.photo-reserve span{padding:10px 15px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#625c66;background:rgba(255,255,255,.26)}
+.about-mark{min-height:470px;aspect-ratio:4/5}.about h2,.location h2{font-size:clamp(42px,4vw,55px);letter-spacing:-.04em;line-height:1.12}
+.credential{color:#72647a!important;letter-spacing:.03em;font-weight:600!important;font-size:13px!important}
+.about p,.location p{font-size:17px;line-height:1.82}.text-link{font-size:14px;color:#5e526d;font-weight:600;text-decoration:none;border-bottom:1px solid #aea0b2;padding-bottom:4px}
+.philosophy{background:#fff}.philosophy-intro{max-width:815px;margin-bottom:58px}.philosophy-intro h2{font-size:clamp(40px,4.6vw,60px);color:#25283c}.philosophy-intro p{font-size:17px;color:#666573}
+.values-grid{border-color:#e6e3e6}.value-item{padding-block:36px}.value-item+.value-item{border-color:#e6e3e6}
+.value-number{font-size:26px;color:#a28aa7}.value-item h3{font-size:24px;font-weight:400;letter-spacing:-.025em}.value-item p{font-size:15px}
+.philosophy-signature{font-size:19px;color:#756681;margin-top:46px}
+.location{background:#fbfaf8}.location-grid{grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:90px}.location-image{width:100%;min-height:330px;aspect-ratio:4/3;background:linear-gradient(145deg,#e6e2df,#c9c5ca)}
+.location-points .pill{background:transparent;border-radius:0;border:0;border-left:2px solid #ae9bb5;color:#625b6e;font-weight:600;padding:3px 11px;font-size:13px}
+.final{background:#29283c;padding:83px 0}.final h2{font-size:clamp(36px,3.7vw,51px);letter-spacing:-.035em}.final p{font-size:16px;line-height:1.7}.final .btn{border-radius:3px}
+.footer{background:#222133;padding:35px 0}.footer p{color:#beb8c5}
+.whatsapp-fixo{border-radius:4px}
+@media(max-width:1100px){.nav{gap:13px}.header{gap:18px}.nav a{font-size:12px}.brandname{font-size:25px}}
+@media(max-width:930px){.header{min-height:80px}.nav{gap:16px}.hero{min-height:550px}.hero-photo{width:61%}.about-grid,.location-grid{gap:38px}.section{padding:84px 0}}
+@media(max-width:650px){.wrap{width:calc(100% - 38px)}.hero{min-height:580px}.hero-inner{padding-block:80px 58px}.hero-photo{width:100%;height:55%;opacity:.42}.hero::before{background:linear-gradient(0deg,#27283d 15%,rgba(39,40,61,.92) 63%,rgba(39,40,61,.65) 100%)}.hero h1{font-size:clamp(39px,10vw,48px)}.hero p{font-size:17px}.section{padding:70px 0}.section-head{margin-bottom:35px}.section-head h2{font-size:39px}.guide-grid,.treatment-grid,.about-grid,.location-grid,.values-grid{grid-template-columns:1fr}.guide-grid{gap:0}.guide-card{padding:22px 0}.searchrow input{min-height:64px;font-size:16px}.treatment-grid{gap:1px}.treatment{min-height:190px}.about-mark{min-height:320px;max-height:440px}.location-image{min-height:240px}.philosophy-intro h2{font-size:39px}.final{padding:65px 0}}
+@media(prefers-reduced-motion:reduce){.guide-card,.treatment{transition:none!important}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
+</script>
 </head>
-
 <body>
-
-  <a class="skip" href="#conteudo">
-    Pular para o conteúdo
-  </a>
-
-  <!-- =====================================
-       MENU PRINCIPAL
-  ===================================== -->
-
-  <header class="top">
-    <div class="container nav">
-
-      <a class="brand"
-         href="/index.html"
-         aria-label="Dr. Pedro Simplício, página inicial">
-        <strong>Dr. Pedro Simplício</strong>
-        <small>Especialista em Prótese Dentária</small>
-      </a>
-
-      <button
-        class="menu"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="menu-principal"
-        onclick="alternarMenu(this)">
-        ☰ Menu
-      </button>
-
-      <nav class="links"
-           id="menu-principal"
-           aria-label="Menu principal">
-        <a href="/index.html">Início</a>
-        <a href="#tratamentos">Tratamentos</a>
-        <a href="#guia">Guia do paciente</a>
-        <a href="/sobre.html">Sobre mim</a>
-        <a href="/contato.html">Contato</a>
-      </nav>
-
-      <div class="controls">
-        <button
-          class="textsize"
-          type="button"
-          onclick="alternarLetras()"
-          aria-label="Aumentar ou reduzir letras">
-          A+
-        </button>
-      </div>
-
-    </div>
-  </header>
-
-  <main id="conteudo">
-
-    <!-- =====================================
-         NOVA ABERTURA
-    ===================================== -->
-
-    <section class="ps-feature"
-             aria-labelledby="titulo-principal">
-
-      <div class="ps-feature-media">
-        <img
-          src="/hero-maca.jpg"
-          alt="Senhora sorridente segurando uma maçã"
-          width="1648"
-          height="928"
-          fetchpriority="high">
-      </div>
-
-      <div class="container ps-feature-inner">
-
-        <div class="ps-feature-copy">
-
-          <span class="ps-feature-kicker">
-            REABILITAÇÃO ORAL EM NATAL/RN
-          </span>
-
-          <h1 id="titulo-principal">
-            Reabilitação oral focada no que realmente
-            importa: a sua tranquilidade.
-          </h1>
-
-          <p class="ps-feature-description">
-            Comer com conforto, sorrir sem constrangimento
-            e conversar sem o receio de que sua prótese
-            se solte.
-          </p>
-
-          <div class="ps-feature-actions">
-
-            <a class="ps-feature-button"
-               href="/contato.html">
-              Agendar minha avaliação
-            </a>
-
-            <a class="ps-feature-secondary"
-               href="#tratamentos">
-              Conhecer os tratamentos
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================
-         APRESENTAÇÃO PROFISSIONAL
-    ===================================== -->
-
-    <section class="ps-about"
-             id="sobre"
-             aria-labelledby="titulo-sobre">
-
-      <div class="container ps-about-grid">
-
-        <div class="ps-about-photo">
-
-          <img
-            src="/pedro-simplicio.jpg"
-            alt="Dr. Pedro Simplício, especialista em Prótese Dentária"
-            width="600"
-            height="750"
-            loading="lazy">
-
-        </div>
-
-        <div class="ps-about-content">
-
-          <span class="ps-about-kicker">
-            PRAZER, SOU PEDRO SIMPLÍCIO
-          </span>
-
-          <h2 id="titulo-sobre">
-            Entender o seu problema é o primeiro
-            passo para cuidar dele.
-          </h2>
-
-          <p>
-            Sou cirurgião-dentista especialista em
-            Prótese Dentária e atuo na reabilitação
-            oral de pacientes que precisam recuperar
-            dentes, mastigação e conforto.
-          </p>
-
-          <p>
-            Acredito que um bom tratamento começa
-            com uma avaliação cuidadosa, uma conversa
-            clara e um planejamento que considere
-            as necessidades de cada pessoa.
-          </p>
-
-          <p>
-            Meu objetivo é que você compreenda
-            as possibilidades para o seu caso
-            e participe das decisões com segurança,
-            sabendo o que esperar de cada etapa.
-          </p>
-
-          <a class="ps-about-link" href="/sobre.html">
-            Conheça mais sobre meu trabalho →
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================
-         DIFERENCIAIS
-    ===================================== -->
-
-    <section class="trust"
-             aria-label="Características do atendimento">
-
-      <div class="container trust-grid">
-
-        <div>
-          <strong>Atendimento por especialista</strong>
-          <span>
-            Formação especializada em Prótese Dentária.
-          </span>
-        </div>
-
-        <div>
-          <strong>Explicações claras</strong>
-          <span>
-            Entenda as possibilidades antes de decidir.
-          </span>
-        </div>
-
-        <div>
-          <strong>Planejamento individualizado</strong>
-          <span>
-            Tratamentos pensados para cada necessidade.
-          </span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================
-         TRATAMENTOS
-    ===================================== -->
-
-    <section class="section" id="tratamentos">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            TRATAMENTOS
-          </span>
-
-          <h2>Como posso ajudar você?</h2>
-
-          <p>
-            Conheça as possibilidades de tratamento
-            para recuperar seus dentes, sua mastigação
-            e seu conforto.
-          </p>
-
-        </div>
-
-        <div class="cards">
-
-          <a class="card" href="/protese-protocolo.html">
-
-            <span class="num">01</span>
-
-            <h3>Dentes fixos sobre implantes</h3>
-
-            <p>
-              Conheça a prótese protocolo, suas etapas,
-              indicações e cuidados.
-            </p>
-
-            <span class="more">
-              Entender o tratamento →
-            </span>
-
-          </a>
-
-          <a class="card" href="/coroas-dentarias.html">
-
-            <span class="num">02</span>
-
-            <h3>Coroas dentárias</h3>
-
-            <p>
-              Entenda como uma coroa pode ajudar
-              a recuperar um dente comprometido.
-            </p>
-
-            <span class="more">
-              Entender o tratamento →
-            </span>
-
-          </a>
-
-          <a class="card" href="/protese-total.html">
-
-            <span class="num">03</span>
-
-            <h3>Dentaduras</h3>
-
-            <p>
-              Informações sobre próteses totais,
-              adaptação, conforto e manutenção.
-            </p>
-
-            <span class="more">
-              Entender o tratamento →
-            </span>
-
-          </a>
-
-          <a class="card"
-             href="/protese-parcial-removivel.html">
-
-            <span class="num">04</span>
-
-            <h3>Próteses removíveis</h3>
-
-            <p>
-              Alternativas para substituir alguns
-              dentes ausentes.
-            </p>
-
-            <span class="more">
-              Entender o tratamento →
-            </span>
-
-          </a>
-
-          <a class="card"
-             href="/protese-sobre-implantes.html">
-
-            <span class="num">05</span>
-
-            <h3>Coroas e próteses sobre implantes</h3>
-
-            <p>
-              Entenda as opções de próteses
-              apoiadas em implantes dentários.
-            </p>
-
-            <span class="more">
-              Entender o tratamento →
-            </span>
-
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================
-         GUIA DO PACIENTE
-    ===================================== -->
-
-    <section class="section ps-education" id="guia">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            GUIA DO PACIENTE
-          </span>
-
-          <h2>
-            Entenda seu tratamento antes de decidir.
-          </h2>
-
-          <p>
-            Aqui você encontra respostas para dúvidas
-            comuns, explicadas de forma simples,
-            sem termos complicados.
-          </p>
-
-        </div>
-
-        <div class="ps-education-grid">
-
-          <a class="ps-education-card"
-             href="/dentadura-solta-machucando.html">
-
-            <span class="eyebrow">
-              DENTADURAS
-            </span>
-
-            <h3>
-              Minha dentadura está solta ou machucando.
-              O que fazer?
-            </h3>
-
-            <p>
-              Entenda as possíveis causas, os cuidados
-              necessários e quando procurar uma avaliação.
-            </p>
-
-            <strong>
-              Leia o guia completo →
-            </strong>
-
-          </a>
-
-          <a class="ps-education-card"
-             href="/protese-protocolo.html">
-
-            <span class="eyebrow">
-              IMPLANTES
-            </span>
-
-            <h3>
-              Como funciona o tratamento com dentes fixos?
-            </h3>
-
-            <p>
-              Conheça as etapas da prótese protocolo,
-              da avaliação até a manutenção.
-            </p>
-
-            <strong>
-              Leia o guia completo →
-            </strong>
-
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================
-         PERGUNTAS FREQUENTES
-    ===================================== -->
-
-    <section class="section" id="duvidas">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <span class="eyebrow">
-            PERGUNTAS FREQUENTES
-          </span>
-
-          <h2>
-            Suas dúvidas merecem respostas claras.
-          </h2>
-
-          <p>
-            Algumas das perguntas mais comuns
-            de quem está pensando em fazer
-            uma prótese dentária.
-          </p>
-
-        </div>
-
-        <div class="faq">
-
-          <details>
-
-            <summary>
-              Vou ficar sem dentes durante o tratamento?
-            </summary>
-
-            <p>
-              Depende do tipo de tratamento e das
-              condições clínicas. Em muitos casos,
-              existem alternativas provisórias.
-              A indicação precisa ser individualizada.
-            </p>
-
-          </details>
-
-          <details>
-
-            <summary>
-              A prótese protocolo pode ser colocada
-              no mesmo dia?
-            </summary>
-
-            <p>
-              Em situações selecionadas, pode ser possível
-              instalar uma prótese provisória fixa logo
-              após a cirurgia. Isso depende de condições
-              clínicas e da estabilidade dos implantes.
-            </p>
-
-          </details>
-
-          <details>
-
-            <summary>
-              Quanto tempo demora para fazer uma prótese?
-            </summary>
-
-            <p>
-              O prazo depende do tipo de prótese,
-              da complexidade do caso e das etapas
-              necessárias para sua confecção.
-            </p>
-
-          </details>
-
-          <details>
-
-            <summary>
-              Uma dentadura solta sempre precisa ser trocada?
-            </summary>
-
-            <p>
-              Não necessariamente. Alguns casos podem
-              ser resolvidos com ajustes ou reembasamento.
-              Em outros, pode ser indicada uma nova prótese.
-            </p>
-
-          </details>
-
-          <details>
-
-            <summary>
-              Como saber qual tratamento é melhor para mim?
-            </summary>
-
-            <p>
-              A escolha depende da avaliação da boca,
-              das condições dos dentes e dos tecidos,
-              das suas necessidades e das possibilidades
-              clínicas de cada tratamento.
-            </p>
-
-          </details>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================
-         CHAMADA FINAL
-    ===================================== -->
-
-    <section class="section alt">
-
-      <div class="container">
-
-        <div class="banner">
-
-          <div>
-
-            <h2>
-              Vamos conversar sobre seu caso?
-            </h2>
-
-            <p>
-              Agende uma avaliação e entenda
-              as possibilidades de tratamento
-              para sua necessidade.
-            </p>
-
-          </div>
-
-          <a class="btn light"
-             href="/contato.html">
-            Agendar uma avaliação
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- =====================================
-       RODAPÉ
-  ===================================== -->
-
-  <footer class="footer">
-
-    <div class="container">
-
-      <div class="foot-grid">
-
-        <div>
-
-          <h3>
-            Dr. Pedro Simplício
-          </h3>
-
-          <p>
-            Especialista em Prótese Dentária.<br>
-            Reabilitação oral em Natal/RN.
-          </p>
-
-          <small>
-            CRO-RN: inserir número antes da publicação.
-          </small>
-
-        </div>
-
-        <div>
-
-          <strong>
-            Tratamentos
-          </strong>
-
-          <p>
-            <a href="/protese-protocolo.html">
-              Prótese protocolo
-            </a><br>
-
-            <a href="/coroas-dentarias.html">
-              Coroas dentárias
-            </a><br>
-
-            <a href="/protese-total.html">
-              Dentaduras
-            </a>
-          </p>
-
-        </div>
-
-        <div>
-
-          <strong>
-            Informações
-          </strong>
-
-          <p>
-            <a href="/sobre.html">
-              Sobre mim
-            </a><br>
-
-            <a href="/contato.html">
-              Contato
-            </a><br>
-
-            <a href="/privacidade.html">
-              Privacidade
-            </a>
-          </p>
-
-        </div>
-
-      </div>
-
-      <p class="ps-footer-note">
-        Conteúdo educativo. As informações deste site
-        não substituem uma avaliação odontológica.
-      </p>
-
-    </div>
-  </footer>
-
-  <!-- =====================================
-       FUNCIONALIDADES
-  ===================================== -->
-
-  <script>
-
-    function alternarMenu(botao) {
-      const menu = document.getElementById("menu-principal");
-
-      if (!menu) return;
-
-      const aberto = menu.classList.toggle("open");
-
-      botao.setAttribute(
-        "aria-expanded",
-        String(aberto)
-      );
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="top"><div class="wrap header"><a aria-label="Dr. Pedro Simplício, início" class="brand" href="index.html"><span class="brandwords"><strong class="brandname">Dr. Pedro Simplício</strong><span class="brandsub">REABILITAÇÃO ORAL E PRÓTESE DENTÁRIA</span></span></a><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
+<main id="conteudo">
+<section aria-labelledby="principal" class="hero"><div aria-hidden="true" aria-label="Espaço reservado para fotografia principal" class="hero-photo premium-photo-space"></div><div class="wrap hero-inner"><div class="hero-copy"><h1 class="serif" id="principal">Reabilitação oral focada no que realmente importa: <em>a sua tranquilidade.</em></h1><p>Comer com prazer, conversar à vontade e aproveitar os bons momentos sem que os problemas com os dentes sejam uma preocupação constante.</p><div class="hero-actions"><a class="btn" data-agendar="" href="/contato.html">Agendar minha avaliação</a><a class="hero-secondary" href="#duvidas">Tirar minhas dúvidas ↓</a></div></div></div></section>
+<section aria-labelledby="titulo-duvidas" class="section guide" id="duvidas">
+<div class="wrap guide-layout">
+<div class="section-head guide-intro">
+<span class="eyebrow">Guia do paciente</span>
+<h2 id="titulo-duvidas">Qual é a sua dúvida?</h2>
+<p>Tem alguma dificuldade com seus dentes ou sua prótese? Comece por aqui. Informação clara para compreender suas opções, no seu tempo.</p>
+</div>
+<div class="guide-panel">
+<label class="search-label" for="busca">Pesquise sobre dentes, dentaduras e próteses</label>
+<div class="searchrow">
+<svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10" cy="10" r="7"></circle><path d="m15 15 6 6"></path></svg>
+<input aria-describedby="search-hint" autocomplete="off" id="busca" placeholder="Ex.: minha dentadura está solta" type="search"/>
+</div>
+<p class="search-hint" id="search-hint">Pesquise usando palavras do dia a dia. A busca encontra conteúdos publicados no site.</p>
+<div class="guide-results-head">
+<h3 id="resultados-titulo">Explore os artigos</h3>
+<p aria-live="polite" class="search-count" id="search-count">4 conteúdos para começar</p>
+</div>
+<div aria-labelledby="resultados-titulo" class="guide-grid" id="guide-grid">
+<a class="guide-card" data-keywords="dentadura solta machucando dor gengiva ferida adaptacao cair soltar" href="/dentadura-solta-machucando.html">
+<span class="tag">Dentaduras</span>
+<h4>Minha dentadura está solta ou machucando. O que fazer?</h4>
+<p>Possíveis causas, cuidados e quando buscar uma avaliação.</p>
+<span class="more">Ler artigo <span aria-hidden="true">↗</span></span>
+</a>
+<a class="guide-card" data-keywords="dentes fixos implante protocolo cirurgia provisoria implantodontia" href="/protese-protocolo.html">
+<span class="tag">Dentes fixos</span>
+<h4>Como funciona o tratamento com dentes fixos?</h4>
+<p>Etapas da prótese protocolo, indicações e manutenção.</p>
+<span class="more">Ler artigo <span aria-hidden="true">↗</span></span>
+</a>
+<a class="guide-card" data-keywords="dentadura nova total adaptacao proteses quanto tempo dura trocar" href="/protese-total.html">
+<span class="tag">Prótese total</span>
+<h4>Preciso fazer uma dentadura nova?</h4>
+<p>Quando um ajuste pode ajudar e quando é preciso substituir.</p>
+<span class="more">Ler artigo <span aria-hidden="true">↗</span></span>
+</a>
+<a class="guide-card" data-keywords="coroa dentaria dente quebrado estragado restauracao" href="/coroas-dentarias.html">
+<span class="tag">Coroas</span>
+<h4>Quando um dente precisa de coroa?</h4>
+<p>Como avaliar a recuperação de um dente comprometido.</p>
+<span class="more">Ler artigo <span aria-hidden="true">↗</span></span>
+</a>
+</div>
+<div class="no-results" id="no-results" role="status">Ainda não temos um artigo específico sobre esse assunto. <a data-agendar="" href="/contato.html">Entre em contato</a> para saber como agendar uma avaliação.</div>
+</div>
+</div>
+</section>
+<section class="section" id="tratamentos"><div class="wrap"><div class="section-head"><span class="eyebrow">Tratamentos</span><h2>Cuidados que ajudam você a aproveitar mais a vida</h2><p>Há diferentes maneiras de recuperar a mastigação e o conforto. O melhor caminho depende de uma avaliação cuidadosa.</p></div><div class="treatment-grid">
+<a class="treatment" href="/protese-total.html"><span class="treatment-index">01</span><div class="treatment-body"><h3>Prótese Total (dentadura)</h3><p>Reposição de todos os dentes de uma arcada com uma prótese removível.</p><span class="more">Saiba mais →</span></div></a>
+<a class="treatment" href="/protese-parcial-removivel.html"><span class="treatment-index">02</span><div class="treatment-body"><h3>Prótese Parcial Removível (PPR)</h3><p>Opção para substituir parte dos dentes ausentes.</p><span class="more">Saiba mais →</span></div></a>
+<a class="treatment" href="/protese-protocolo.html"><span class="treatment-index">03</span><div class="treatment-body"><h3>Prótese Protocolo (dentes fixos)</h3><p>Reabilitação fixa de arcada completa sobre implantes, quando indicada.</p><span class="more">Saiba mais →</span></div></a>
+<a class="treatment" href="/coroas-dentarias.html"><span class="treatment-index">04</span><div class="treatment-body"><h3>Coroas Dentárias</h3><p>Recuperação da forma e da função de dentes comprometidos.</p><span class="more">Saiba mais →</span></div></a>
+</div></div></section>
+<section class="section about" id="sobre"><div class="wrap about-grid"><div aria-label="Marca provisória do consultório" class="about-mark photo-reserve"><span>Retrato profissional</span></div><div><span class="eyebrow">Sobre o profissional</span><h2>Dr. Pedro Simplício</h2><p class="credential">Cirurgião-dentista · Especialista em Prótese Dentária · CRO/RN 5780</p><p>Meu trabalho começa entendendo o que você gostaria de voltar a fazer com mais conforto: comer, conversar, sorrir ou simplesmente deixar de se preocupar tanto com a prótese. Como especialista em Prótese Dentária, explico as alternativas e planejo cada caso com atenção às suas necessidades.</p><a class="text-link" href="/sobre.html">Conheça minha trajetória →</a></div></div></section><section aria-labelledby="titulo-diferenciais" class="section philosophy" id="diferenciais">
+<div class="wrap">
+<div class="philosophy-intro">
+<span class="eyebrow">O cuidado em cada detalhe</span>
+<h2 id="titulo-diferenciais">Mais liberdade para aproveitar o que a vida tem de melhor.</h2>
+<p>Uma reabilitação oral não é só sobre dentes. É também sobre poder estar à mesa, conversar e participar dos momentos que fazem bem, com menos preocupações.</p>
+</div>
+<div class="values-grid">
+<article class="value-item">
+<span aria-hidden="true" class="value-number">01</span>
+<div><h3>Sua vida vai muito além dos seus dentes.</h3><p>Primeiro, quero entender o que faz falta no seu dia a dia. Mastigar com conforto, sorrir sem constrangimento e estar à vontade com quem você gosta são questões que importam no planejamento.</p></div>
+</article>
+<article class="value-item">
+<span aria-hidden="true" class="value-number">02</span>
+<div><h3>Cuidado e atenção em cada etapa.</h3><p>Você é ouvido e recebe explicações claras sobre as possibilidades, as limitações e os cuidados de cada tratamento, para decidir com tranquilidade — inclusive junto à família, se desejar.</p></div>
+</article>
+<article class="value-item">
+<span aria-hidden="true" class="value-number">03</span>
+<div><h3>Conhecimento e tecnologia com propósito.</h3><p>A especialização em Prótese Dentária, a experiência em reabilitação oral e os recursos digitais ajudam a planejar o tratamento quando são indicados. A tecnologia é uma ferramenta, não o objetivo.</p></div>
+</article>
+</div>
+<p class="philosophy-signature">O objetivo é que os cuidados com a saúde bucal abram espaço para o que realmente importa: viver bem.</p>
+</div>
+</section>
+<section class="section location" id="local"><div class="wrap location-grid"><div><span class="eyebrow">Local de atendimento</span><h2>Um lugar para ser ouvido e atendido com calma</h2><p>O atendimento é realizado mediante agendamento, com espaço para conversar sobre suas dificuldades e entender as opções de tratamento.</p><div class="location-points"><span class="pill">Natal/RN</span></div><p class="note">Local e informações de acesso serão confirmados no agendamento.</p><a class="text-link" data-agendar="" href="/contato.html">Como agendar uma avaliação →</a></div><figure class="location-photo"><div class="location-image photo-reserve"><span>Fotografia do espaço</span></div></figure></div></section>
+<section class="final" id="contato"><div class="wrap final-inner"><div><h2>Que tal começar com uma conversa?</h2><p>Conte o que está incomodando você. Uma avaliação pode ajudar a identificar alternativas para ter mais conforto e leveza no dia a dia.</p></div><a class="btn btn-light" data-agendar="" href="/contato.html">Agendar minha avaliação →</a></div></section>
+</main><a aria-label="Agendar avaliação pelo WhatsApp" class="whatsapp-fixo" href="/contato.html" id="whatsapp-fixo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.5 3.5A11.4 11.4 0 0 0 12.1 0 11.6 11.6 0 0 0 2.1 17.4L.5 23.5l6.3-1.6A11.6 11.6 0 0 0 12.1 23h.1A11.5 11.5 0 0 0 20.5 3.5ZM12.2 21a9.6 9.6 0 0 1-4.9-1.3l-.4-.2-3.7 1 1-3.6-.2-.4A9.5 9.5 0 1 1 12.2 21Zm5.2-7.1c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.1.2-.3.2-.6.1-1.6-.8-2.7-1.6-3.7-3.3-.3-.4.3-.4.8-1.4.1-.2.1-.4 0-.6l-.9-2.1c-.2-.5-.5-.5-.7-.5H8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.2 3.4 5.3 4.7 2 .9 2.8 1 3.8.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.2-.6-.4Z"></path></svg><span>Agendar pelo WhatsApp</span></a><footer class="footer"><div class="wrap footer-inner"><div><strong>Dr. Pedro Simplício</strong><p>Especialista em Prótese Dentária · CRO/RN 5780 · Natal/RN</p><p>Conteúdo educativo; não substitui uma avaliação odontológica.</p></div><div><a href="/contato.html">Contato</a><a href="/privacidade.html">Privacidade</a></div></div></footer>
+<script>
+const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('menu');toggle.addEventListener('click',()=>{let open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+const input=document.getElementById('busca'),cards=[...document.querySelectorAll('.guide-card')],counter=document.getElementById('search-count'),empty=document.getElementById('no-results');function norm(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')};input.addEventListener('input',()=>{const q=norm(input.value.trim());let hits=0;for(const card of cards){let show=!q||norm(card.textContent+' '+card.dataset.keywords).includes(q);card.hidden=!show;if(show)hits++}counter.textContent=q?(hits===1?'1 artigo encontrado':hits+' artigos encontrados'):'4 conteúdos para começar';empty.classList.toggle('visible',!!q&&!hits)});
+
+// Preencha com seu número real, com DDI 55 e DDD, sem pontuação.
+// Exemplo de formato: 5584XXXXXXXXX. Enquanto estiver vazio, o site mantém /contato.html.
+const WHATSAPP_PROFISSIONAL = '';
+const num = WHATSAPP_PROFISSIONAL.replace(/\D/g, '');
+if (/^55\d{10,11}$/.test(num)) {
+  const mensagem = encodeURIComponent('Olá! Encontrei o site do Dr. Pedro Simplício e gostaria de agendar uma avaliação.');
+  const url = `https://wa.me/${num}?text=${mensagem}`;
+  document.querySelectorAll('[data-agendar]').forEach(link => {
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  });
+  const fixo = document.getElementById('whatsapp-fixo');
+  fixo.href = url;
+  fixo.target = '_blank';
+  fixo.rel = 'noopener noreferrer';
+  fixo.classList.add('ativo');
+}
+/* Microinterações progressivas: não bloqueiam conteúdo quando JS está indisponível. */
+(function(){
+  const header=document.querySelector('.top');
+  if(header){
+    let ticking=false;
+    const syncHeader=()=>{header.classList.toggle('is-scrolled',window.scrollY>12);ticking=false;};
+    syncHeader();
+    window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(syncHeader);}},{passive:true});
+  }
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(!('IntersectionObserver' in window)||reduced.matches)return;
+  const elements=[...document.querySelectorAll('.section-head,.guide-panel,.treatment,.about-grid,.location-grid,.final-inner')];
+  const observer=new IntersectionObserver((entries,obs)=>{
+    for(const entry of entries){
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target);}
     }
+  },{rootMargin:'0px 0px 28px 0px',threshold:0.06});
+  elements.forEach((el)=>{
+    /* Elementos já visíveis não precisam de movimento de entrada. */
+    const box=el.getBoundingClientRect();
+    el.classList.add('reveal-item');
+    if(box.top<window.innerHeight*0.9)el.classList.add('is-visible');
+    else observer.observe(el);
+  });
+  document.documentElement.classList.add('motion-enabled');
+  reduced.addEventListener?.('change',(e)=>{
+    if(e.matches){document.documentElement.classList.remove('motion-enabled');observer.disconnect();}
+  });
+})();
 
-    function alternarLetras() {
-      document.body.classList.toggle("large-text");
-    }
-
-  </script>
-
-</body>
-</html>
+</script>
+</body></html>
