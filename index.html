@@ -17,6 +17,7 @@
 <meta property="og:url" content="https://DOMINIO-CONFIRMADO.com.br/">
 Não publique um domínio fictício como URL canônica. Configure também redirecionamento www/sem-www no Vercel.
 -->
+<!-- Versão V4: legibilidade ampliada (06-11-2026). -->
 <!-- Antes de publicar: confirmar domínio, adicionar imagens reais, WhatsApp profissional, endereço e conferir páginas internas. -->
 <style>
 :root{--navy:#111637;--navy2:#263454;--purple:#572595;--purple2:#7542bb;--lilac:#bfa3ed;--text:#18203d;--muted:#4c536c;--line:#e6e1ef;--bg:#fbfaff;--white:#fff;--max:1140px}
@@ -301,6 +302,144 @@ body{font-size:19px;line-height:1.7}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
+
+/* V4 — legibilidade realmente prioritária: público maduro, escala global */
+:root{--max:1480px}
+html{font-size:20px}
+body{font-size:20px;line-height:1.65}
+.wrap{width:min(var(--max),calc(100% - clamp(36px,7vw,112px)))}
+.header{min-height:106px}
+.brandname{font-size:clamp(30px,2.3vw,39px)}
+.brandsub{font-size:12px;letter-spacing:.095em}
+.nav a{font-size:17px}
+.header-cta{font-size:17px}
+.btn{font-size:18px;min-height:60px;padding:17px 27px}
+.hero{min-height:660px}
+.hero-copy{max-width:980px;width:80%}
+.hero h1{font-size:clamp(58px,5.4vw,85px);line-height:1.085}
+.hero p{font-size:24px;max-width:740px;line-height:1.55}
+.hero-secondary{font-size:18px}
+.section{padding:96px 0}
+.section-head{max-width:1010px}
+.section-head h2{font-size:clamp(46px,4.8vw,69px)}
+.section-head p,.philosophy-intro p{font-size:22px;line-height:1.65}
+.eyebrow{font-size:16px;letter-spacing:.12em}
+.guide-intro{max-width:950px}
+.guide-panel{max-width:1190px}
+.search-label{font-size:19px}
+.searchrow input{min-height:84px;font-size:22px;padding-left:67px}
+.searchrow svg{width:27px;height:27px;left:23px}
+.search-hint,.search-count{font-size:17px;line-height:1.55}
+.guide-results-head{margin-top:40px}
+.guide-results-head h3{font-size:33px}
+.guide-grid{gap:0 50px}
+.guide-card{padding:30px 4px 30px 0;min-height:185px}
+.guide-card .tag{font-size:15px;letter-spacing:.1em}
+.guide-card h3,.guide-card h4{font-size:30px;line-height:1.27;margin-top:12px}
+.guide-card p{font-size:19px;line-height:1.55}
+.guide-card .more{font-size:17px}
+.treatment-index{font-size:30px}
+.treatment h3{font-size:32px}
+.treatment p,.value-item p{font-size:20px;line-height:1.65}
+.treatment .more,.text-link{font-size:18px}
+.about h2,.location h2{font-size:clamp(46px,4.5vw,65px)}
+.about p,.location p{font-size:21px;line-height:1.7}
+.credential{font-size:18px!important}
+.philosophy-intro h2{font-size:clamp(46px,4.7vw,68px)}
+.value-item h3{font-size:30px}
+.philosophy-signature{font-size:25px}
+.location .note,.location-points .pill{font-size:18px}
+.final h2{font-size:clamp(44px,4.3vw,62px)}
+.final p{font-size:21px}
+.footer{font-size:17px}
+/* Em telas médias, priorizar leitura: artigos em coluna única, menu acessível */
+@media(max-width:1390px){
+ .menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;margin-left:auto;min-height:55px;padding:12px 18px;font-size:19px}
+ .nav{display:none!important;position:absolute;left:0;right:0;top:100%;background:white;box-shadow:0 15px 25px #10162b1e;padding:24px max(24px,6vw);flex-direction:column;align-items:stretch;gap:0}
+ .nav.open{display:flex!important}
+ .nav a{font-size:20px;padding:15px 0;border-bottom:1px solid #eeecee}
+ .header-cta{display:none!important}
+}
+@media(min-width:1391px){.menu-toggle{display:none!important}}
+@media(min-width:651px) and (max-width:1100px){
+ .hero{min-height:620px}
+ .hero-copy{width:94%;max-width:850px}
+ .hero h1{font-size:clamp(56px,6.6vw,74px)}
+ .hero p{font-size:23px}
+ .guide-grid{grid-template-columns:1fr}
+ .guide-card{min-height:0;padding:26px 0}
+ .guide-card h3,.guide-card h4{font-size:29px}
+ .treatment-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .section-head h2{font-size:clamp(45px,5vw,57px)}
+}
+@media(max-width:650px){
+ html{font-size:18px}body{font-size:19px}
+ .wrap{width:calc(100% - 36px)}
+ .header{min-height:86px}
+ .brandname{font-size:26px}
+ .brandsub{font-size:9px}
+ .menu-toggle{font-size:17px;min-height:48px;padding:9px 12px}
+ .hero{min-height:0}
+ .hero-inner{padding-block:82px 75px}
+ .hero-copy{width:100%;max-width:100%}
+ .hero h1{font-size:clamp(43px,10.4vw,57px)}
+ .hero p{font-size:20px;line-height:1.55}
+ .hero-actions .btn{font-size:18px}
+ .hero-secondary{font-size:18px}
+ .section{padding:76px 0}
+ .section-head h2{font-size:clamp(40px,9.7vw,52px)}
+ .section-head p,.philosophy-intro p{font-size:19px}
+ .eyebrow{font-size:14px}
+ .guide-grid,.treatment-grid,.about-grid,.location-grid{grid-template-columns:1fr}
+ .search-label{font-size:18px}
+ .searchrow input{min-height:72px;font-size:18px;padding-left:53px}
+ .searchrow svg{left:18px;width:23px;height:23px}
+ .search-hint,.search-count{font-size:16px}
+ .guide-results-head h3{font-size:29px}
+ .guide-card{min-height:0;padding:24px 0}
+ .guide-card .tag{font-size:14px}
+ .guide-card h3,.guide-card h4{font-size:27px}
+ .guide-card p{font-size:18px}
+ .guide-card .more{font-size:16px}
+ .treatment h3{font-size:29px}
+ .treatment p,.value-item p{font-size:18px}
+ .about h2,.location h2{font-size:clamp(42px,10vw,53px)}
+ .about p,.location p{font-size:19px}
+ .credential{font-size:17px!important}
+ .value-item h3{font-size:27px}
+ .philosophy-intro h2{font-size:clamp(40px,9vw,52px)}
+ .final h2{font-size:43px}
+ .final p{font-size:19px}
+}
+
+/* Correção da causa raiz: regras antigas tinham seletores mais específicos. */
+.guide .search-label{font-size:19px;margin-bottom:14px}
+.guide .searchrow input{min-height:84px;font-size:22px;padding-left:65px;border-radius:7px}
+.guide .searchrow svg{left:23px;width:27px;height:27px}
+.guide .search-hint{font-size:17px;line-height:1.55;margin-top:13px}
+.guide .search-count{font-size:17px;text-align:right}
+.guide .guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 45px;margin:0}
+.guide .guide-card{display:flex;flex-direction:column;gap:8px;min-height:210px;padding:28px 4px;border:0;border-radius:0;border-bottom:1px solid #dcd8de;background:transparent;box-shadow:none}
+.guide .guide-card .tag{font-size:15px;letter-spacing:.09em}
+.guide .guide-card h4,.guide .guide-card h3{font:400 30px/1.26 Georgia,'Times New Roman',serif;letter-spacing:-.02em;margin:3px 0}
+.guide .guide-card p{font-size:19px;line-height:1.55;margin:0;flex:initial}
+.guide .guide-card .more{font-size:17px;align-self:flex-start;max-width:none;text-align:left;line-height:1.4;margin-top:5px}
+.guide .guide-card:hover{background:transparent;transform:translateX(4px)}
+@media(max-width:1100px){
+ .guide .guide-grid{grid-template-columns:1fr}
+ .guide .guide-card{min-height:0;padding:27px 0}
+ .guide .guide-card h4,.guide .guide-card h3{font-size:29px}
+}
+@media(max-width:650px){
+ .guide .search-label{font-size:18px}
+ .guide .searchrow input{font-size:18px;min-height:72px;padding-left:52px}
+ .guide .searchrow svg{left:17px;width:23px;height:23px}
+ .guide .search-hint,.guide .search-count{font-size:16px}
+ .guide .guide-card .tag{font-size:14px}
+ .guide .guide-card h4,.guide .guide-card h3{font-size:27px}
+ .guide .guide-card p{font-size:18px}
+ .guide .guide-card .more{font-size:17px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
