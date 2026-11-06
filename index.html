@@ -738,6 +738,35 @@ body{color:var(--text);background:#fff}
 /* Preserva o esquema de A− / A+ e os tamanhos já aprovados. */
 @media(prefers-reduced-motion:reduce){.searchrow:focus-within{transition:none}}
 
+
+/* V9 — linha de progresso editorial e fundos orgânicos suaves */
+.page-progress{display:none}
+@media(min-width:1320px){
+  .page-progress{position:fixed;top:50%;transform:translateY(-50%);left:max(22px,calc((100vw - 1540px)/2 + 40px));width:188px;z-index:35;display:block;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s ease,visibility .24s ease}
+  .page-progress.is-active{opacity:1;visibility:visible;pointer-events:auto}
+  .page-progress-heading{display:block;font:700 12px/1.4 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#51396b;margin:0 0 20px 18px}
+  .page-progress-track{position:relative;display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+  .page-progress-track::before{content:"";position:absolute;left:6px;top:15px;bottom:18px;width:1px;background:#bdb2cd}
+  .page-progress-track::after{content:"";position:absolute;left:6px;top:15px;width:2px;height:var(--progress-fill,0%);background:#593c78;transition:height .3s ease}
+  .page-progress a{position:relative;display:flex;align-items:center;gap:14px;padding:10px 0;color:#404052;text-decoration:none;font:500 14px/1.4 system-ui,sans-serif;transition:color .2s ease}
+  .page-progress a::before{content:"";position:relative;z-index:2;display:block;flex:0 0 13px;height:13px;border:1.5px solid #9685aa;background:#f8f7f5;border-radius:50%;transition:background .2s,border-color .2s,transform .2s}
+  .page-progress a[aria-current="location"]{font-weight:750;color:#41225f}
+  .page-progress a[aria-current="location"]::before{background:#593c78;border-color:#593c78;transform:scale(1.12)}
+  .page-progress a:hover{color:#442068}
+  /* Reserva uma coluna real: a navegação não se sobrepõe aos artigos. */
+  main>.section>.wrap,main>.final>.wrap{padding-left:180px}
+  .guide .guide-panel{width:100%}
+}
+/* Formas atmosféricas, sem imagens e sem reduzir o contraste dos textos */
+.guide,.philosophy,.location{position:relative;isolation:isolate;overflow:hidden}
+.guide::before,.guide::after,.philosophy::before,.location::after{content:"";position:absolute;z-index:-1;pointer-events:none}
+.guide::before{width:490px;height:530px;right:-275px;top:-170px;border-radius:42% 58% 65% 35% / 42% 48% 52% 58%;background:radial-gradient(ellipse at 40% 45%,rgba(184,154,211,.17),rgba(217,202,231,.08) 55%,transparent 72%);transform:rotate(28deg)}
+.guide::after{width:460px;height:340px;left:-330px;bottom:5%;border-radius:56% 44% 38% 62% / 64% 51% 49% 36%;background:radial-gradient(ellipse at 65% 45%,rgba(190,170,215,.15),rgba(210,194,231,.07) 62%,transparent 75%);transform:rotate(-24deg)}
+.philosophy::before{width:600px;height:550px;right:-300px;top:5%;border-radius:58% 42% 59% 41% / 42% 63% 37% 58%;background:radial-gradient(ellipse at 44% 50%,rgba(164,139,195,.13),rgba(209,191,229,.05) 60%,transparent 75%);transform:rotate(-17deg)}
+.location::after{width:400px;height:500px;left:-260px;bottom:-180px;border-radius:65% 35% 57% 43%;background:radial-gradient(ellipse at 60% 40%,rgba(172,151,201,.12),transparent 71%)}
+@media(max-width:1319px){.page-progress{display:none!important}}
+@media(prefers-reduced-motion:reduce){.page-progress,.page-progress-track::after,.page-progress a,.page-progress a::before{transition:none!important}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -750,6 +779,18 @@ body{color:var(--text);background:#fff}
   
   <button type="button" id="leitura-mais" class="leitura-botao" aria-label="Aumentar tamanho do texto" title="Aumentar letras">A+</button>
 </div><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
+
+<nav class="page-progress" id="page-progress" aria-label="Navegação pelas seções da página">
+  <span class="page-progress-heading">Explore o site</span>
+  <ol class="page-progress-track">
+    <li><a href="#duvidas" data-progress-link>Suas dúvidas</a></li>
+    <li><a href="#tratamentos" data-progress-link>Tratamentos</a></li>
+    <li><a href="#sobre" data-progress-link>Sobre</a></li>
+    <li><a href="#diferenciais" data-progress-link>Nosso cuidado</a></li>
+    <li><a href="#local" data-progress-link>Atendimento</a></li>
+    <li><a href="#contato" data-progress-link>Contato</a></li>
+  </ol>
+</nav>
 <main id="conteudo">
 <section aria-labelledby="principal" class="hero"><div aria-hidden="true" aria-label="Espaço reservado para fotografia principal" class="hero-photo premium-photo-space"></div><div class="wrap hero-inner"><div class="hero-copy"><h1 class="serif" id="principal">Reabilitação oral focada no que realmente importa: <em>a sua tranquilidade.</em></h1><p>Comer com prazer, conversar à vontade e aproveitar os bons momentos sem que os problemas com os dentes sejam uma preocupação constante.</p><div class="hero-actions"><a class="btn" data-agendar="" href="/contato.html">Agendar minha avaliação</a><a class="hero-secondary" href="#duvidas">Tirar minhas dúvidas ↓</a></div></div></div></section>
 <section aria-labelledby="titulo-duvidas" class="section guide" id="duvidas">
@@ -907,6 +948,35 @@ if (/^55\d{10,11}$/.test(num)) {
  minus.addEventListener('click',()=>{if(index>0){index--;apply();}});
  plus.addEventListener('click',()=>{if(index<sizes.length-1){index++;apply();}});
  apply();
+})();
+
+/* Navegação lateral: indica a seção atual e acompanha a rolagem. */
+(function(){
+ const aside=document.getElementById('page-progress');
+ if(!aside)return;
+ const links=[...aside.querySelectorAll('[data-progress-link]')];
+ const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+ const hero=document.querySelector('.hero');
+ const media=window.matchMedia('(min-width: 1320px)');
+ let raf=false;
+ function update(){
+   raf=false;
+   if(!media.matches){aside.classList.remove('is-active');return;}
+   const activation=(hero?hero.getBoundingClientRect().bottom:0)<window.innerHeight*.6;
+   const end=document.querySelector('.footer')?.getBoundingClientRect().top ?? Infinity;
+   aside.classList.toggle('is-active',activation&&end>window.innerHeight*.25);
+   const checkpoint=window.innerHeight*.43;
+   let index=0;
+   sections.forEach((sec,i)=>{if(sec&&sec.getBoundingClientRect().top<=checkpoint)index=i;});
+   links.forEach((link,i)=>{if(i===index)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')});
+   aside.style.setProperty('--progress-fill',(index/(links.length-1)*100)+'%');
+   aside.querySelector('.page-progress-heading').textContent=['Guia do paciente','Tratamentos','Sobre o especialista','Nosso cuidado','Local de atendimento','Agendamento'][index];
+ }
+ function schedule(){if(!raf){raf=true;requestAnimationFrame(update)}}
+ window.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('resize',schedule,{passive:true});
+ media.addEventListener?.('change',schedule);
+ update();
 })();
 </script>
 </body></html>
