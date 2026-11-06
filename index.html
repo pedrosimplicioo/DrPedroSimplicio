@@ -207,6 +207,100 @@ body{font-size:17px;background:#fff;color:var(--text);line-height:1.68;-webkit-f
 @media(max-width:930px){.header{min-height:80px}.nav{gap:16px}.hero{min-height:550px}.hero-photo{width:61%}.about-grid,.location-grid{gap:38px}.section{padding:84px 0}}
 @media(max-width:650px){.wrap{width:calc(100% - 38px)}.hero{min-height:580px}.hero-inner{padding-block:80px 58px}.hero-photo{width:100%;height:55%;opacity:.42}.hero::before{background:linear-gradient(0deg,#27283d 15%,rgba(39,40,61,.92) 63%,rgba(39,40,61,.65) 100%)}.hero h1{font-size:clamp(39px,10vw,48px)}.hero p{font-size:17px}.section{padding:70px 0}.section-head{margin-bottom:35px}.section-head h2{font-size:39px}.guide-grid,.treatment-grid,.about-grid,.location-grid,.values-grid{grid-template-columns:1fr}.guide-grid{gap:0}.guide-card{padding:22px 0}.searchrow input{min-height:64px;font-size:16px}.treatment-grid{gap:1px}.treatment{min-height:190px}.about-mark{min-height:320px;max-height:440px}.location-image{min-height:240px}.philosophy-intro h2{font-size:39px}.final{padding:65px 0}}
 @media(prefers-reduced-motion:reduce){.guide-card,.treatment{transition:none!important}}
+
+/* AJUSTE DE ESCALA E LEGIBILIDADE V3 — layout editorial responsivo */
+:root{--max:1340px}
+html{scroll-padding-top:104px}
+body{font-size:19px;line-height:1.7}
+.wrap{width:min(var(--max),calc(100% - clamp(36px,9vw,144px)))}
+.header{min-height:98px;gap:24px}
+.brandname{font-size:clamp(27px,2.15vw,34px)}
+.brandsub{font-size:11px;letter-spacing:.11em;line-height:1.45}
+.nav{gap:clamp(13px,1.5vw,24px)}
+.nav a{font-size:15px;line-height:1.4}
+.header-cta{font-size:15px;padding-inline:23px}
+.btn{min-height:56px;font-size:16px;padding:15px 27px}
+/* Sem fotografia publicada, o banner aproveita toda a largura. */
+.hero{min-height:620px;background:#29283f}
+.hero-photo.premium-photo-space{background:transparent;width:100%;inset:0;opacity:1;pointer-events:none}
+.hero-photo.premium-photo-space::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 86% 53%,rgba(121,98,145,.28),transparent 43%)}
+.hero::before{background:linear-gradient(100deg,rgba(34,35,55,.97),rgba(39,38,60,.86) 68%,rgba(47,42,65,.68))}
+.hero-inner{padding-block:106px}
+.hero-copy{max-width:min(850px,76%)}
+.hero h1{font-size:clamp(52px,5.25vw,78px);line-height:1.1;letter-spacing:-.035em;margin-bottom:30px}
+.hero p{max-width:680px;font-size:21px;line-height:1.6;margin-bottom:34px}
+.hero-secondary{font-size:16px}
+.section{padding:100px 0}
+.section-head{max-width:900px}
+.section-head h2{font-size:clamp(41px,4.1vw,59px)}
+.section-head p,.philosophy-intro p{font-size:19px}
+.eyebrow{font-size:13px;letter-spacing:.18em}
+.guide-intro{max-width:850px}
+.guide-panel{max-width:1020px}
+.search-label{font-size:16px}
+.searchrow input{min-height:76px;font-size:20px}
+.search-hint,.search-count{font-size:15px}
+.guide-results-head h3{font-size:28px}
+.guide-card .tag{font-size:13px}
+.guide-card h3,.guide-card h4{font-size:27px}
+.guide-card p{font-size:17px}
+.guide-card .more{font-size:15px}
+.treatment h3{font-size:29px}
+.treatment p,.value-item p{font-size:18px}
+.treatment .more,.text-link{font-size:16px}
+.about p,.location p{font-size:19px}
+.credential{font-size:16px!important}
+.value-item h3{font-size:27px}
+.location .note,.location-points .pill{font-size:16px}
+.final p{font-size:19px}
+.footer{font-size:16px}
+/* Menu compacto antes que a navegação reduza o tamanho das letras. */
+@media(max-width:1250px){
+  .header{min-height:90px}
+  .menu-toggle{display:inline-block;margin-left:auto;min-height:46px;font-size:16px}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;box-shadow:0 15px 25px #10162b1e;padding:24px max(24px,6vw);flex-direction:column;align-items:stretch;gap:0}
+  .nav.open{display:flex}
+  .nav a{font-size:18px;padding:12px 0;border-bottom:1px solid #eeecee}
+  .header-cta{display:none}
+}
+@media(min-width:1251px){.menu-toggle{display:none}}
+@media(min-width:651px) and (max-width:1100px){
+  .hero{min-height:580px}
+  .hero-copy{max-width:770px;width:86%}
+  .hero h1{font-size:clamp(50px,6vw,66px)}
+  .hero p{font-size:20px}
+  .guide-grid{gap:0 32px}
+  .guide-card h3,.guide-card h4{font-size:24px}
+}
+@media(max-width:650px){
+  body{font-size:18px}
+  .wrap{width:calc(100% - 40px)}
+  .header{min-height:78px}
+  .brandname{font-size:25px}
+  .brandsub{font-size:9px}
+  .hero{min-height:unset;align-items:center}
+  .hero-photo.premium-photo-space{width:100%;height:100%;opacity:1}
+  .hero-inner{padding-block:85px 83px}
+  .hero-copy{max-width:100%;width:100%}
+  .hero h1{font-size:clamp(42px,9.2vw,54px);line-height:1.12}
+  .hero p{font-size:19px;line-height:1.6}
+  .hero::before{background:linear-gradient(135deg,#27283d 0%,#343046 100%)}
+  .hero-secondary{font-size:16px}
+  .section{padding:72px 0}
+  .section-head h2{font-size:clamp(38px,9vw,48px)}
+  .section-head p,.philosophy-intro p{font-size:18px}
+  .searchrow input{font-size:17px;min-height:68px}
+  .search-label{font-size:16px}
+  .guide-card h3,.guide-card h4{font-size:25px}
+  .guide-card p{font-size:17px}
+  .treatment h3{font-size:27px}
+  .treatment p,.value-item p{font-size:17px}
+  .about p,.location p{font-size:18px}
+  .about h2,.location h2{font-size:clamp(37px,9vw,48px)}
+  .final p{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
