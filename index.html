@@ -602,6 +602,34 @@ html[data-leitura="2"] .guide .guide-card,html[data-leitura="3"] .guide .guide-c
 html[data-leitura="2"] .guide .guide-card .more,html[data-leitura="3"] .guide .guide-card .more{grid-column:1;grid-row:auto;max-width:none;text-align:left;}
 @media(max-width:900px){html[data-leitura="2"] .treatment-grid,html[data-leitura="3"] .treatment-grid{grid-template-columns:1fr}}
 
+
+/* V7 — Cabeçalho estável: a preferência A− / A+ amplia o conteúdo,
+   mas não altera dimensões, posição nem quebra dos itens de navegação. */
+.top .header { font-size:16px; }
+.top .brandname { font-size:29px; line-height:1.12; }
+.top .brandsub { font-size:11px; line-height:1.4; }
+.top .nav a { font-size:17px; line-height:1.4; }
+.top .header-cta { font-size:17px; min-height:54px; padding:12px 18px; }
+.top .menu-toggle { font-size:19px; line-height:1.2; }
+.top .leitura-controles { flex:0 0 auto; }
+.top .leitura-botao { font-size:22px; line-height:1; }
+@media (max-width:1500px) {
+  .top .nav a { font-size:20px; }
+  .top .menu-toggle { font-size:19px; }
+}
+@media (max-width:900px) {
+  .top .brandname { font-size:23px; }
+  .top .brandsub { font-size:9px; }
+  .top .menu-toggle { font-size:18px; }
+  .top .leitura-botao { font-size:21px; }
+}
+@media (max-width:500px) {
+  .top .brandname { font-size:23px; }
+  .top .brandsub { font-size:9px; }
+  .top .menu-toggle { font-size:17px; }
+  .top .leitura-botao { font-size:20px; }
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
