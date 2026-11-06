@@ -630,6 +630,45 @@ html[data-leitura="2"] .guide .guide-card .more,html[data-leitura="3"] .guide .g
   .top .leitura-botao { font-size:20px; }
 }
 
+
+/* Botão persistente de agendamento: acompanha a rolagem, sem bloquear a leitura. */
+.whatsapp-fixo,
+.whatsapp-fixo:not(.ativo){
+  position:fixed;
+  inset:auto max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) auto;
+  z-index:90;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:58px;
+  padding:13px 21px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  background:#28684f;
+  color:#fff;
+  box-shadow:0 8px 28px rgba(24,35,36,.25);
+  font:700 16px/1.3 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  text-decoration:none;
+  transition:background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+.whatsapp-fixo svg{width:26px;height:26px;flex:none;fill:currentColor}
+@media(hover:hover) and (pointer:fine){
+  .whatsapp-fixo:hover{background:#1d593f;transform:translateY(-3px);box-shadow:0 12px 30px rgba(24,35,36,.32)}
+}
+.whatsapp-fixo:active{transform:translateY(1px)}
+.whatsapp-fixo:focus-visible{outline:3px solid #efcb79;outline-offset:4px}
+@media(max-width:650px){
+  .whatsapp-fixo,.whatsapp-fixo:not(.ativo){
+    right:max(14px,env(safe-area-inset-right));
+    bottom:max(14px,env(safe-area-inset-bottom));
+    min-height:56px;padding:12px 17px;font-size:16px;
+  }
+  body{padding-bottom:86px}
+}
+@media(max-width:380px){.whatsapp-fixo span{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.whatsapp-fixo{transition:none!important}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -724,7 +763,7 @@ html[data-leitura="2"] .guide .guide-card .more,html[data-leitura="3"] .guide .g
 </section>
 <section class="section location" id="local"><div class="wrap location-grid"><div><span class="eyebrow">Local de atendimento</span><h2>Um lugar para ser ouvido e atendido com calma</h2><p>O atendimento é realizado mediante agendamento, com espaço para conversar sobre suas dificuldades e entender as opções de tratamento.</p><div class="location-points"><span class="pill">Natal/RN</span></div><p class="note">Local e informações de acesso serão confirmados no agendamento.</p><a class="text-link" data-agendar="" href="/contato.html">Como agendar uma avaliação →</a></div><figure class="location-photo"><div class="location-image photo-reserve"><span>Fotografia do espaço</span></div></figure></div></section>
 <section class="final" id="contato"><div class="wrap final-inner"><div><h2>Que tal começar com uma conversa?</h2><p>Conte o que está incomodando você. Uma avaliação pode ajudar a identificar alternativas para ter mais conforto e leveza no dia a dia.</p></div><a class="btn btn-light" data-agendar="" href="/contato.html">Agendar minha avaliação →</a></div></section>
-</main><a aria-label="Agendar avaliação pelo WhatsApp" class="whatsapp-fixo" href="/contato.html" id="whatsapp-fixo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.5 3.5A11.4 11.4 0 0 0 12.1 0 11.6 11.6 0 0 0 2.1 17.4L.5 23.5l6.3-1.6A11.6 11.6 0 0 0 12.1 23h.1A11.5 11.5 0 0 0 20.5 3.5ZM12.2 21a9.6 9.6 0 0 1-4.9-1.3l-.4-.2-3.7 1 1-3.6-.2-.4A9.5 9.5 0 1 1 12.2 21Zm5.2-7.1c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.1.2-.3.2-.6.1-1.6-.8-2.7-1.6-3.7-3.3-.3-.4.3-.4.8-1.4.1-.2.1-.4 0-.6l-.9-2.1c-.2-.5-.5-.5-.7-.5H8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.2 3.4 5.3 4.7 2 .9 2.8 1 3.8.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.2-.6-.4Z"></path></svg><span>Agendar pelo WhatsApp</span></a><footer class="footer"><div class="wrap footer-inner"><div><strong>Dr. Pedro Simplício</strong><p>Especialista em Prótese Dentária · CRO/RN 5780 · Natal/RN</p><p>Conteúdo educativo; não substitui uma avaliação odontológica.</p></div><div><a href="/contato.html">Contato</a><a href="/privacidade.html">Privacidade</a></div></div></footer>
+</main><a aria-label="Agendar uma avaliação" class="whatsapp-fixo" href="/contato.html" id="whatsapp-fixo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.5 3.5A11.4 11.4 0 0 0 12.1 0 11.6 11.6 0 0 0 2.1 17.4L.5 23.5l6.3-1.6A11.6 11.6 0 0 0 12.1 23h.1A11.5 11.5 0 0 0 20.5 3.5ZM12.2 21a9.6 9.6 0 0 1-4.9-1.3l-.4-.2-3.7 1 1-3.6-.2-.4A9.5 9.5 0 1 1 12.2 21Zm5.2-7.1c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.1.2-.3.2-.6.1-1.6-.8-2.7-1.6-3.7-3.3-.3-.4.3-.4.8-1.4.1-.2.1-.4 0-.6l-.9-2.1c-.2-.5-.5-.5-.7-.5H8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.2 3.4 5.3 4.7 2 .9 2.8 1 3.8.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.2-.6-.4Z"></path></svg><span>Agendar avaliação</span></a><footer class="footer"><div class="wrap footer-inner"><div><strong>Dr. Pedro Simplício</strong><p>Especialista em Prótese Dentária · CRO/RN 5780 · Natal/RN</p><p>Conteúdo educativo; não substitui uma avaliação odontológica.</p></div><div><a href="/contato.html">Contato</a><a href="/privacidade.html">Privacidade</a></div></div></footer>
 <script>
 const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('menu');toggle.addEventListener('click',()=>{let open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
 const input=document.getElementById('busca'),cards=[...document.querySelectorAll('.guide-card')],counter=document.getElementById('search-count'),empty=document.getElementById('no-results');function norm(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')};input.addEventListener('input',()=>{const q=norm(input.value.trim());let hits=0;for(const card of cards){let show=!q||norm(card.textContent+' '+card.dataset.keywords).includes(q);card.hidden=!show;if(show)hits++}counter.textContent=q?(hits===1?'1 artigo encontrado':hits+' artigos encontrados'):'4 conteúdos para começar';empty.classList.toggle('visible',!!q&&!hits)});
@@ -746,6 +785,7 @@ if (/^55\d{10,11}$/.test(num)) {
   fixo.target = '_blank';
   fixo.rel = 'noopener noreferrer';
   fixo.classList.add('ativo');
+  fixo.setAttribute('aria-label','Agendar avaliação pelo WhatsApp');
 }
 /* Microinterações progressivas: não bloqueiam conteúdo quando JS está indisponível. */
 (function(){
