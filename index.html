@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://DOMINIO-CONFIRMADO.com.br/">
 Não publique um domínio fictício como URL canônica. Configure também redirecionamento www/sem-www no Vercel.
 -->
-<!-- Versão V6: leitura ampliada e controles compactos A− A+ (06-11-2026). -->
+<!-- Versão V8: alto contraste e leitura ampliada (06-11-2026). -->
 <!-- Antes de publicar: confirmar domínio, adicionar imagens reais, WhatsApp profissional, endereço e conferir páginas internas. -->
 <style>
 :root{--navy:#111637;--navy2:#263454;--purple:#572595;--purple2:#7542bb;--lilac:#bfa3ed;--text:#18203d;--muted:#4c536c;--line:#e6e1ef;--bg:#fbfaff;--white:#fff;--max:1140px}
@@ -669,6 +669,75 @@ html[data-leitura="2"] .guide .guide-card .more,html[data-leitura="3"] .guide .g
 @media(max-width:380px){.whatsapp-fixo span{font-size:15px}}
 @media(prefers-reduced-motion:reduce){.whatsapp-fixo{transition:none!important}}
 
+
+/* V8 — Contraste de leitura. Mantém o desenho editorial, as dimensões
+   do cabeçalho e a ampliação independente de conteúdo (A− / A+). */
+:root {
+  --navy:#191d30;
+  --navy2:#24283d;
+  --text:#191d30;
+  --muted:#303344;
+  --purple:#49346d;
+  --purple2:#382454;
+  --lilac:#f0ddf3;
+  --line:#cbc5d1;
+  --bg:#f8f7f4;
+}
+body{color:var(--text);background:#fff}
+/* Texto comum, textos menores e informações de apoio: evitar cinza lavado */
+.section-head p,.guide-intro p,.philosophy-intro p,
+.guide .guide-card p,.treatment p,.about p,.location p,.value-item p,
+.location .note,.location-photo figcaption,.footer p{color:var(--muted)}
+.credential,.guide-results-head h3,.guide .guide-card h3,
+.guide .guide-card h4,.treatment h3,.value-item h3,
+.about h2,.location h2,.section-head h2,.philosophy-intro h2{color:var(--text)}
+/* Pistas editoriais ainda precisam ser legíveis. */
+.eyebrow,.guide .guide-card .tag,.value-number,
+.guide .search-label,.guide .search-count,.guide .search-hint,
+.location .pill,.philosophy-signature{color:var(--purple)}
+.guide .guide-card .more,.treatment .more,.text-link,
+.location .text-link,.footer a{color:var(--purple);text-decoration-color:currentColor}
+.guide .guide-card .more,.treatment .more,.text-link{font-weight:750}
+.guide .guide-card:hover .more,.treatment:hover .more,.text-link:hover{color:var(--purple2)}
+.guide,.location{background:var(--bg)}
+.guide-results-head,.guide .guide-card{border-color:var(--line)}
+.guide .guide-card:hover{border-color:#82708e}
+.searchrow input,.guide .searchrow input{background:#fff;color:var(--text);border-color:#837592}
+.searchrow input::placeholder,.guide .searchrow input::placeholder{color:#545061;opacity:1}
+.searchrow svg{stroke:var(--purple)}
+.searchrow:focus-within{box-shadow:0 0 0 4px rgba(73,52,109,.18)}
+.searchrow:focus-within input{border-color:var(--purple)}
+/* Cabeçalho: mantém exatamente as dimensões fixadas na V7. */
+.top .brandname{color:var(--text)}
+.top .brandsub,.top .nav a{color:#303344}
+.top .nav a:hover,.top .nav a[aria-current]{color:var(--purple)}
+.top .leitura-botao{color:var(--text);border-color:#776986;background:#fff}
+.top .leitura-botao:hover{background:#f2edf6;border-color:var(--purple)}
+.top .menu-toggle{color:var(--text);border-color:#837592}
+/* Botões: branco sobre ameixa escura, sem reduzir legibilidade no hover. */
+.btn,.top .header-cta{background:var(--purple);color:#fff}
+.btn:hover,.top .header-cta:hover{background:var(--purple2);color:#fff}
+.btn-light{background:#fff;color:#29233b}
+.btn-light:hover{background:#f3edf7;color:#29233b}
+/* Banner: contraste elevado tanto no título quanto na frase lilás. */
+.hero{background:#24283d;color:#fff}
+.hero::before{background:linear-gradient(90deg,#22263a 0%,#292b42 46%,rgba(42,39,59,.82) 70%,rgba(38,37,56,.45) 100%)}
+.hero h1,.hero p,.hero-secondary{color:#fff}
+.hero h1 em{color:#f0ddf3}
+.hero-secondary{border-bottom-color:#f0ddf3}
+/* Seções coloridas, sem contraste insuficiente em frases e créditos. */
+.philosophy{background:#fff}
+.about{background:#f5f3f8}
+.final{background:linear-gradient(110deg,#252b44,#382452);color:#fff}
+.final h2,.final p{color:#fff}
+.footer{background:#191d30;color:#fff}
+.footer a{color:#fff}
+.footer p{color:#e2e0e8}
+/* Elementos menos expressivos não devem usar transparência na escrita. */
+.pill{background:#efebf3;border-color:#c9bed4;color:var(--purple)}
+/* Preserva o esquema de A− / A+ e os tamanhos já aprovados. */
+@media(prefers-reduced-motion:reduce){.searchrow:focus-within{transition:none}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -831,7 +900,7 @@ if (/^55\d{10,11}$/.test(num)) {
    document.documentElement.dataset.leitura=String(index);
 
    minus.disabled=index===0;plus.disabled=index===sizes.length-1;
-   minus.setAttribute('aria-label','Diminuir tamanho do texto'+(index===0?' (mínimo .hero{min-height:unse)':''));
+   minus.setAttribute('aria-label','Diminuir tamanho do texto'+(index===0?' (mínimo)':''));
    plus.setAttribute('aria-label','Aumentar tamanho do texto'+(index===sizes.length-1?' (máximo)':''));
    try{localStorage.setItem('pedro-leitura-nivel',String(index));}catch(e){}
  }
