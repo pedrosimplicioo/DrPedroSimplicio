@@ -853,18 +853,68 @@ body{color:var(--text);background:#fff}
   .top > .wrap.header{width:calc(100% - 28px);margin-inline:14px;min-height:80px}
 }
 
+
+/* V11 — Cabeçalho centralizado e distribuído com equilíbrio, sem espaços artificiais */
+.top > .wrap.header {
+  display:grid;
+  grid-template-columns:minmax(255px,1fr) auto minmax(170px,1fr);
+  align-items:center;
+  column-gap:24px;
+  width:min(1520px,calc(100% - 72px));
+  max-width:1520px;
+  margin-inline:auto;
+  min-height:90px;
+  padding:0;
+}
+.top .brand{margin:0;justify-self:start;min-width:0}
+.top .brandsub{white-space:nowrap;font-size:10px}
+.top .header-center{grid-column:2;display:flex;align-items:center;justify-content:center;gap:15px;min-width:0}
+.top .leitura-controles{display:flex;align-items:center;gap:5px;flex:none}
+.top .nav{display:flex!important;position:static;align-items:center;justify-content:center;gap:clamp(11px,1vw,17px);margin:0;padding:0;box-shadow:none;background:transparent;flex-direction:row;animation:none}
+.top .nav a{font-size:15px;white-space:nowrap}
+.top .header-cta{display:inline-flex!important;justify-self:end;grid-column:3;order:initial;margin:0;min-height:48px;padding:11px 17px;font-size:15px;white-space:nowrap}
+.top .menu-toggle{display:none!important}
+@media(max-width:1280px){
+  .top > .wrap.header{grid-template-columns:minmax(0,1fr) auto auto;gap:17px;width:calc(100% - 48px);min-height:84px}
+  .top .header-center{grid-column:2;gap:13px}
+  .top .menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;order:initial;margin:0}
+  .top .nav{display:none!important;position:absolute;top:100%;left:0;right:0;padding:22px 28px;background:#fff;flex-direction:column;align-items:stretch;gap:18px;box-shadow:0 12px 24px rgba(24,20,45,.13)}
+  .top .nav.open{display:flex!important}
+  .top .nav a{font-size:18px}
+  .top .header-cta{grid-column:3}
+}
+@media(max-width:930px){
+  .top .header-cta{display:none!important}
+  .top > .wrap.header{grid-template-columns:minmax(0,1fr) auto}
+}
+@media(max-width:500px){
+  .top > .wrap.header{width:calc(100% - 28px);grid-template-columns:minmax(0,1fr) auto;gap:8px;min-height:79px;flex-wrap:nowrap;padding-block:0}
+  .top .brand{flex:none;min-width:0}
+  .top .brandname{font-size:21px}
+  .top .brandsub{font-size:8px}
+  .top .header-center{gap:8px}
+  .top .leitura-botao{min-width:37px;min-height:39px;padding:4px;font-size:18px}
+  .top .menu-toggle{font-size:0;padding:8px 10px;min-height:39px}
+  .top .menu-toggle::after{content:'☰';font-size:19px}
+}
+@media(max-width:390px){
+  .top .brandname{font-size:18px}
+  .top .brandsub{font-size:7px}
+  .top .leitura-botao{min-width:34px}
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header class="top"><div class="wrap header"><a aria-label="Dr. Pedro Simplício, início" class="brand" href="index.html"><span class="brandwords"><strong class="brandname">Dr. Pedro Simplício</strong><span class="brandsub">REABILITAÇÃO ORAL E PRÓTESE DENTÁRIA</span></span></a><div class="leitura-controles" role="group" aria-label="Ajustar tamanho do texto">
+<header class="top"><div class="wrap header"><a aria-label="Dr. Pedro Simplício, início" class="brand" href="index.html"><span class="brandwords"><strong class="brandname">Dr. Pedro Simplício</strong><span class="brandsub">REABILITAÇÃO ORAL E PRÓTESE DENTÁRIA</span></span></a><div class="header-center"><div class="leitura-controles" role="group" aria-label="Ajustar tamanho do texto">
   
   <button type="button" id="leitura-menos" class="leitura-botao" aria-label="Diminuir tamanho do texto" title="Diminuir letras">A−</button>
   
   <button type="button" id="leitura-mais" class="leitura-botao" aria-label="Aumentar tamanho do texto" title="Aumentar letras">A+</button>
-</div><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
+</div><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav></div><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
 
 <nav class="page-progress" id="page-progress" aria-label="Navegação pelas seções da página">
   <span class="page-progress-heading">Explore o site</span>
