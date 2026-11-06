@@ -440,13 +440,111 @@ body{font-size:20px;line-height:1.65}
  .guide .guide-card p{font-size:18px}
  .guide .guide-card .more{font-size:17px}
 }
+
+/* === V5: leitura acessível. Uma única escala central governa toda a tipografia. === */
+:root { --escala-leitura: 1; }
+body { font-size:calc(20px * var(--escala-leitura)); line-height:1.65; }
+.wrap { --max: 1230px; }
+.header { gap:18px; min-height:91px; }
+.brandname { font-size:calc(27px * var(--escala-leitura)); white-space:normal; }
+.brandsub { font-size:calc(11px * var(--escala-leitura)); letter-spacing:.04em; }
+.nav a { font-size:calc(17px * var(--escala-leitura)); }
+.header-cta,.btn { font-size:calc(17px * var(--escala-leitura)); min-height:54px; }
+.menu-toggle { font-size:calc(18px * var(--escala-leitura)); }
+.hero h1 { font-size:clamp(46px,5.1vw,76px); }
+.hero p { font-size:calc(22px * var(--escala-leitura)); line-height:1.65; }
+.hero-secondary {font-size:calc(18px * var(--escala-leitura));}
+.eyebrow {font-size:calc(15px * var(--escala-leitura));}
+.section-head h2 {font-size:clamp(42px,4.1vw,60px);}
+.section-head p,.philosophy-intro p {font-size:calc(21px * var(--escala-leitura));line-height:1.6;}
+.guide .search-label {font-size:calc(20px * var(--escala-leitura));}
+.guide .searchrow input {font-size:calc(21px * var(--escala-leitura));min-height:74px;}
+.guide .search-hint,.guide .search-count {font-size:calc(17px * var(--escala-leitura));}
+.guide-results-head h3 {font-size:calc(31px * var(--escala-leitura));}
+.guide .guide-card .tag {font-size:calc(15px * var(--escala-leitura));}
+.guide .guide-card h4,.guide .guide-card h3 {font-size:calc(28px * var(--escala-leitura));line-height:1.3;}
+.guide .guide-card p {font-size:calc(20px * var(--escala-leitura));line-height:1.55;}
+.guide .guide-card .more {font-size:calc(18px * var(--escala-leitura));}
+.treatment h3,.value-item h3 {font-size:calc(27px * var(--escala-leitura));line-height:1.3;}
+.treatment p,.value-item p {font-size:calc(20px * var(--escala-leitura));line-height:1.6;}
+.treatment .more {font-size:calc(18px * var(--escala-leitura));}
+.about h2,.location h2,.philosophy-intro h2 {font-size:clamp(40px,4vw,59px);}
+.about p,.location p {font-size:calc(20px * var(--escala-leitura));}
+.credential {font-size:calc(18px * var(--escala-leitura))!important;}
+.location .note,.location-photo figcaption,.pill {font-size:calc(17px * var(--escala-leitura));}
+.final h2 {font-size:clamp(38px,4vw,56px);}
+.final p {font-size:calc(21px * var(--escala-leitura));}
+.footer,.footer p,.footer a {font-size:calc(16px * var(--escala-leitura));}
+/* Controls look like part of the editorial header, not a floating accessibility widget */
+.leitura-controles {display:flex;align-items:center;gap:5px;margin-left:auto;flex-shrink:0;white-space:nowrap;}
+.leitura-rotulo {font-size:14px;color:#49485b;margin-right:6px;}
+.leitura-botao {background:white;color:#282540;border:1px solid #bcb5c9;border-radius:6px;min-width:43px;min-height:45px;padding:6px 8px;font-size:19px;font-weight:750;line-height:1;transition:background .17s,border-color .17s;}
+.leitura-botao:hover {background:#f4effa;border-color:#655474;}
+.leitura-botao:disabled {opacity:.45;cursor:not-allowed;}
+.leitura-nivel {display:inline-block;min-width:49px;font-size:13px;text-align:center;color:#50495c;font-variant-numeric:tabular-nums;}
+/* The menu collapses before the content becomes tiny or overflows */
+@media(max-width:1500px){
+  .nav {display:none!important;position:absolute;left:0;right:0;top:100%;background:#fff;box-shadow:0 10px 19px #0002;padding:22px 28px;flex-direction:column;align-items:stretch;gap:6px;margin:0;max-height:calc(100dvh - 85px);overflow-y:auto;}
+  .nav.open {display:flex!important;}
+  .nav a {font-size:calc(20px * var(--escala-leitura));padding:10px 0;white-space:normal;}
+  .menu-toggle {display:inline-flex!important;align-items:center;justify-content:center;margin-left:4px;min-height:47px;padding:10px 14px;}
+  .header-cta {display:none!important;}
+}
+@media(max-width:1200px){
+  .guide .guide-grid{grid-template-columns:1fr;}
+  .guide .guide-card{min-height:0;padding:24px 4px;}
+}
+@media(max-width:750px){
+  .wrap{width:calc(100% - 34px);}
+  .header {gap:9px;min-height:83px;flex-wrap:wrap;}
+  .brandname {font-size:calc(21px * var(--escala-leitura));}
+  .brandsub {font-size:calc(8px * var(--escala-leitura));}
+  .leitura-controles {gap:3px;}
+  .leitura-rotulo,.leitura-nivel {display:none;}
+  .leitura-botao {min-width:39px;min-height:44px;font-size:18px;padding:7px;}
+  .menu-toggle {font-size:16px;min-height:44px;padding:9px 10px;}
+  .hero h1 {font-size:clamp(40px,9vw,58px);}
+  .hero p {font-size:calc(19px * var(--escala-leitura));}
+  .section-head h2 {font-size:clamp(37px,8vw,51px);}
+  .section-head p,.philosophy-intro p {font-size:calc(19px * var(--escala-leitura));}
+  .guide .search-label {font-size:calc(18px * var(--escala-leitura));}
+  .guide .searchrow input {font-size:calc(18px * var(--escala-leitura));min-height:68px;padding-left:52px;}
+  .guide .guide-card h4,.guide .guide-card h3 {font-size:calc(24px * var(--escala-leitura));}
+  .guide .guide-card p {font-size:calc(18px * var(--escala-leitura));}
+  .guide .guide-card .more {font-size:calc(17px * var(--escala-leitura));}
+  .guide .guide-card .tag {font-size:calc(14px * var(--escala-leitura));}
+  .guide-results-head h3 {font-size:calc(27px * var(--escala-leitura));}
+  .guide .search-hint,.guide .search-count {font-size:calc(15px * var(--escala-leitura));}
+  .treatment h3,.value-item h3 {font-size:calc(24px * var(--escala-leitura));}
+  .treatment p,.value-item p,.about p,.location p {font-size:calc(18px * var(--escala-leitura));}
+  .footer,.footer p,.footer a {font-size:calc(15px * var(--escala-leitura));}
+}
+@media(max-width:420px){
+  .brandname{font-size:calc(19px * var(--escala-leitura));}
+  .header{gap:5px;}
+  .leitura-botao{min-width:36px;padding:5px;}
+  .menu-toggle{padding:8px;}
+}
+/* At high reading magnification, simplify columns to avoid squeezing text */
+html[data-leitura="2"] .treatment-grid,html[data-leitura="3"] .treatment-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+html[data-leitura="2"] .guide-grid,html[data-leitura="3"] .guide-grid {grid-template-columns:1fr;}
+@media(max-width:750px){
+  html[data-leitura="2"] .treatment-grid,html[data-leitura="3"] .treatment-grid{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){.leitura-botao{transition:none;}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<header class="top"><div class="wrap header"><a aria-label="Dr. Pedro Simplício, início" class="brand" href="index.html"><span class="brandwords"><strong class="brandname">Dr. Pedro Simplício</strong><span class="brandsub">REABILITAÇÃO ORAL E PRÓTESE DENTÁRIA</span></span></a><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
+<header class="top"><div class="wrap header"><a aria-label="Dr. Pedro Simplício, início" class="brand" href="index.html"><span class="brandwords"><strong class="brandname">Dr. Pedro Simplício</strong><span class="brandsub">REABILITAÇÃO ORAL E PRÓTESE DENTÁRIA</span></span></a><div class="leitura-controles" role="group" aria-label="Ajustar tamanho do texto">
+  <span class="leitura-rotulo">Tamanho do texto</span>
+  <button type="button" id="leitura-menos" class="leitura-botao" aria-label="Diminuir tamanho do texto" title="Diminuir letras">A−</button>
+  <output id="leitura-nivel" class="leitura-nivel" aria-live="polite" aria-atomic="true">Normal</output>
+  <button type="button" id="leitura-mais" class="leitura-botao" aria-label="Aumentar tamanho do texto" title="Aumentar letras">A+</button>
+</div><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
 <main id="conteudo">
 <section aria-labelledby="principal" class="hero"><div aria-hidden="true" aria-label="Espaço reservado para fotografia principal" class="hero-photo premium-photo-space"></div><div class="wrap hero-inner"><div class="hero-copy"><h1 class="serif" id="principal">Reabilitação oral focada no que realmente importa: <em>a sua tranquilidade.</em></h1><p>Comer com prazer, conversar à vontade e aproveitar os bons momentos sem que os problemas com os dentes sejam uma preocupação constante.</p><div class="hero-actions"><a class="btn" data-agendar="" href="/contato.html">Agendar minha avaliação</a><a class="hero-secondary" href="#duvidas">Tirar minhas dúvidas ↓</a></div></div></div></section>
 <section aria-labelledby="titulo-duvidas" class="section guide" id="duvidas">
@@ -582,5 +680,27 @@ if (/^55\d{10,11}$/.test(num)) {
   });
 })();
 
+
+/* Leitura assistida: 4 níveis, preferência preservada entre visitas. */
+(function(){
+ const sizes=[1,1.15,1.3,1.45];
+ const minus=document.getElementById('leitura-menos');
+ const plus=document.getElementById('leitura-mais');
+ const output=document.getElementById('leitura-nivel');
+ let index=0;
+ try {const saved=Number(localStorage.getItem('pedro-leitura-nivel'));if(Number.isInteger(saved)&&saved>=0&&saved<sizes.length)index=saved;}catch(e){}
+ function apply(){
+   document.documentElement.style.setProperty('--escala-leitura',String(sizes[index]));
+   document.documentElement.dataset.leitura=String(index);
+   output.textContent=index===0?'Normal':Math.round(sizes[index]*100)+'%';
+   minus.disabled=index===0;plus.disabled=index===sizes.length-1;
+   minus.setAttribute('aria-label','Diminuir tamanho do texto'+(index===0?' (mínimo)':''));
+   plus.setAttribute('aria-label','Aumentar tamanho do texto'+(index===sizes.length-1?' (máximo)':''));
+   try{localStorage.setItem('pedro-leitura-nivel',String(index));}catch(e){}
+ }
+ minus.addEventListener('click',()=>{if(index>0){index--;apply();}});
+ plus.addEventListener('click',()=>{if(index<sizes.length-1){index++;apply();}});
+ apply();
+})();
 </script>
 </body></html>
