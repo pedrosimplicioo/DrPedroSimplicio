@@ -1278,3 +1278,36 @@ html { scroll-padding-top: 112px; }
   .search-assist .suggestion-link{padding:12px 14px}
   .search-assist .suggestion-heading,.search-assist .suggestion-subtitle,.search-assist .suggestion-all{padding-left:14px;padding-right:14px}
 }
+
+/* Caixa de resultados fisicamente conectada à pesquisa, sem espaço artificial. */
+.search-assist .search-suggestions{
+  position:relative;
+  top:auto;left:auto;right:auto;
+  width:100%;
+  margin-top:-1px;
+  border:1.5px solid #9a83c4;
+  border-top:1px solid #eae4f1;
+  border-radius:0 0 11px 11px;
+  box-shadow:0 11px 20px rgba(32,24,59,.09);
+  padding:5px 0 6px;
+  max-height:min(340px,48vh);
+}
+.search-assist.has-suggestions .searchrow input{
+  border-radius:11px 11px 0 0;
+  border-bottom-color:#eae4f1;
+  box-shadow:none;
+}
+.search-assist.has-suggestions .searchrow input:focus{
+  outline:none;
+  outline-offset:0;
+  box-shadow:none;
+}
+.search-assist.has-suggestions .searchline{
+  border-radius:8px 8px 0 0;
+  border-bottom-color:#eae4f1;
+}
+.search-assist .search-suggestions+.search-hint,
+.search-assist .search-suggestions+.search-help{margin-top:10px}
+@media(max-width:620px){
+  .search-assist .search-suggestions{max-height:min(320px,50vh);border-radius:0 0 9px 9px}
+}
