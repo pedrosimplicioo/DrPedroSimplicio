@@ -1076,6 +1076,30 @@ main .btn{font-size:calc(14px * var(--escala-leitura));min-height:46px}
 }
 @media(max-width:390px){.top .brandname{font-size:18px}}
 
+
+/* V15 — lateral mais discreta e ativada apenas a partir da faixa branca */
+@media(min-width:1320px){
+  :root{--ps-side-width:clamp(185px,14vw,215px)}
+  .page-progress{
+    top:calc(var(--header-height, 96px) + 8px);
+    bottom:24px;
+    max-height:calc(100vh - var(--header-height, 96px) - 32px);
+    padding:26px 14px 26px clamp(18px,2vw,28px);
+    background:linear-gradient(180deg,#faf8fb 0%,#f8f6f9 100%);
+    box-shadow:none;
+  }
+  .page-progress-heading{font-size:10px;letter-spacing:.14em;margin:0 0 16px 0;max-width:none}
+  .page-progress a{font-size:13px;gap:10px;padding:8px 0;min-height:38px}
+  .page-progress a::before{flex-basis:13px;height:13px;border-width:1.5px}
+  .page-progress-track::before,.page-progress-track::after{left:6px}
+  main > .section > .wrap, main > .final > .wrap{
+    width:calc(100% - var(--ps-side-width) - 44px);
+    margin-left:calc(var(--ps-side-width) + 22px);
+    margin-right:22px;
+  }
+  .guide.section{position:relative}
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -1270,8 +1294,12 @@ if (/^55\d{10,11}$/.test(num)) {
  let raf=false;
  function update(){
    raf=false;
+   const headerHeight=document.querySelector('.top')?.offsetHeight ?? 94;
+   document.documentElement.style.setProperty('--header-height', headerHeight+'px');
    if(!media.matches){aside.classList.remove('is-active');return;}
-   const activation=(hero?hero.getBoundingClientRect().bottom:0)<window.innerHeight*.6;
+   const guide=document.querySelector('#duvidas');
+   const guideTop=guide?guide.getBoundingClientRect().top:Infinity;
+   const activation=guideTop<=headerHeight+16;
    const end=document.querySelector('.footer')?.getBoundingClientRect().top ?? Infinity;
    aside.classList.toggle('is-active',activation&&end>window.innerHeight*.25);
    const checkpoint=window.innerHeight*.43;
