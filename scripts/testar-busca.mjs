@@ -8,6 +8,7 @@ const engine=env.window.PedroBusca;
 assert.ok(engine && typeof engine.search==="function","Mecanismo de busca não carregado");
 const cases=[
  ["minha chapa cai quando estou comendo","dentadura-solta-machucando"],
+ ["minha cha","dentadura-solta-machucando"],
  ["dentadura de baixo não para no lugar","dentadura-solta-machucando"],
  ["minha dentadura está machucando a gengiva","dentadura-solta-machucando"],
  ["como lavar a chapa","como-limpar-dentadura"],
@@ -37,10 +38,24 @@ assert.ok(library.includes('id="sugestoes-biblioteca"'),"Área de sugestões aus
 assert.ok(library.includes('src="/sugestoes-busca.js"'),"Biblioteca não carrega as sugestões");
 assert.ok(!bookJS.includes("field.addEventListener('input', filter)"),"A biblioteca não deve ocultar os artigos durante a pesquisa");
 const suggestions=read("sugestoes-busca.js");
-assert.ok(suggestions.includes("const WAIT_MS = 2000"),"Sugestões não estão configuradas para aguardar 2 segundos");
+assert.ok(suggestions.includes("const WAIT_MS = 550"),"Sugestões não estão configuradas para aguardar 2 segundos");
 assert.ok(suggestions.includes("setTimeout("),"Temporizador de busca ausente");
 assert.ok(suggestions.includes("engine.search(query, 4)"),"Sugestões não consultam o dicionário");
 assert.ok(suggestions.includes("popularIds"),"Faltam sugestões alternativas quando não há resultado");
+
+const homeBox = base.indexOf('class="search-assist"');
+const homeInput = base.indexOf('id="busca"', homeBox);
+const homePanel = base.indexOf('id="sugestoes-home"', homeInput);
+const homeExamples = base.indexOf('class="search-hint"', homePanel);
+assert.ok(homeBox >= 0 && homeInput > homeBox && homePanel > homeInput && homeExamples > homePanel, "Sugestões não estão acopladas ao campo de busca da página inicial");
+const libraryBox = library.indexOf('class="search-assist"');
+const libraryInput = library.indexOf('id="library-search"', libraryBox);
+const libraryPanel = library.indexOf('id="sugestoes-biblioteca"', libraryInput);
+const libraryExamples = library.indexOf('class="search-help"', libraryPanel);
+assert.ok(libraryBox >= 0 && libraryInput > libraryBox && libraryPanel > libraryInput && libraryExamples > libraryPanel, "Sugestões não estão acopladas ao campo da biblioteca");
+assert.ok(suggestions.includes("wrapper.classList.add('has-suggestions')"), "Estado visual de abertura da pesquisa não configurado");
+const styles = read("site-shared.css");
+assert.ok(styles.includes(".search-assist.has-suggestions .searchrow input"), "Barra de pesquisa e dropdown não compartilham o mesmo contorno visual");
 new Script(suggestions,{filename:"sugestoes-busca.js"});
 for(const a of engine.list()){
  const slug=a.url.split("/").pop();
