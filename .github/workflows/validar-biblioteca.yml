@@ -5,6 +5,7 @@ on:
       - 'index.html'
       - 'site-shared.css'
       - 'busca-inteligente.js'
+      - 'sugestoes-busca.js'
       - 'scripts/testar-busca.mjs'
       - 'biblioteca/**'
       - 'scripts/validar-biblioteca.mjs'
@@ -14,6 +15,7 @@ on:
       - 'index.html'
       - 'site-shared.css'
       - 'busca-inteligente.js'
+      - 'sugestoes-busca.js'
       - 'scripts/testar-busca.mjs'
       - 'biblioteca/**'
       - 'scripts/validar-biblioteca.mjs'
@@ -30,6 +32,7 @@ jobs:
         run: |
           node --check biblioteca/biblioteca.js
           node --check busca-inteligente.js
+          node --check sugestoes-busca.js
       - name: Testar pesquisa em linguagem natural
         run: node scripts/testar-busca.mjs
       - name: Validar identidade e navegação
