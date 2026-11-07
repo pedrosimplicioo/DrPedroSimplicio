@@ -42,3 +42,17 @@ E, antes do `</body>`:
 - Cabeçalho diferente: copiar o cabeçalho oficial, nunca reconstruí-lo manualmente.
 - Menu ou leitura sem funcionar: conferir `/biblioteca/biblioteca.js`.
 - Artigo sem aparecer na lista: conferir o link no `biblioteca/index.html`.
+
+
+## Busca por linguagem do paciente (obrigatório ao criar novo artigo)
+A pesquisa da página inicial e a da biblioteca usam o mesmo dicionário em `/busca-inteligente.js`. O dicionário ajuda **apenas a busca interna**; não deve ser utilizado para esconder palavras-chave na página.
+
+Para cada artigo novo:
+1. Acrescente uma entrada ao catálogo em `busca-inteligente.js` com o slug do arquivo, título, categoria e descrição reais.
+2. Registre termos populares e frases que os pacientes usam (por exemplo, "chapa cai" para uma dentadura solta). Associe apenas dúvidas realmente atendidas pelo artigo.
+3. Inclua um link para o novo arquivo no índice `biblioteca/index.html`, dentro da categoria correta, e atualize a contagem.
+4. Crie exemplos de pesquisa no arquivo `scripts/testar-busca.mjs`, verificando o artigo mais relevante e uma consulta que **não** deveria retornar resultado.
+5. Verifique as duas pesquisas: `/#duvidas` e `/biblioteca/`. A busca deve mostrar conteúdos existentes, nunca afirmar um diagnóstico ou prometer tratamento.
+
+Evite adicionar termos médicos e populares desconexos apenas para aumentar a quantidade de resultados. Se o tema ainda não tiver artigo, o correto é informar que o conteúdo não está disponível.
+
