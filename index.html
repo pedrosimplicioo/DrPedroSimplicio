@@ -1210,6 +1210,27 @@ main .btn{font-size:calc(14px * var(--escala-leitura));min-height:46px}
   .hero p{margin-bottom:22px!important}
 }
 
+
+/* V19 — fundo com mais textura orgânica, mantendo leitura limpa */
+body{background:
+  radial-gradient(900px 540px at -8% 14%, rgba(157,129,196,.08), transparent 58%),
+  radial-gradient(760px 480px at 108% 34%, rgba(118,87,153,.06), transparent 56%),
+  linear-gradient(180deg,#fff 0%,#fcfbfd 100%);
+}
+.hero{overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -28% auto;width:42vw;height:42vw;max-width:560px;max-height:560px;border-radius:50%;background:radial-gradient(circle at 35% 35%, rgba(216,195,245,.16), rgba(216,195,245,0) 63%),radial-gradient(circle at 70% 65%, rgba(119,90,154,.18), rgba(119,90,154,0) 58%);filter:blur(8px);pointer-events:none;z-index:-1}
+.guide,.about,.philosophy,.location{position:relative;overflow:hidden}
+.guide::before{content:"";position:absolute;left:-10%;top:8%;width:30vw;height:30vw;min-width:260px;min-height:260px;border-radius:47% 53% 58% 42% / 39% 52% 48% 61%;background:radial-gradient(circle at 40% 40%, rgba(214,197,237,.26), rgba(214,197,237,0) 70%);transform:rotate(-10deg);pointer-events:none}
+.guide::after{content:"";position:absolute;right:-8%;bottom:-10%;width:28vw;height:24vw;min-width:220px;min-height:190px;border-radius:60% 40% 53% 47% / 44% 56% 49% 51%;background:radial-gradient(circle at 50% 50%, rgba(127,94,167,.08), rgba(127,94,167,0) 68%);pointer-events:none}
+.about::before{content:"";position:absolute;right:-12%;top:-8%;width:32vw;height:26vw;min-width:280px;min-height:220px;border-radius:56% 44% 64% 36% / 40% 56% 44% 60%;background:radial-gradient(circle at 45% 45%, rgba(193,174,219,.18), rgba(193,174,219,0) 67%);pointer-events:none}
+.philosophy::before{content:"";position:absolute;left:-6%;bottom:-16%;width:26vw;height:26vw;min-width:240px;min-height:240px;border-radius:54% 46% 40% 60% / 55% 45% 55% 45%;background:radial-gradient(circle at 50% 50%, rgba(171,143,201,.12), rgba(171,143,201,0) 70%);pointer-events:none}
+.location::before{content:"";position:absolute;right:-7%;top:12%;width:24vw;height:30vw;min-width:220px;min-height:260px;border-radius:44% 56% 48% 52% / 57% 42% 58% 43%;background:radial-gradient(circle at 50% 45%, rgba(203,187,225,.18), rgba(203,187,225,0) 68%);pointer-events:none}
+.guide > .wrap,.about > .wrap,.philosophy > .wrap,.location > .wrap{position:relative;z-index:1}
+@media(max-width:900px){
+  body{background:radial-gradient(480px 300px at -10% 8%, rgba(157,129,196,.07), transparent 58%), linear-gradient(180deg,#fff 0%,#fcfbfd 100%)}
+  .hero::after,.guide::before,.guide::after,.about::before,.philosophy::before,.location::before{opacity:.65}
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
