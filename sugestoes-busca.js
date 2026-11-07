@@ -48,23 +48,31 @@
       if (!query) { hide(); return; }
       const results = engine.search(query, 4);
       const fallback = engine.list().filter(article => popularIds.includes(article.id));
-      panel.replaceChildren();
+      /* Um recorte com altura animada: as linhas aparecem de cima para baixo
+         sem deformar fontes ou deslocar o campo de pesquisa. */
+      const clip = node('div', 'suggestions-clip');
+      const scroll = node('div', 'suggestions-scroll');
+      clip.append(scroll);
+      panel.replaceChildren(clip);
 
       const headline = node('p', 'suggestion-heading',
         results.length ? 'Artigos relacionados à sua dúvida' : 'Sugestões de leitura');
-      panel.append(headline);
+      scroll.append(headline);
 
       if (!results.length) {
-        panel.append(node('p', 'suggestion-subtitle', 'Continue digitando ou escolha um destes assuntos:'));
+        scroll.append(node('p', 'suggestion-subtitle', 'Continue digitando ou escolha um destes assuntos:'));
       }
       const list = node('ul', 'suggestion-list');
       (results.length ? results : fallback).forEach(article => addArticle(list, article));
-      panel.append(list);
+      scroll.append(list);
 
       const all = node('a', 'suggestion-all', 'Explorar toda a Biblioteca do Paciente');
       all.href = '/biblioteca/';
-      panel.append(all);
+      scroll.append(all);
       panel.hidden = false;
+      /* Registra o estado recolhido antes de acionar a transição CSS.
+         Sem esta leitura de layout, a lista aparece de uma vez. */
+      void panel.offsetHeight;
       wrapper.classList.add('has-suggestions');
       input.setAttribute('aria-expanded', 'true');
     }
