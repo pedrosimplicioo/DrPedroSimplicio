@@ -48,10 +48,10 @@
     const groups = Array.from(document.querySelectorAll('.category'));
     const status = document.getElementById('search-status');
     const empty = document.getElementById('empty');
-    const normalize = value => String(value || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().trim();
+    const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
     function filter() {
       const query = normalize(field.value);
-      const words = query.split(/\\s+/).filter(Boolean);
+      const words = query.split(/\s+/).filter(Boolean);
       let total = 0;
       groups.forEach(group => {
         let visible = 0;
