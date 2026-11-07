@@ -48,25 +48,25 @@
     const groups = Array.from(document.querySelectorAll('.category'));
     const status = document.getElementById('search-status');
     const empty = document.getElementById('empty');
-    const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
     function filter() {
-      const query = normalize(field.value);
-      const words = query.split(/\s+/).filter(Boolean);
-      let total = 0;
-      groups.forEach(group => {
+      const query = field.value.trim();
+      const results = query && window.PedroBusca ? window.PedroBusca.search(query) : [];
+      const ids = new Set(results.map(item => item.id));
+      let count = 0;
+      for (const group of groups) {
         let visible = 0;
-        group.querySelectorAll('.story').forEach(link => {
-          const haystack = normalize(link.dataset.search || link.textContent);
-          const matches = words.every(word => haystack.includes(word));
-          link.hidden = !matches;
-          if (matches) { visible++; total++; }
-        });
+        for (const link of group.querySelectorAll('.story')) {
+          const slug = link.getAttribute('href').split(/[?#]/)[0].split('/').pop().replace(/\\.html$/,'');
+          const show = !query || ids.has(slug);
+          link.hidden = !show;
+          if (show) { visible++; count++; }
+        }
         group.hidden = visible === 0;
-      });
-      if (empty) empty.hidden = total > 0;
+      }
+      if (empty) empty.hidden = count !== 0;
       if (status) status.textContent = query ?
-        total + (total === 1 ? ' artigo encontrado para “' : ' artigos encontrados para “') + field.value.trim() + '”' :
-        total + (total === 1 ? ' artigo para explorar' : ' artigos para explorar');
+        count + (count === 1 ? ' artigo relacionado à sua dúvida' : ' artigos relacionados à sua dúvida') :
+        count + (count === 1 ? ' artigo para explorar' : ' artigos para explorar');
     }
     field.addEventListener('input', filter);
     const query = new URLSearchParams(location.search).get('q');
