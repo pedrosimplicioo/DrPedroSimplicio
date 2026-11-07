@@ -10,7 +10,7 @@ window.PedroBusca = (function buildSearcher(){
  function normalize(s){return String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim().replace(/\s+/g," ")}
  const stops=new Set("a ao aos as de da das do dos e em na nas no nos o os um uma uns umas meu minha meus minhas seu sua seus suas que qual quais com sem por para pra pro quando onde porque pq voce vc eu ele ela esta estou tem tenho ter muito pouco pode posso preciso gostaria queria quero saber sobre fazer so isso isto esse essa aqui seria como nao entre no".split(" "));
  function canon(t){
-   if(/^(chapa|chapas|dentadura|dentaduras)$/.test(t))return "dentadura";
+   if(/^(cha|chap|chapa|chapas|dentadura|dentaduras)$/.test(t))return "dentadura";
    if(/^(proteses|protese)$/.test(t))return "protese";
    if(/^(dente|dentes)$/.test(t))return "dente";
    if(/^(cai|cair|caindo|caiu|solta|solto|soltam|soltando|soltar|frouxa|frouxo|escapa|escapando|sambando|desencaixa|desencaixando)$/.test(t))return "solto";
@@ -43,7 +43,7 @@ window.PedroBusca = (function buildSearcher(){
  function search(text,limit){
    const words=tokens(text);
    if(!words.length)return [];
-   let hits=prepared.map(doc=>({id:doc.id,title:doc.title,category:doc.category,description:doc.description,url:doc.url,score:rank(doc,words)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score || a.title.localeCompare(b.title,"pt-BR"));
+   let hits=prepared.map(doc=>({id:doc.id,title:doc.title,category:doc.category,description:doc.description,url:doc.url,score:rank(doc,words)})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score );
    return Number.isInteger(limit)&&limit>0?hits.slice(0,limit):hits;
  }
  function list(){return prepared.map(({id,title,category,description,url})=>({id,title,category,description,url}));}
