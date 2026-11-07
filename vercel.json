@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/dentadura-solta-machucando.html",
+      "destination": "/biblioteca/dentadura-solta-machucando.html",
+      "permanent": true
+    },
+    {
+      "source": "/dentadura-solta-machucando",
+      "destination": "/biblioteca/dentadura-solta-machucando.html",
+      "permanent": true
+    }
+  ]
 }
