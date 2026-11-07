@@ -28,11 +28,20 @@ for(const [query,expected] of cases){
 const base=read("index.html");
 const library=read("biblioteca/index.html");
 assert.ok(base.includes('src="/busca-inteligente.js"'),"Página inicial não importa o dicionário");
-assert.ok(base.includes("window.PedroBusca.search(query,5)"),"Página inicial não utiliza o dicionário");
+assert.ok(base.includes('id="sugestoes-home"'),"Área de sugestões ausente na página inicial");
+assert.ok(base.includes('src="/sugestoes-busca.js"'),"Página inicial não carrega as sugestões");
+assert.ok(base.includes('4 conteúdos para começar'),"Os artigos iniciais não estão mais visíveis");
 assert.ok(library.includes('src="/busca-inteligente.js"'),"Biblioteca não importa o dicionário");
 const bookJS=read("biblioteca/biblioteca.js");
-assert.ok(bookJS.includes("window.PedroBusca.search(query)"),"Biblioteca não usa o dicionário");
-assert.ok(bookJS.includes("link.getAttribute('href')"),"Biblioteca não extrai o identificador do artigo");
+assert.ok(library.includes('id="sugestoes-biblioteca"'),"Área de sugestões ausente na biblioteca");
+assert.ok(library.includes('src="/sugestoes-busca.js"'),"Biblioteca não carrega as sugestões");
+assert.ok(!bookJS.includes("field.addEventListener('input', filter)"),"A biblioteca não deve ocultar os artigos durante a pesquisa");
+const suggestions=read("sugestoes-busca.js");
+assert.ok(suggestions.includes("const WAIT_MS = 2000"),"Sugestões não estão configuradas para aguardar 2 segundos");
+assert.ok(suggestions.includes("setTimeout("),"Temporizador de busca ausente");
+assert.ok(suggestions.includes("engine.search(query, 4)"),"Sugestões não consultam o dicionário");
+assert.ok(suggestions.includes("popularIds"),"Faltam sugestões alternativas quando não há resultado");
+new Script(suggestions,{filename:"sugestoes-busca.js"});
 for(const a of engine.list()){
  const slug=a.url.split("/").pop();
  assert.ok(readdirSync("biblioteca").includes(slug),"Artigo ausente: "+slug);
@@ -42,4 +51,4 @@ for(const match of base.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
  if(/src=|application\/ld\+json/.test(match[1]))continue;
  new Script(match[2],{filename:"script-inline-index.html"});
 }
-console.log("Busca por sinônimos: "+cases.length+" testes passaram; índice e páginas conferidos.");
+console.log("Busca por sinônimos e sugestões: "+cases.length+" testes passaram; índice e páginas conferidos.");
