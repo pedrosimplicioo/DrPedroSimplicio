@@ -1211,24 +1211,44 @@ main .btn{font-size:calc(14px * var(--escala-leitura));min-height:46px}
 }
 
 
-/* V19 — fundo com mais textura orgânica, mantendo leitura limpa */
-body{background:
-  radial-gradient(900px 540px at -8% 14%, rgba(157,129,196,.08), transparent 58%),
-  radial-gradient(760px 480px at 108% 34%, rgba(118,87,153,.06), transparent 56%),
-  linear-gradient(180deg,#fff 0%,#fcfbfd 100%);
+/* V20 — curvas orgânicas desenhadas, sem manchas desfocadas */
+.hero::after{content:"";position:absolute;right:0;top:0;bottom:0;left:auto;width:60%;height:100%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20780%20540%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%3E%3Cpath%20d%3D%22M785%20-65%20C590%20-45%20568%2092%20635%20192%20C713%20316%20600%20382%20464%20423%20C350%20458%20333%20519%20387%20606%20L834%20588Z%22%20fill%3D%22%23a791c5%22%20fill-opacity%3D%22.15%22%2F%3E%3Cpath%20d%3D%22M798%20-36%20C640%20-9%20617%20107%20683%20192%20C778%20313%20659%20442%20525%20469%20C441%20489%20413%20542%20457%20606%20L833%20605Z%22%20fill%3D%22%23c7b3de%22%20fill-opacity%3D%22.13%22%2F%3E%3Cpath%20d%3D%22M795%2026%20C653%2058%20640%20138%20702%20220%20C771%20310%20701%20406%20596%20451%20C496%20494%20498%20545%20528%20588%22%20stroke%3D%22%23dbcbec%22%20stroke-opacity%3D%22.37%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M779%2069%20C674%20101%20659%20170%20730%20246%20C782%20304%20746%20387%20652%20433%20C559%20480%20563%20536%20600%20594%22%20stroke%3D%22%23b5a0cd%22%20stroke-opacity%3D%22.34%22%20stroke-width%3D%221.6%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E") right center/cover no-repeat;pointer-events:none;z-index:-1;filter:none;max-width:none;max-height:none;border-radius:0;opacity:1}
+.guide,.about,.philosophy,.location{position:relative;isolation:isolate;overflow:hidden}
+.guide::before,.guide::after,.about::before,.philosophy::before,.location::before{content:"";position:absolute;pointer-events:none;z-index:0;inset:auto;transform:none;border-radius:0;filter:none;min-width:0;min-height:0;opacity:1}
+.guide::before{left:auto;right:-20px;top:0;width:min(40%,450px);height:100%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20680%20760%22%3E%3Cpath%20d%3D%22M682%20-80%20C368%2025%20345%20162%20494%20290%20C646%20417%20546%20543%20359%20593%20C236%20624%20221%20696%20279%20803%20L725%20825Z%22%20fill%3D%22%23ddd0e9%22%20fill-opacity%3D%22.31%22%2F%3E%3Cpath%20d%3D%22M705%20-45%20C459%2070%20447%20192%20554%20314%20C662%20436%20595%20560%20430%20615%20C347%20644%20323%20722%20373%20796%20L719%20818Z%22%20fill%3D%22%23eee6f3%22%20fill-opacity%3D%22.73%22%2F%3E%3Cpath%20d%3D%22M667%20-25%20C421%2093%20429%20187%20535%20301%20C642%20416%20554%20540%20403%20595%20C299%20633%20275%20699%20329%20793%22%20stroke%3D%22%239f87bd%22%20stroke-opacity%3D%22.27%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M661%2053%20C486%20136%20474%20206%20564%20308%20C680%20440%20588%20560%20463%20606%20C382%20637%20366%20689%20416%20783%22%20stroke%3D%22%23ad97c5%22%20stroke-opacity%3D%22.32%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E") right top/100% 100% no-repeat}
+.guide::after{left:-20px;right:auto;top:20%;bottom:auto;width:min(27%,270px);height:65%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20780%22%3E%3Cpath%20d%3D%22M-132%20-55%20C191%2040%20240%20168%2091%20322%20C-48%20466%2085%20571%20239%20612%20C337%20638%20339%20736%20283%20812%20L-165%20814Z%22%20fill%3D%22%23e0d5eb%22%20fill-opacity%3D%22.28%22%2F%3E%3Cpath%20d%3D%22M-131%205%20C126%20104%20144%20185%2038%20315%20C-65%20445%2049%20559%20171%20597%20C264%20626%20249%20733%20221%20805%22%20stroke%3D%22%23a590be%22%20stroke-opacity%3D%22.30%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M-107%2081%20C77%20145%2084%20218%20-5%20324%20C-101%20440%2017%20558%20115%20587%20C204%20614%20190%20725%20175%20804%22%20stroke%3D%22%23b49fc9%22%20stroke-opacity%3D%22.32%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E") left center/100% 100% no-repeat}
+.about::before{right:-25px;top:0;width:min(42%,480px);height:100%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20680%20760%22%3E%3Cpath%20d%3D%22M682%20-80%20C368%2025%20345%20162%20494%20290%20C646%20417%20546%20543%20359%20593%20C236%20624%20221%20696%20279%20803%20L725%20825Z%22%20fill%3D%22%23ddd0e9%22%20fill-opacity%3D%22.31%22%2F%3E%3Cpath%20d%3D%22M705%20-45%20C459%2070%20447%20192%20554%20314%20C662%20436%20595%20560%20430%20615%20C347%20644%20323%20722%20373%20796%20L719%20818Z%22%20fill%3D%22%23eee6f3%22%20fill-opacity%3D%22.73%22%2F%3E%3Cpath%20d%3D%22M667%20-25%20C421%2093%20429%20187%20535%20301%20C642%20416%20554%20540%20403%20595%20C299%20633%20275%20699%20329%20793%22%20stroke%3D%22%239f87bd%22%20stroke-opacity%3D%22.27%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M661%2053%20C486%20136%20474%20206%20564%20308%20C680%20440%20588%20560%20463%20606%20C382%20637%20366%20689%20416%20783%22%20stroke%3D%22%23ad97c5%22%20stroke-opacity%3D%22.32%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E") right center/100% 100% no-repeat;transform:scaleY(-1)}
+.philosophy::before{left:-30px;bottom:0;width:min(33%,355px);height:100%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20780%22%3E%3Cpath%20d%3D%22M-132%20-55%20C191%2040%20240%20168%2091%20322%20C-48%20466%2085%20571%20239%20612%20C337%20638%20339%20736%20283%20812%20L-165%20814Z%22%20fill%3D%22%23e0d5eb%22%20fill-opacity%3D%22.28%22%2F%3E%3Cpath%20d%3D%22M-131%205%20C126%20104%20144%20185%2038%20315%20C-65%20445%2049%20559%20171%20597%20C264%20626%20249%20733%20221%20805%22%20stroke%3D%22%23a590be%22%20stroke-opacity%3D%22.30%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M-107%2081%20C77%20145%2084%20218%20-5%20324%20C-101%20440%2017%20558%20115%20587%20C204%20614%20190%20725%20175%20804%22%20stroke%3D%22%23b49fc9%22%20stroke-opacity%3D%22.32%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E") left center/100% 100% no-repeat}
+.location::before{right:-20px;top:0;width:min(36%,390px);height:100%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20680%20760%22%3E%3Cpath%20d%3D%22M682%20-80%20C368%2025%20345%20162%20494%20290%20C646%20417%20546%20543%20359%20593%20C236%20624%20221%20696%20279%20803%20L725%20825Z%22%20fill%3D%22%23ddd0e9%22%20fill-opacity%3D%22.31%22%2F%3E%3Cpath%20d%3D%22M705%20-45%20C459%2070%20447%20192%20554%20314%20C662%20436%20595%20560%20430%20615%20C347%20644%20323%20722%20373%20796%20L719%20818Z%22%20fill%3D%22%23eee6f3%22%20fill-opacity%3D%22.73%22%2F%3E%3Cpath%20d%3D%22M667%20-25%20C421%2093%20429%20187%20535%20301%20C642%20416%20554%20540%20403%20595%20C299%20633%20275%20699%20329%20793%22%20stroke%3D%22%239f87bd%22%20stroke-opacity%3D%22.27%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M661%2053%20C486%20136%20474%20206%20564%20308%20C680%20440%20588%20560%20463%20606%20C382%20637%20366%20689%20416%20783%22%20stroke%3D%22%23ad97c5%22%20stroke-opacity%3D%22.32%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E") right center/100% 100% no-repeat}
+.guide>.wrap,.about>.wrap,.philosophy>.wrap,.location>.wrap{position:relative;z-index:1}
+@media(max-width:900px){.hero::after{width:58%;opacity:.66}.guide::before,.guide::after,.about::before,.philosophy::before,.location::before{opacity:.65}}
+@media(max-width:650px){.hero::after{width:72%;opacity:.4}.guide::before,.guide::after,.about::before,.philosophy::before,.location::before{width:45%;opacity:.38}}
+
+/* V21 — textura de papel natural discreta, restrita às áreas claras.
+   Banner azul inteiramente reservado para a fotografia futura. */
+.hero::after{content:none!important;display:none!important;background:none!important}
+.hero{background:#27283d}
+/* Remove as ondas e formas decorativas que disputavam atenção com a leitura. */
+.guide::before,.guide::after,.about::before,.about::after,
+.philosophy::before,.philosophy::after,.location::before,.location::after{
+  content:none!important;display:none!important;
 }
-.hero{overflow:hidden}
-.hero::after{content:"";position:absolute;inset:auto -10% -28% auto;width:42vw;height:42vw;max-width:560px;max-height:560px;border-radius:50%;background:radial-gradient(circle at 35% 35%, rgba(216,195,245,.16), rgba(216,195,245,0) 63%),radial-gradient(circle at 70% 65%, rgba(119,90,154,.18), rgba(119,90,154,0) 58%);filter:blur(8px);pointer-events:none;z-index:-1}
-.guide,.about,.philosophy,.location{position:relative;overflow:hidden}
-.guide::before{content:"";position:absolute;left:-10%;top:8%;width:30vw;height:30vw;min-width:260px;min-height:260px;border-radius:47% 53% 58% 42% / 39% 52% 48% 61%;background:radial-gradient(circle at 40% 40%, rgba(214,197,237,.26), rgba(214,197,237,0) 70%);transform:rotate(-10deg);pointer-events:none}
-.guide::after{content:"";position:absolute;right:-8%;bottom:-10%;width:28vw;height:24vw;min-width:220px;min-height:190px;border-radius:60% 40% 53% 47% / 44% 56% 49% 51%;background:radial-gradient(circle at 50% 50%, rgba(127,94,167,.08), rgba(127,94,167,0) 68%);pointer-events:none}
-.about::before{content:"";position:absolute;right:-12%;top:-8%;width:32vw;height:26vw;min-width:280px;min-height:220px;border-radius:56% 44% 64% 36% / 40% 56% 44% 60%;background:radial-gradient(circle at 45% 45%, rgba(193,174,219,.18), rgba(193,174,219,0) 67%);pointer-events:none}
-.philosophy::before{content:"";position:absolute;left:-6%;bottom:-16%;width:26vw;height:26vw;min-width:240px;min-height:240px;border-radius:54% 46% 40% 60% / 55% 45% 55% 45%;background:radial-gradient(circle at 50% 50%, rgba(171,143,201,.12), rgba(171,143,201,0) 70%);pointer-events:none}
-.location::before{content:"";position:absolute;right:-7%;top:12%;width:24vw;height:30vw;min-width:220px;min-height:260px;border-radius:44% 56% 48% 52% / 57% 42% 58% 43%;background:radial-gradient(circle at 50% 45%, rgba(203,187,225,.18), rgba(203,187,225,0) 68%);pointer-events:none}
-.guide > .wrap,.about > .wrap,.philosophy > .wrap,.location > .wrap{position:relative;z-index:1}
-@media(max-width:900px){
-  body{background:radial-gradient(480px 300px at -10% 8%, rgba(157,129,196,.07), transparent 58%), linear-gradient(180deg,#fff 0%,#fcfbfd 100%)}
-  .hero::after,.guide::before,.guide::after,.about::before,.philosophy::before,.location::before{opacity:.65}
+/* O ruído finíssimo é embutido no CSS: não depende de imagem externa. */
+main > .section:not(.hero),
+main > section.guide, main > section.about, main > section.philosophy,
+main > section.location, main > section#tratamentos{
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%20viewBox%3D%220%200%20160%20160%22%3E%3Cfilter%20id%3D%22grain%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.72%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%20seed%3D%2211%22%2F%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20fill%3D%22%23675a72%22%20filter%3D%22url%28%23grain%29%22%20opacity%3D%22.065%22%2F%3E%3C%2Fsvg%3E")!important;
+  background-size:160px 160px!important;
+  background-repeat:repeat!important;
+}
+/* Fundo naturalmente quente, sem desenhos, mantendo contraste. */
+.guide{background-color:#f8f7f4!important}
+.about{background-color:#f7f5f3!important}
+.philosophy{background-color:#fff!important}
+.location{background-color:#fbfaf8!important}
+#tratamentos{background-color:#fff!important}
+@media(prefers-contrast:more){
+  main > .section:not(.hero){background-image:none!important}
 }
 
 </style>
