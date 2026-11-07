@@ -38,7 +38,7 @@ assert.ok(library.includes('id="sugestoes-biblioteca"'),"Área de sugestões aus
 assert.ok(library.includes('src="/sugestoes-busca.js"'),"Biblioteca não carrega as sugestões");
 assert.ok(!bookJS.includes("field.addEventListener('input', filter)"),"A biblioteca não deve ocultar os artigos durante a pesquisa");
 const suggestions=read("sugestoes-busca.js");
-assert.ok(suggestions.includes("const WAIT_MS = 550"),"Sugestões não estão configuradas para aguardar 2 segundos");
+assert.ok(suggestions.includes("const WAIT_MS = 550"),"Sugestões não estão configuradas para aguardar 550 ms");
 assert.ok(suggestions.includes("setTimeout("),"Temporizador de busca ausente");
 assert.ok(suggestions.includes("engine.search(query, 4)"),"Sugestões não consultam o dicionário");
 assert.ok(suggestions.includes("popularIds"),"Faltam sugestões alternativas quando não há resultado");
@@ -56,6 +56,11 @@ assert.ok(libraryBox >= 0 && libraryInput > libraryBox && libraryPanel > library
 assert.ok(suggestions.includes("wrapper.classList.add('has-suggestions')"), "Estado visual de abertura da pesquisa não configurado");
 const styles = read("site-shared.css");
 assert.ok(styles.includes(".search-assist.has-suggestions .searchrow input"), "Barra de pesquisa e dropdown não compartilham o mesmo contorno visual");
+assert.ok(suggestions.includes("const clip = node('div', 'suggestions-clip')"), "Falta o recorte para animar sem distorcer os textos");
+assert.ok(suggestions.includes("const scroll = node('div', 'suggestions-scroll')"), "Falta a camada rolável das sugestões");
+assert.ok(suggestions.includes("void panel.offsetHeight"), "Abertura não força o estado inicial da transição");
+assert.ok(styles.includes("grid-template-rows 360ms"), "Animação de expansão vertical não encontrada");
+assert.ok(styles.includes("prefers-reduced-motion:reduce"), "Falta respeitar movimento reduzido");
 new Script(suggestions,{filename:"sugestoes-busca.js"});
 for(const a of engine.list()){
  const slug=a.url.split("/").pop();
