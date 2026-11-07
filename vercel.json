@@ -3,13 +3,63 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/dentadura-solta-machucando.html",
-      "destination": "/biblioteca/dentadura-solta-machucando.html",
+      "source": "/dentadura-solta-machucando",
+      "destination": "/biblioteca/dentadura-solta-machucando",
       "permanent": true
     },
     {
-      "source": "/dentadura-solta-machucando",
-      "destination": "/biblioteca/dentadura-solta-machucando.html",
+      "source": "/dentadura-solta-machucando.html",
+      "destination": "/biblioteca/dentadura-solta-machucando",
+      "permanent": true
+    },
+    {
+      "source": "/protese-protocolo",
+      "destination": "/biblioteca/protese-protocolo",
+      "permanent": true
+    },
+    {
+      "source": "/protese-protocolo.html",
+      "destination": "/biblioteca/protese-protocolo",
+      "permanent": true
+    },
+    {
+      "source": "/coroas-dentarias",
+      "destination": "/biblioteca/quando-dente-precisa-coroa",
+      "permanent": true
+    },
+    {
+      "source": "/coroas-dentarias.html",
+      "destination": "/biblioteca/quando-dente-precisa-coroa",
+      "permanent": true
+    },
+    {
+      "source": "/como-limpar-dentadura",
+      "destination": "/biblioteca/como-limpar-dentadura",
+      "permanent": true
+    },
+    {
+      "source": "/como-limpar-dentadura.html",
+      "destination": "/biblioteca/como-limpar-dentadura",
+      "permanent": true
+    },
+    {
+      "source": "/dentadura-ou-protese-fixa",
+      "destination": "/biblioteca/dentadura-ou-protese-fixa",
+      "permanent": true
+    },
+    {
+      "source": "/dentadura-ou-protese-fixa.html",
+      "destination": "/biblioteca/dentadura-ou-protese-fixa",
+      "permanent": true
+    },
+    {
+      "source": "/quando-dente-precisa-coroa",
+      "destination": "/biblioteca/quando-dente-precisa-coroa",
+      "permanent": true
+    },
+    {
+      "source": "/quando-dente-precisa-coroa.html",
+      "destination": "/biblioteca/quando-dente-precisa-coroa",
       "permanent": true
     }
   ]
