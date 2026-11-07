@@ -1311,3 +1311,46 @@ html { scroll-padding-top: 112px; }
 @media(max-width:620px){
   .search-assist .search-suggestions{max-height:min(320px,50vh);border-radius:0 0 9px 9px}
 }
+
+
+/* Expansão progressiva das sugestões: revelação de cima para baixo, sem esticar o texto. */
+.search-assist .search-suggestions{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  transform:translateY(-5px);
+  overflow:hidden;
+  max-height:none;
+  padding:0;
+  transition:
+    grid-template-rows 360ms cubic-bezier(.22, 1, .36, 1),
+    opacity 240ms ease-out,
+    transform 360ms cubic-bezier(.22, 1, .36, 1);
+  will-change:grid-template-rows,opacity;
+}
+.search-assist .suggestions-clip{
+  min-height:0;
+  overflow:hidden;
+}
+.search-assist .suggestions-scroll{
+  max-height:min(340px,48vh);
+  overflow-y:auto;
+  overflow-x:hidden;
+  padding:5px 0 6px;
+  scrollbar-width:thin;
+}
+.search-assist.has-suggestions .search-suggestions{
+  grid-template-rows:1fr;
+  opacity:1;
+  transform:translateY(0);
+}
+@media (max-width:620px){
+  .search-assist .suggestions-scroll{max-height:min(320px,50vh)}
+}
+@media (prefers-reduced-motion:reduce){
+  .search-assist .search-suggestions{
+    transition:none;
+    transform:none;
+    will-change:auto;
+  }
+}
