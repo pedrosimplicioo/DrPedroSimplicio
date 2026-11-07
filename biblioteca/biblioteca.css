@@ -2,7 +2,7 @@
 /* Biblioteca: apenas o conteúdo editorial. A identidade do site fica em /site-shared.css */
 .library-page{background:#fbfaf9;color:#29293f}
 .library-page #conteudo{min-height:70vh;padding:62px 0 88px;background:transparent}
-.library-page #conteudo>.wrap{width:min(900px,calc(100% - 44px));max-width:900px;margin:0 auto;padding:0}
+.library-page #conteudo>.wrap{width:min(900px,calc(100% - 44px));max-width:900px!important;margin:0 auto!important;padding:0!important}
 .library-page #conteudo a{color:#563878}
 .library-page .intro{margin:0 0 31px;padding:0}
 .library-page .intro .eyebrow,.library-page .article .eyebrow{display:block;margin:0 0 10px;color:#65517c;font-size:calc(11px * var(--escala-leitura,1));font-weight:700;letter-spacing:.14em;text-transform:uppercase}
