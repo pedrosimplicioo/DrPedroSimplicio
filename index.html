@@ -961,6 +961,57 @@ main .btn{font-size:calc(16px * var(--escala-leitura));min-height:50px;padding:1
 }
 @media(max-width:390px){.top .brandname{font-size:18px}.top .brandsub{font-size:7px}}
 
+
+/* V13 — escala menor e harmonizada; o cabeçalho continua estável ao usar A+/A− */
+body{font-size:calc(16px * var(--escala-leitura))}
+.hero h1{font-size:clamp(38px,4.2vw,54px)}
+.hero p{font-size:calc(17px * var(--escala-leitura));max-width:560px}
+.hero-secondary{font-size:calc(15px * var(--escala-leitura))}
+main .btn{font-size:calc(15px * var(--escala-leitura));min-height:48px}
+.section-head h2,.guide-intro h2{font-size:clamp(32px,3.4vw,42px)}
+.section-head p,.philosophy-intro p{font-size:calc(17px * var(--escala-leitura))}
+.eyebrow{font-size:calc(12px * var(--escala-leitura))}
+.guide .search-label{font-size:calc(16px * var(--escala-leitura))}
+.guide .searchrow input{font-size:calc(17px * var(--escala-leitura));min-height:58px}
+.guide .search-hint,.guide .search-count{font-size:calc(14px * var(--escala-leitura))}
+.guide-results-head h3{font-size:calc(24px * var(--escala-leitura))}
+.guide .guide-card{padding:18px 17px;gap:8px 14px}
+.guide .guide-card .tag{font-size:calc(12px * var(--escala-leitura))}
+.guide .guide-card h4,.guide .guide-card h3{font-size:calc(20px * var(--escala-leitura))}
+.guide .guide-card p{font-size:calc(16px * var(--escala-leitura))}
+.guide .guide-card .more{font-size:calc(15px * var(--escala-leitura))}
+.treatment h3,.value-item h3{font-size:calc(21px * var(--escala-leitura))}
+.treatment p,.value-item p,.about p,.location p{font-size:calc(16px * var(--escala-leitura))}
+.treatment .more,.text-link{font-size:calc(16px * var(--escala-leitura))}
+.credential{font-size:calc(16px * var(--escala-leitura))!important}
+.final p{font-size:calc(17px * var(--escala-leitura))}
+.footer,.footer p,.footer a{font-size:calc(14px * var(--escala-leitura))}
+/* A barra superior fica independente da escala de leitura. */
+.top .brandname{font-size:23px}
+.top .brandsub{font-size:9px}
+.top .nav a{font-size:14px}
+.top .header-cta{font-size:14px}
+.top .leitura-botao{font-size:17px}
+@media(min-width:1320px){.page-progress-heading{font-size:12px}.page-progress a{font-size:15px}}
+@media(max-width:900px){
+ .hero h1{font-size:clamp(36px,5.8vw,50px)}
+ .hero p,.section-head p{font-size:calc(17px * var(--escala-leitura))}
+ .section-head h2,.guide-intro h2{font-size:clamp(31px,4.7vw,40px)}
+ .guide .guide-card h4,.guide .guide-card h3{font-size:calc(20px * var(--escala-leitura))}
+ .guide .guide-card p{font-size:calc(16px * var(--escala-leitura))}
+ .guide .guide-card .more{font-size:calc(15px * var(--escala-leitura))}
+ .guide .searchrow input{font-size:calc(17px * var(--escala-leitura))}
+}
+@media(max-width:500px){
+ .hero h1{font-size:clamp(33px,8.2vw,42px)}
+ .section-head h2,.guide-intro h2{font-size:clamp(30px,7.5vw,37px)}
+ .guide .guide-card h4,.guide .guide-card h3{font-size:calc(19px * var(--escala-leitura))}
+ .guide .guide-card p{font-size:calc(16px * var(--escala-leitura))}
+ .top .brandname{font-size:20px}
+ .top .leitura-botao{font-size:17px}
+}
+@media(max-width:390px){.top .brandname{font-size:18px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
