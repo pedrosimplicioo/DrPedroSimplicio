@@ -64,6 +64,47 @@ for (const name of pages) {
   }
 }
 
+
+// Páginas internas não podem voltar a usar o cabeçalho e o CSS das versões antigas.
+const internalPages = [
+  "protese-total.html",
+  "protese-parcial-removivel.html",
+  "protese-sobre-implantes.html",
+  "sobre.html",
+  "contato.html",
+  "privacidade.html"
+];
+for (const page of internalPages) {
+  const html = file(page);
+  assert(page, normalizeHeader(html) === homeHeader, "Cabeçalho diferente da página inicial");
+  assert(page, html.includes('href="/site-shared.css"'), "CSS oficial ausente");
+  assert(page, html.includes('href="/biblioteca/biblioteca.css"'), "CSS editorial ausente");
+  assert(page, html.includes('src="/biblioteca/biblioteca.js"'), "JS compartilhado ausente");
+  assert(page, (html.match(/<h1\b/gi) || []).length === 1, "Deve haver um único título principal");
+  assert(page, !html.includes("/assets/style.css"), "CSS legado encontrado");
+}
+
+// Endereços usados nas versões anteriores precisam encontrar a versão correta.
+const redirects = JSON.parse(file("vercel.json")).redirects || [];
+const aliases = {
+  "dentadura-solta-machucando": "dentadura-solta-machucando",
+  "protese-protocolo": "protese-protocolo",
+  "coroas-dentarias": "quando-dente-precisa-coroa",
+  "como-limpar-dentadura": "como-limpar-dentadura",
+  "dentadura-ou-protese-fixa": "dentadura-ou-protese-fixa",
+  "quando-dente-precisa-coroa": "quando-dente-precisa-coroa"
+};
+for (const [oldSlug, articleSlug] of Object.entries(aliases)) {
+  const destination = "/biblioteca/" + articleSlug;
+  assert("vercel.json", existsSync(join(root,"biblioteca",articleSlug+".html")), "Artigo ausente: "+articleSlug);
+  for (const ext of ["", ".html"]) {
+    const source = "/" + oldSlug + ext;
+    assert("vercel.json", redirects.some(r => r.source === source && r.destination === destination), "Redirecionamento ausente: "+source);
+  }
+}
+assert("index.html", !homepage.includes('href="/protese-protocolo.html"'), "Link da página inicial aponta à página antiga de protocolo");
+assert("index.html", !homepage.includes('href="/coroas-dentarias.html"'), "Link da página inicial aponta à página antiga de coroas");
+
 if (errors.length) {
   console.error("Falhas de consistência na biblioteca:\n" + errors.map(x => " - " + x).join("\n"));
   process.exit(1);
