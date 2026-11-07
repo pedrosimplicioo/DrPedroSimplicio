@@ -1012,6 +1012,70 @@ main .btn{font-size:calc(15px * var(--escala-leitura));min-height:48px}
 }
 @media(max-width:390px){.top .brandname{font-size:18px}}
 
+
+/* V14 — tipografia compacta, com leitura ajustável e lateral mais enxuta.
+   Mantém A+/A− funcional sem redimensionar o cabeçalho. */
+body{font-size:calc(15px * var(--escala-leitura))}
+.hero h1{font-size:clamp(37px,3.7vw,48px)}
+.hero p{font-size:calc(16px * var(--escala-leitura));max-width:530px}
+.hero-secondary{font-size:calc(14px * var(--escala-leitura))}
+main .btn{font-size:calc(14px * var(--escala-leitura));min-height:46px}
+.section-head h2,.guide-intro h2{font-size:clamp(30px,3.1vw,38px)}
+.section-head p,.philosophy-intro p{font-size:calc(16px * var(--escala-leitura))}
+.eyebrow{font-size:calc(11px * var(--escala-leitura))}
+.guide .search-label{font-size:calc(15px * var(--escala-leitura))}
+.guide .searchrow input{font-size:calc(16px * var(--escala-leitura));min-height:54px}
+.guide .search-hint,.guide .search-count{font-size:calc(13px * var(--escala-leitura))}
+.guide-results-head h3{font-size:calc(22px * var(--escala-leitura))}
+.guide .guide-card{padding:16px 14px;gap:7px 12px}
+.guide .guide-card .tag{font-size:calc(11px * var(--escala-leitura))}
+.guide .guide-card h4,.guide .guide-card h3{font-size:calc(19px * var(--escala-leitura))}
+.guide .guide-card p{font-size:calc(15px * var(--escala-leitura))}
+.guide .guide-card .more{font-size:calc(14px * var(--escala-leitura))}
+.treatment h3,.value-item h3{font-size:calc(19px * var(--escala-leitura))}
+.treatment p,.value-item p,.about p,.location p{font-size:calc(15px * var(--escala-leitura))}
+.treatment .more,.text-link{font-size:calc(15px * var(--escala-leitura))}
+.credential{font-size:calc(15px * var(--escala-leitura))!important}
+.final p{font-size:calc(16px * var(--escala-leitura))}
+.footer,.footer p,.footer a{font-size:calc(13px * var(--escala-leitura))}
+/* Cabeçalho independente dos controles de zoom de texto. */
+.top .brandname{font-size:22px}
+.top .brandsub{font-size:9px}
+.top .nav a{font-size:13px}
+.top .header-cta{font-size:13px}
+.top .leitura-botao{font-size:16px}
+@media(min-width:1320px){
+ :root{--ps-side-width:clamp(235px,19vw,275px)}
+ .page-progress{padding:30px 18px 30px clamp(26px,3vw,48px)}
+ .page-progress-heading{font-size:11px;margin-bottom:18px}
+ .page-progress a{font-size:14px;padding:9px 0;min-height:42px;gap:12px}
+ .page-progress a::before{flex-basis:15px;height:15px;border-width:1.5px}
+ .page-progress-track::before,.page-progress-track::after{left:7px}
+ main > .section > .wrap,main > .final > .wrap{
+   width:calc(100% - var(--ps-side-width) - 56px);
+   margin-left:calc(var(--ps-side-width) + 28px);
+   margin-right:28px;
+ }
+}
+@media(max-width:900px){
+ .hero h1{font-size:clamp(35px,5.2vw,46px)}
+ .hero p,.section-head p{font-size:calc(16px * var(--escala-leitura))}
+ .section-head h2,.guide-intro h2{font-size:clamp(29px,4.3vw,37px)}
+ .guide .guide-card h4,.guide .guide-card h3{font-size:calc(19px * var(--escala-leitura))}
+ .guide .guide-card p{font-size:calc(15px * var(--escala-leitura))}
+ .guide .guide-card .more{font-size:calc(14px * var(--escala-leitura))}
+ .guide .searchrow input{font-size:calc(16px * var(--escala-leitura))}
+}
+@media(max-width:500px){
+ .hero h1{font-size:clamp(32px,7.6vw,39px)}
+ .section-head h2,.guide-intro h2{font-size:clamp(29px,7vw,35px)}
+ .guide .guide-card h4,.guide .guide-card h3{font-size:calc(18px * var(--escala-leitura))}
+ .guide .guide-card p{font-size:calc(15px * var(--escala-leitura))}
+ .top .brandname{font-size:19px}
+ .top .leitura-botao{font-size:16px}
+}
+@media(max-width:390px){.top .brandname{font-size:18px}}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
