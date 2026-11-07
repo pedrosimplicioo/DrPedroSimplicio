@@ -1100,6 +1100,26 @@ main .btn{font-size:calc(14px * var(--escala-leitura));min-height:46px}
   .guide.section{position:relative}
 }
 
+
+/* V16 — Não permitir que o painel sobreponha o banner na subida.
+   Animação somente na entrada; desaparecimento sem fade no limite. */
+@media(min-width:1320px){
+  .page-progress:not(.is-active){
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+    transition:none!important;
+  }
+  .page-progress.is-active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transition:opacity .24s ease!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .page-progress.is-active{transition:none!important}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -1299,7 +1319,7 @@ if (/^55\d{10,11}$/.test(num)) {
    if(!media.matches){aside.classList.remove('is-active');return;}
    const guide=document.querySelector('#duvidas');
    const guideTop=guide?guide.getBoundingClientRect().top:Infinity;
-   const activation=guideTop<=headerHeight+16;
+   const activation=guideTop<=headerHeight-12;
    const end=document.querySelector('.footer')?.getBoundingClientRect().top ?? Infinity;
    aside.classList.toggle('is-active',activation&&end>window.innerHeight*.25);
    const checkpoint=window.innerHeight*.43;
