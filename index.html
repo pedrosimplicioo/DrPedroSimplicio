@@ -1251,6 +1251,13 @@ main > section.location, main > section#tratamentos{
   main > .section:not(.hero){background-image:none!important}
 }
 
+
+/* V24: posição consistente de leitura para links internos. */
+html { scroll-padding-top: 112px; }
+#duvidas .section-head .eyebrow, #tratamentos .section-head .eyebrow,
+#sobre .eyebrow, #diferenciais .philosophy-intro .eyebrow,
+#local .eyebrow, #contato h2 { scroll-margin-top: 112px; }
+@media (max-width:930px) { html { scroll-padding-top: 95px; } }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -1476,53 +1483,49 @@ if (/^55\d{10,11}$/.test(num)) {
  const setTop=()=>document.documentElement.style.setProperty('--sidebar-top', (header.getBoundingClientRect().height+10)+'px');
  setTop();window.addEventListener('resize',setTop,{passive:true});
 })();
-/* V22 — navegação por seções com título alinhado abaixo do cabeçalho */
+/* V24 — um único ponto de leitura para todas as seções do site. */
 (function () {
   const header = document.querySelector('.top');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const knownSections = new Set(['duvidas', 'tratamentos', 'sobre', 'diferenciais', 'local', 'contato']);
+  const navOffset = 20;
 
-  function destination(hash) {
+  function findDestination(hash) {
     if (!hash || hash === '#') return null;
-    const section = document.getElementById(decodeURIComponent(hash.slice(1)));
+    let id;
+    try { id = decodeURIComponent(hash.substring(1)); } catch { return null; }
+    if (id === 'conteudo') return document.getElementById('conteudo');
+    if (!knownSections.has(id)) return document.getElementById(id);
+    const section = document.getElementById(id);
     if (!section) return null;
-    const heading = section.querySelector(
-      '.section-head, .philosophy-intro, h1, h2, .final-inner h2'
-    );
-    return heading || section;
+    // O pequeno rótulo editorial aparece sempre acima do título.
+    return section.querySelector('.section-head .eyebrow, .philosophy-intro .eyebrow, .about-grid .eyebrow, .location-grid .eyebrow, .eyebrow, h2') || section;
   }
 
-  function navigate(hash, smooth) {
-    const target = destination(hash);
-    if (!target) return false;
-
-    const offset = (header ? header.getBoundingClientRect().height : 0) + 22;
-    const y = Math.max(0, window.scrollY + target.getBoundingClientRect().top - offset);
-    window.scrollTo({
-      top: y,
-      behavior: smooth && !prefersReducedMotion.matches ? 'smooth' : 'instant'
-    });
+  function goTo(hash, animate) {
+    const destination = findDestination(hash);
+    if (!destination) return false;
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const y = Math.max(0, window.scrollY + destination.getBoundingClientRect().top - headerHeight - navOffset);
+    window.scrollTo({top: y, behavior: animate && !reduced.matches ? 'smooth' : 'instant'});
     return true;
   }
 
-  document.addEventListener('click', (event) => {
+  document.addEventListener('click', event => {
     const link = event.target.closest('a[href^="#"]');
-    if (!link || !link.hash || !destination(link.hash)) return;
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-
+    if (!link || !link.hash || !findDestination(link.hash)) return;
+    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    if (window.location.hash !== link.hash) {
-      history.pushState(null, '', link.hash);
-    }
-    navigate(link.hash, true);
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    goTo(link.hash, true);
   });
-
   window.addEventListener('popstate', () => {
-    if (window.location.hash) navigate(window.location.hash, false);
+    if (location.hash) goTo(location.hash, false);
+    else window.scrollTo({top:0, behavior:'instant'});
   });
-
-  if (window.location.hash) {
-    window.addEventListener('load', () => navigate(window.location.hash, false), {once:true});
-  }
+  window.addEventListener('load', () => {
+    if (location.hash) goTo(location.hash, false);
+  }, {once:true});
 })();
 
 </script>
