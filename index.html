@@ -1258,6 +1258,19 @@ html { scroll-padding-top: 112px; }
 #sobre .eyebrow, #diferenciais .philosophy-intro .eyebrow,
 #local .eyebrow, #contato h2 { scroll-margin-top: 112px; }
 @media (max-width:930px) { html { scroll-padding-top: 95px; } }
+
+.library-entry{margin:26px 0 0;text-align:center}.library-entry a{display:inline-block;padding:11px 4px;font-size:15px}
+
+/* V26: convite à biblioteca integrado ao bloco Suas dúvidas */
+.guide .library-invite{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:24px 0 28px;padding:22px 24px;background:#f3f0f6;border:1px solid #e0d8e9;border-radius:14px}
+.guide .library-invite-copy{flex:1;min-width:0}
+.guide .library-invite-eyebrow{font-size:11px;letter-spacing:.12em;font-weight:750;color:#604777}
+.guide .library-invite h3{font:400 clamp(19px,2vw,23px)/1.25 Georgia,serif;margin:7px 0 6px;color:#29293f}
+.guide .library-invite p{margin:0;color:#575366;font-size:14px;line-height:1.5;max-width:480px}
+.guide .library-invite-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;border-radius:8px;padding:13px 17px;background:#48346d;color:#fff;font-weight:700;font-size:14px;text-decoration:none;min-height:46px}
+.guide .library-invite-link:hover{background:#382656}
+.guide .library-invite-link:focus-visible{outline:3px solid #9b7bbb;outline-offset:3px}
+@media(max-width:700px){.guide .library-invite{flex-direction:column;align-items:stretch;padding:19px 18px}.guide .library-invite-link{align-self:stretch;text-align:center}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
@@ -1269,7 +1282,7 @@ html { scroll-padding-top: 112px; }
   <button type="button" id="leitura-menos" class="leitura-botao" aria-label="Diminuir tamanho do texto" title="Diminuir letras">A−</button>
   
   <button type="button" id="leitura-mais" class="leitura-botao" aria-label="Aumentar tamanho do texto" title="Aumentar letras">A+</button>
-</div><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="#duvidas">Suas dúvidas</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav></div><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
+</div><button aria-controls="menu" aria-expanded="false" class="menu-toggle" id="menu-toggle" type="button">☰ Menu</button><nav aria-label="Navegação principal" class="nav" id="menu"><a aria-current="page" href="index.html">Início</a><a href="biblioteca.html">Biblioteca</a><a href="#tratamentos">Tratamentos</a><a href="#sobre">Sobre</a><a href="#diferenciais">Nosso cuidado</a><a href="#local">Local de atendimento</a><a href="#contato">Contato</a></nav></div><a class="btn header-cta" data-agendar="" href="/contato.html">Agendar avaliação</a></div></header>
 
 <main id="conteudo">
 <section aria-labelledby="principal" class="hero"><div aria-hidden="true" aria-label="Espaço reservado para fotografia principal" class="hero-photo premium-photo-space"></div><div class="wrap hero-inner"><div class="hero-copy"><h1 class="serif" id="principal">Reabilitação oral focada no que realmente importa: <em>a sua tranquilidade.</em></h1><p>Comer com prazer, conversar à vontade e aproveitar os bons momentos sem que os problemas com os dentes sejam uma preocupação constante.</p><div class="hero-actions"><a class="btn" data-agendar="" href="/contato.html">Agendar minha avaliação</a><a class="hero-secondary" href="#duvidas">Tirar minhas dúvidas ↓</a></div></div></div></section>
@@ -1303,6 +1316,14 @@ html { scroll-padding-top: 112px; }
 <input aria-describedby="search-hint" autocomplete="off" id="busca" placeholder="Ex.: minha dentadura está solta" type="search"/>
 </div>
 <p class="search-hint" id="search-hint">Pesquise usando palavras do dia a dia. A busca encontra conteúdos publicados no site.</p>
+<div class="library-invite" aria-label="Acesso à Biblioteca do Paciente">
+  <div class="library-invite-copy">
+    <span class="library-invite-eyebrow">PREFERE EXPLORAR?</span>
+    <h3>Todos os assuntos em um só lugar</h3>
+    <p>Veja os temas organizados por categoria e descubra outras dúvidas que vale a pena esclarecer.</p>
+  </div>
+  <a class="library-invite-link" href="biblioteca.html">Conhecer a biblioteca <span aria-hidden="true">→</span></a>
+</div>
 <div class="guide-results-head">
 <h3 id="resultados-titulo">Explore os artigos</h3>
 <p aria-live="polite" class="search-count" id="search-count">4 conteúdos para começar</p>
@@ -1333,6 +1354,7 @@ html { scroll-padding-top: 112px; }
 <span class="more">Ler artigo <span aria-hidden="true">↗</span></span>
 </a>
 </div>
+
 <div class="no-results" id="no-results" role="status">Ainda não temos um artigo específico sobre esse assunto. <a data-agendar="" href="/contato.html">Entre em contato</a> para saber como agendar uma avaliação.</div>
 </div>
 </div>
