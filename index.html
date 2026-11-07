@@ -63,7 +63,7 @@ Não publique um domínio fictício como URL canônica. Configure também redire
 <svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10" cy="10" r="7"></circle><path d="m15 15 6 6"></path></svg>
 <input aria-describedby="search-hint" autocomplete="off" id="busca" placeholder="Ex.: minha dentadura está solta" type="search"/>
 </div>
-<p class="search-hint" id="search-hint">Pesquise usando palavras do dia a dia. A busca encontra conteúdos publicados no site.</p>
+<p class="search-hint" id="search-hint">Escreva do seu jeito: “minha chapa cai”, “como lavar a dentadura” ou “dente quebrou”.</p>
 <div class="library-invite" aria-label="Acesso à Biblioteca do Paciente">
   <div class="library-invite-copy">
     <span class="library-invite-eyebrow">PREFERE EXPLORAR?</span>
@@ -103,7 +103,7 @@ Não publique um domínio fictício como URL canônica. Configure também redire
 </a>
 </div>
 
-<div class="no-results" id="no-results" role="status">Ainda não temos um artigo específico sobre esse assunto. <a data-agendar="" href="/contato.html">Entre em contato</a> para saber como agendar uma avaliação.</div>
+<div class="no-results" id="no-results" role="status">Não encontramos um artigo específico para essa dúvida. Tente outras palavras ou <a href="/biblioteca/">explore a biblioteca</a>.</div>
 </div>
 </div>
 </section>
@@ -142,9 +142,49 @@ Não publique um domínio fictício como URL canônica. Configure também redire
 </div>
 </div>
 </main><a aria-label="Agendar uma avaliação" class="whatsapp-fixo" href="/contato.html" id="whatsapp-fixo"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20.5 3.5A11.4 11.4 0 0 0 12.1 0 11.6 11.6 0 0 0 2.1 17.4L.5 23.5l6.3-1.6A11.6 11.6 0 0 0 12.1 23h.1A11.5 11.5 0 0 0 20.5 3.5ZM12.2 21a9.6 9.6 0 0 1-4.9-1.3l-.4-.2-3.7 1 1-3.6-.2-.4A9.5 9.5 0 1 1 12.2 21Zm5.2-7.1c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.1-.7.2l-.9 1.1c-.1.2-.3.2-.6.1-1.6-.8-2.7-1.6-3.7-3.3-.3-.4.3-.4.8-1.4.1-.2.1-.4 0-.6l-.9-2.1c-.2-.5-.5-.5-.7-.5H8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.2 3.4 5.3 4.7 2 .9 2.8 1 3.8.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.2-.6-.4Z"></path></svg><span>Agendar avaliação</span></a><footer class="footer"><div class="wrap footer-inner"><div><strong>Dr. Pedro Simplício</strong><p>Especialista em Prótese Dentária · CRO/RN 5780 · Natal/RN</p><p>Conteúdo educativo; não substitui uma avaliação odontológica.</p></div><div><a href="/contato.html">Contato</a><a href="/privacidade.html">Privacidade</a></div></div></footer>
+<script src="/busca-inteligente.js" defer></script>
 <script>
 const toggle=document.getElementById('menu-toggle'),menu=document.getElementById('menu');toggle.addEventListener('click',()=>{let open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
-const input=document.getElementById('busca'),cards=[...document.querySelectorAll('.guide-card')],counter=document.getElementById('search-count'),empty=document.getElementById('no-results');function norm(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')};input.addEventListener('input',()=>{const q=norm(input.value.trim());let hits=0;for(const card of cards){let show=!q||norm(card.textContent+' '+card.dataset.keywords).includes(q);card.hidden=!show;if(show)hits++}counter.textContent=q?(hits===1?'1 artigo encontrado':hits+' artigos encontrados'):'4 conteúdos para começar';empty.classList.toggle('visible',!!q&&!hits)});
+/* Busca por linguagem cotidiana — resultados de artigos publicados. */
+const input=document.getElementById('busca');
+const grid=document.getElementById('guide-grid');
+const defaultCards=Array.from(grid.children);
+const counter=document.getElementById('search-count');
+const empty=document.getElementById('no-results');
+const resultsHeading=document.getElementById('resultados-titulo');
+function makeSearchCard(article){
+  const link=document.createElement('a');
+  link.className='guide-card';
+  link.href=article.url;
+  const tag=document.createElement('span');tag.className='tag';tag.textContent=article.category;
+  const title=document.createElement('h4');title.textContent=article.title;
+  const desc=document.createElement('p');desc.textContent=article.description;
+  const more=document.createElement('span');more.className='more';more.textContent='Ler artigo ↗';
+  link.append(tag,title,desc,more);
+  return link;
+}
+function updateGuideSearch(){
+  const query=input.value.trim();
+  if(!query){
+    grid.replaceChildren(...defaultCards);
+    counter.textContent='4 conteúdos para começar';
+    resultsHeading.textContent='Explore os artigos';
+    empty.classList.remove('visible');
+    return;
+  }
+  const results=window.PedroBusca?window.PedroBusca.search(query,5):[];
+  grid.replaceChildren(...results.map(makeSearchCard));
+  resultsHeading.textContent='Artigos relacionados à sua dúvida';
+  counter.textContent=results.length===1?'1 artigo encontrado':results.length+' artigos encontrados';
+  empty.classList.toggle('visible',results.length===0);
+}
+input.addEventListener('input',updateGuideSearch);
+input.addEventListener('keydown',e=>{
+  if(e.key==='Enter' && input.value.trim()){
+    e.preventDefault();
+    window.location.href='/biblioteca/?q='+encodeURIComponent(input.value.trim());
+  }
+});
 
 // Preencha com seu número real, com DDI 55 e DDD, sem pontuação.
 // Exemplo de formato: 5584XXXXXXXXX. Enquanto estiver vazio, o site mantém /contato.html.
