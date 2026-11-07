@@ -4,6 +4,8 @@ on:
     paths:
       - 'index.html'
       - 'site-shared.css'
+      - 'busca-inteligente.js'
+      - 'scripts/testar-busca.mjs'
       - 'biblioteca/**'
       - 'scripts/validar-biblioteca.mjs'
       - '.github/workflows/validar-biblioteca.yml'
@@ -11,6 +13,8 @@ on:
     paths:
       - 'index.html'
       - 'site-shared.css'
+      - 'busca-inteligente.js'
+      - 'scripts/testar-busca.mjs'
       - 'biblioteca/**'
       - 'scripts/validar-biblioteca.mjs'
       - '.github/workflows/validar-biblioteca.yml'
@@ -23,6 +27,10 @@ jobs:
         with:
           node-version: '22'
       - name: Validar sintaxe do JavaScript
-        run: node --check biblioteca/biblioteca.js
+        run: |
+          node --check biblioteca/biblioteca.js
+          node --check busca-inteligente.js
+      - name: Testar pesquisa em linguagem natural
+        run: node scripts/testar-busca.mjs
       - name: Validar identidade e navegação
         run: node scripts/validar-biblioteca.mjs
