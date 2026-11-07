@@ -1,0 +1,28 @@
+name: Validar Biblioteca
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'site-shared.css'
+      - 'biblioteca/**'
+      - 'scripts/validar-biblioteca.mjs'
+      - '.github/workflows/validar-biblioteca.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'site-shared.css'
+      - 'biblioteca/**'
+      - 'scripts/validar-biblioteca.mjs'
+      - '.github/workflows/validar-biblioteca.yml'
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar sintaxe do JavaScript
+        run: node --check biblioteca/biblioteca.js
+      - name: Validar identidade e navegação
+        run: node scripts/validar-biblioteca.mjs
