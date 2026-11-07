@@ -1,7 +1,7 @@
 /* Sugestões de artigos: comportamento compartilhado nas buscas do site. */
 (function () {
   'use strict';
-  const WAIT_MS = 2000;
+  const WAIT_MS = 550;
   const engine = window.PedroBusca;
   if (!engine || typeof engine.search !== 'function') return;
   const popularIds = ['dentadura-solta-machucando', 'protese-protocolo', 'como-limpar-dentadura'];
@@ -25,6 +25,7 @@
       clearTimeout(timer);
       timer = null;
       panel.hidden = true;
+      wrapper.classList.remove('has-suggestions');
       input.setAttribute('aria-expanded', 'false');
     }
 
@@ -50,11 +51,11 @@
       panel.replaceChildren();
 
       const headline = node('p', 'suggestion-heading',
-        results.length ? 'Artigos relacionados à sua dúvida' : 'Ainda não temos um artigo específico sobre isso.');
+        results.length ? 'Artigos relacionados à sua dúvida' : 'Sugestões de leitura');
       panel.append(headline);
 
       if (!results.length) {
-        panel.append(node('p', 'suggestion-subtitle', 'Mas você pode explorar estes assuntos:'));
+        panel.append(node('p', 'suggestion-subtitle', 'Continue digitando ou escolha um destes assuntos:'));
       }
       const list = node('ul', 'suggestion-list');
       (results.length ? results : fallback).forEach(article => addArticle(list, article));
@@ -64,6 +65,7 @@
       all.href = '/biblioteca/';
       panel.append(all);
       panel.hidden = false;
+      wrapper.classList.add('has-suggestions');
       input.setAttribute('aria-expanded', 'true');
     }
 
