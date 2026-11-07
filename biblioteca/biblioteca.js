@@ -56,7 +56,7 @@
       for (const group of groups) {
         let visible = 0;
         for (const link of group.querySelectorAll('.story')) {
-          const slug = link.getAttribute('href').split(/[?#]/)[0].split('/').pop().replace(/\\.html$/,'');
+          const slug = link.getAttribute('href').split(/[?#]/)[0].split('/').pop().replace(/\.html$/,'');
           const show = !query || ids.has(slug);
           link.hidden = !show;
           if (show) { visible++; count++; }
