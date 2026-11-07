@@ -1186,6 +1186,30 @@ main .btn{font-size:calc(14px * var(--escala-leitura));min-height:46px}
   .reading-rail{display:none!important}
 }
 
+
+/* V18 — abertura mais compacta, deixando o início do guia visível.
+   Nenhum botão ou indicador novo é acrescentado. */
+@media (min-width: 1101px){
+  .hero{min-height:440px!important;height:auto!important}
+  .hero-inner{padding-top:48px!important;padding-bottom:48px!important}
+  .hero-copy{max-width:760px}
+  .hero h1{margin-bottom:16px!important}
+  .hero p{margin-bottom:20px!important}
+  .hero-actions{gap:20px}
+}
+@media (min-width: 651px) and (max-width: 1100px){
+  .hero{min-height:0!important;height:auto!important}
+  .hero-inner{padding-top:54px!important;padding-bottom:54px!important}
+  .hero h1{margin-bottom:18px!important}
+  .hero p{margin-bottom:20px!important}
+}
+@media (max-width:650px){
+  .hero{min-height:0!important;height:auto!important;align-items:center!important}
+  .hero-inner{padding-top:56px!important;padding-bottom:52px!important}
+  .hero h1{margin-bottom:18px!important}
+  .hero p{margin-bottom:22px!important}
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Dr. Pedro Simplício","description":"Especialista em Prótese Dentária e reabilitação oral em Natal/RN. Dentaduras, coroas, prótese protocolo e outras soluções protéticas.","areaServed":{"@type":"City","name":"Natal","address":{"@type":"PostalAddress","addressRegion":"RN","addressCountry":"BR"}}}
 </script>
